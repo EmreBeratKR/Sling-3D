@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class SlingBody : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Transform head;
     [SerializeField] private Transform arm;
 
 
+    public float ArmLength => Vector3.Distance(head.position, arm.position);
+    
+        
     private void Update()
     {
-        UpdateShape();        
+        UpdateShape();
     }
     
     private void UpdateShape()
@@ -24,8 +28,7 @@ public class SlingBody : MonoBehaviour
 
         head.eulerAngles = eulerAngle;
         arm.eulerAngles = eulerAngle;
-
-        var armLength = Vector3.Distance(headPosition, armPosition);
-        arm.localScale = new Vector3(1f, armLength, 1f);
+        
+        arm.localScale = new Vector3(1f, ArmLength, 1f);
     }
 }
