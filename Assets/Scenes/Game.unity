@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 120105384}
   - component: {fileID: 120105383}
   - component: {fileID: 120105382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128285127}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 654038931}
   - component: {fileID: 654038930}
   - component: {fileID: 654038929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1018,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797388635}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 5
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -1040,6 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slingBody: {fileID: 1848108441}
   slingArm: {fileID: 128285130}
+  slingRange: {fileID: 1848108442}
   terminalSpeed: 500
   limitSpeed: 0
   gravityScale: 10
@@ -1344,7 +1345,7 @@ GameObject:
   - component: {fileID: 1279229257}
   - component: {fileID: 1279229256}
   - component: {fileID: 1279229255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1439,6 +1440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1848108438}
   - component: {fileID: 1848108441}
+  - component: {fileID: 1848108442}
   m_Layer: 0
   m_Name: Sling
   m_TagString: Untagged
@@ -1477,6 +1479,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 797388636}
   arm: {fileID: 903175372}
+--- !u!114 &1848108442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848108437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6f6b76c53249aab36bad4b5aeab290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headCollider: {fileID: 797388641}
+  rangeCollider: {fileID: 797388640}
+  arm: {fileID: 128285128}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1982095599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,7 +1509,7 @@ GameObject:
   - component: {fileID: 1982095602}
   - component: {fileID: 1982095601}
   - component: {fileID: 1982095600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

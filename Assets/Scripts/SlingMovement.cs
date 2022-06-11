@@ -6,6 +6,7 @@ public class SlingMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private SlingBody slingBody;
     [SerializeField] private SlingArm slingArm;
+    [SerializeField] private SlingRange slingRange;
     
     [Header("Speed Limitation")]
     [SerializeField] private float terminalSpeed;
@@ -70,7 +71,12 @@ public class SlingMovement : MonoBehaviour
         var positionValue = mousePosition.Value;
         positionValue.z = transform.position.z;
 
-        transform.position = positionValue;
+        var armPosition = slingArm.transform.position;
+        var distance = Vector3.Distance(positionValue, armPosition);
+        var directionArmToHead = (positionValue - armPosition).normalized;
+
+        directionArmToHead *= distance <= slingRange.Range ? distance : slingRange.Range;
+        transform.position = armPosition + directionArmToHead;
     }
 
     private void OnMouseUp()
