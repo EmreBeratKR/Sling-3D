@@ -5,7 +5,9 @@ public class SlingHead : MonoBehaviour
 {
     [SerializeField] private float gravityScale;
     [SerializeField] private bool useGravity;
+    
     private Rigidbody body;
+    private float drag;
 
 
     public Vector3 Position
@@ -20,23 +22,12 @@ public class SlingHead : MonoBehaviour
         set => transform.eulerAngles = value;
     }
 
-    public bool IsKinematic
-    {
-        get => body.isKinematic;
-        set => body.isKinematic = value;
-    }
-
-    public bool UseGravity
-    {
-        get => useGravity;
-        set => useGravity = value;
-    }
-
 
     private void Start()
     {
         body = GetComponent<Rigidbody>();
         body.useGravity = false;
+        drag = body.drag;
     }
 
     private void FixedUpdate()
@@ -44,6 +35,23 @@ public class SlingHead : MonoBehaviour
         ApplyGravity();   
     }
 
+
+    public void OnSlingHeadDragStart()
+    {
+        useGravity = false;
+        body.drag = 0;
+        body.velocity = Vector3.zero;
+    }
+
+    public void OnSlingHeadDrag(Vector3 mousePosition)
+    {
+        Position = mousePosition;
+    }
+
+    public void OnSlingHeadDragEnd()
+    {
+        
+    }
     
     public void AddForce(Vector3 force)
     {

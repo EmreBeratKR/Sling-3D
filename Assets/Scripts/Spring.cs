@@ -36,6 +36,17 @@ public class Spring : MonoBehaviour
     }
 
 
+    public void OnSlingHeadDragStart()
+    {
+        mode = SpringMode.Disabled;
+    }
+    
+    public void OnSlingHeadDragEnd()
+    {
+        mode = SpringMode.EnabledNoOffset;
+    }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
