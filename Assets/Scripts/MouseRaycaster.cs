@@ -46,4 +46,16 @@ public class MouseRaycaster : MonoBehaviour
 
         return null;
     }
+
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+        
+        var mousePos = GetWorldPosition();
+        
+        if (!mousePos.HasValue) return;
+        
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(mousePos.Value, 0.1f);
+    }
 }
