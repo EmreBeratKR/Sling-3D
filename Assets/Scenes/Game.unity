@@ -569,6 +569,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 256
+  minRadius: 0.5
 --- !u!135 &548187478
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -580,7 +581,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &610635661
 GameObject:
