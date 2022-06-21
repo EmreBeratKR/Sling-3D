@@ -9,15 +9,26 @@ public class Spring : MonoBehaviour
     [Header("Values")]
     [SerializeField] private Vector3 equilibriumOffset;
     [SerializeField, Min(0f)] private float spring;
-    [SerializeField] private bool active;
+    [SerializeField] private SpringMode mode;
+    
 
-
-    private Vector3 EquilibriumPoint => arm.Position + equilibriumOffset;
+    private Vector3 EquilibriumPoint
+    {
+        get
+        {
+            if (mode == SpringMode.EnabledNoOffset)
+            {
+                return arm.Position;
+            }
+            
+            return arm.Position + equilibriumOffset;
+        }
+    }
     
     
     private void FixedUpdate()
     {
-        if (!active) return;
+        if (mode == SpringMode.Disabled) return;
 
         var force = (EquilibriumPoint - head.Position) * spring;
         
@@ -27,13 +38,17 @@ public class Spring : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.black;
-        Gizmos.DrawSphere(arm.Position, 0.1f);
-        
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(head.Position, 0.1f);
-        
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(EquilibriumPoint, 0.1f);
+    }
+    
+    
+    
+    
+    public enum SpringMode
+    {
+        Disabled,
+        Enabled,
+        EnabledNoOffset
     }
 }

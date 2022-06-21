@@ -20,6 +20,18 @@ public class SlingHead : MonoBehaviour
         set => transform.eulerAngles = value;
     }
 
+    public bool IsKinematic
+    {
+        get => body.isKinematic;
+        set => body.isKinematic = value;
+    }
+
+    public bool UseGravity
+    {
+        get => useGravity;
+        set => useGravity = value;
+    }
+
 
     private void Start()
     {
