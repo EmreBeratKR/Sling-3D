@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class SlingRange : MonoBehaviour
 {
+    public static float DistanceError = 0.01f;
+    
     [Header("Event Channels")]
     [SerializeField] private VoidEventChannel slingHeadDragStart;
     [SerializeField] private VoidEventChannel slingHeadDragEnd;
@@ -11,11 +13,44 @@ public class SlingRange : MonoBehaviour
     
     [Header("References")]
     [SerializeField] private SlingArm arm;
+    [SerializeField] private SlingHead head;
+    [SerializeField] private LayerMask groundLayers;
 
     
     private SphereCollider rangeCollider;
 
 
+    public float Radius => rangeCollider.radius;
+
+
+
+    private Vector3 ValidatePosition(Vector3 mousePosition)
+    {
+        var armPosition = arm.Position;
+        var distance = Vector3.Distance(mousePosition, armPosition);
+        var origin = armPosition;
+        var headRadius = head.Radius;
+
+
+        var initialHits = Physics.OverlapSphere(armPosition, headRadius, groundLayers);
+
+        foreach (var initialHit in initialHits)
+        {
+            var point = initialHit.ClosestPoint(armPosition);
+            var pointDistance = Vector3.Distance(point, armPosition);
+            origin += (armPosition - point).normalized * (headRadius - pointDistance + DistanceError);
+        }
+
+        var direction = (mousePosition - origin).normalized;
+        var isHit = Physics.SphereCast(origin, headRadius, direction, out var hitInfo, distance, groundLayers);
+        var validDistance = isHit ? hitInfo.distance : Vector3.Distance(mousePosition, origin);
+        validDistance = Mathf.Clamp(validDistance, 0f, Radius);
+
+        return origin + direction * validDistance;
+    }
+    
+    
+    
     private void Start()
     {
         rangeCollider = GetComponent<SphereCollider>();
@@ -31,8 +66,10 @@ public class SlingRange : MonoBehaviour
         var mousePosition = MouseRaycaster.GetWorldPosition();
         
         if (!mousePosition.HasValue) return;
+
+        var validPosition = ValidatePosition(mousePosition.Value);
         
-        slingHeadDrag.RaiseEvent(mousePosition.Value);
+        slingHeadDrag.RaiseEvent(validPosition);
     }
 
     private void OnMouseUp()

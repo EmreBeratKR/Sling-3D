@@ -565,6 +565,10 @@ MonoBehaviour:
   slingHeadDragEnd: {fileID: 11400000, guid: 467fb7ef08906490fa24d68c60d68ef7, type: 2}
   slingHeadDrag: {fileID: 11400000, guid: 1e9fa3545949d4b788710f8c6d3478ca, type: 2}
   arm: {fileID: 872326846}
+  head: {fileID: 1962531237}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!135 &548187478
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1855,6 +1859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d1ab08e700c45ae92f54da16ae1075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCollider: {fileID: 1962531238}
   gravityScale: 3
   useGravity: 1
 --- !u!135 &1962531238

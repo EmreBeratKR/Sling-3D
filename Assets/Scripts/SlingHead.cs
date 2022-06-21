@@ -3,12 +3,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SlingHead : MonoBehaviour
 {
+    [SerializeField] private SphereCollider mainCollider;
     [SerializeField] private float gravityScale;
     [SerializeField] private bool useGravity;
     
     private Rigidbody body;
     private float drag;
 
+
+    public float Radius => mainCollider.radius;
+    
 
     public Vector3 Position
     {

@@ -29,14 +29,16 @@ public class SphereCastTest : MonoBehaviour
         Gizmos.DrawWireSphere(origin, radius);
         
         
-        var hits = Physics.SphereCastAll(origin, radius, direction, distance, groundLayers);
+        var isHit = Physics.SphereCast(origin, radius, direction, out var hitInfo, distance, groundLayers);
 
         Gizmos.color = Color.black;
         Gizmos.DrawSphere(origin, 0.1f);
         Gizmos.color = Color.magenta;
         Gizmos.DrawSphere(targetPosition, 0.1f);
         
-        if (hits.Length == 0) return;
+        if (!isHit) return;
+        
+        /*if (hits.Length == 0) return;
 
         var closestHit = hits[0];
 
@@ -47,9 +49,9 @@ public class SphereCastTest : MonoBehaviour
             if (hit.distance >= closestHit.distance) continue;
 
             closestHit = hit;
-        }
+        }*/
         
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(origin + direction * closestHit.distance, radius);
+        Gizmos.DrawWireSphere(origin + direction * hitInfo.distance, radius);
     }
 }
