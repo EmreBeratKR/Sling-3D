@@ -3,6 +3,9 @@ using UnityEngine;
 public class MouseRaycaster : MonoBehaviour
 {
     [SerializeField] private LayerMask targetLayers;
+    [SerializeField] private bool debug;
+    
+    
     private static LayerMask TargetLayers => Instance.targetLayers;
     
     
@@ -41,7 +44,9 @@ public class MouseRaycaster : MonoBehaviour
 
         if (Physics.Raycast(ray, out var info, float.PositiveInfinity, TargetLayers))
         {
-            return info.point;
+            var point = info.point;
+            point.z = 0f;
+            return point;
         }
 
         return null;
@@ -50,6 +55,8 @@ public class MouseRaycaster : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (!Application.isPlaying) return;
+        
+        if (!debug) return;
         
         var mousePos = GetWorldPosition();
         
