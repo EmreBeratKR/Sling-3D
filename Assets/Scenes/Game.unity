@@ -462,7 +462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546974150}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +550,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &610635661
 GameObject:
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 610635662}
   - component: {fileID: 610635664}
   - component: {fileID: 610635663}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 872326844}
   - component: {fileID: 872326845}
   - component: {fileID: 872326846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +830,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 56
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &872326846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +843,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a90ea9d128d645e19df5e9330102e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slingArmAttached: {fileID: 11400000, guid: 4c5885a2859c045c8b5010e5102db93b, type: 2}
+  slingArmDetached: {fileID: 11400000, guid: fa1f363c7860d49fb8ba39041c9732ad, type: 2}
+  shape: {fileID: 1226224063}
+  head: {fileID: 1962531237}
 --- !u!1 &960077545
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +858,7 @@ GameObject:
   - component: {fileID: 960077546}
   - component: {fileID: 960077549}
   - component: {fileID: 960077548}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,6 +942,7 @@ GameObject:
   - component: {fileID: 1201413000}
   - component: {fileID: 1201412999}
   - component: {fileID: 1201412998}
+  - component: {fileID: 1201413001}
   m_Layer: 0
   m_Name: Event Listener
   m_TagString: Untagged
@@ -1016,6 +1021,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 872326846}
+        m_TargetAssemblyTypeName: SlingArm, Assembly-CSharp
+        m_MethodName: OnSlingDragEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1962531237}
         m_TargetAssemblyTypeName: SlingHead, Assembly-CSharp
         m_MethodName: OnSlingHeadDragEnd
@@ -1059,6 +1076,58 @@ MonoBehaviour:
       - m_Target: {fileID: 1962531237}
         m_TargetAssemblyTypeName: SlingHead, Assembly-CSharp
         m_MethodName: OnSlingHeadDragStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 872326846}
+        m_TargetAssemblyTypeName: SlingArm, Assembly-CSharp
+        m_MethodName: OnSlingDragStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1201413001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201412996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad30ffef2d4943cdb824bf5f20bf2721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: fa1f363c7860d49fb8ba39041c9732ad, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1775978375}
+        m_TargetAssemblyTypeName: Spring, Assembly-CSharp
+        m_MethodName: OnSlingArmDetached
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1962531237}
+        m_TargetAssemblyTypeName: SlingHead, Assembly-CSharp
+        m_MethodName: OnSlingArmDetached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1128,7 +1197,7 @@ GameObject:
   - component: {fileID: 1244124683}
   - component: {fileID: 1244124685}
   - component: {fileID: 1244124684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1306,7 +1375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1392193328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1345,7 +1414,7 @@ GameObject:
   - component: {fileID: 1752787804}
   - component: {fileID: 1752787806}
   - component: {fileID: 1752787805}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left Pupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1479,7 +1548,7 @@ GameObject:
   - component: {fileID: 1806739393}
   - component: {fileID: 1806739395}
   - component: {fileID: 1806739394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1562,7 +1631,7 @@ GameObject:
   - component: {fileID: 1929051204}
   - component: {fileID: 1929051206}
   - component: {fileID: 1929051205}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right Pupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1645,7 +1714,7 @@ GameObject:
   - component: {fileID: 1959660493}
   - component: {fileID: 1959660495}
   - component: {fileID: 1959660494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1729,7 +1798,7 @@ GameObject:
   - component: {fileID: 1962531238}
   - component: {fileID: 1962531236}
   - component: {fileID: 1962531237}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1762,12 +1831,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 5
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &1962531237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,8 +1850,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCollider: {fileID: 1962531238}
+  arm: {fileID: 872326846}
+  fullBouncy: {fileID: 13400000, guid: e2c527f0cd7c6442fa62989fd538730a, type: 2}
+  lessBouncy: {fileID: 13400000, guid: 0dc10f3b94e5442e091af032be76b586, type: 2}
   gravityScale: 3
   useGravity: 1
+  attachedDrag: 5
+  detachedDrag: 1
+  throwForce: 15
 --- !u!135 &1962531238
 SphereCollider:
   m_ObjectHideFlags: 0

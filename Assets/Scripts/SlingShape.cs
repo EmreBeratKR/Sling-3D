@@ -5,15 +5,17 @@ public class SlingShape : MonoBehaviour
     [Header("References")]
     [SerializeField] private SlingArm arm;
     [SerializeField] private SlingHead head;
-
+    
 
     public float ArmLength => Vector3.Distance(head.Position, arm.Position);
+    public float SqrArmLength => Vector3.SqrMagnitude(head.Position - arm.Position);
     
         
     private void Update()
     {
         UpdateShape();
     }
+    
     
     private void UpdateShape()
     {

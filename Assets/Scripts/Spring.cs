@@ -46,6 +46,11 @@ public class Spring : MonoBehaviour
         mode = SpringMode.EnabledNoOffset;
     }
 
+    public void OnSlingArmDetached()
+    {
+        mode = SpringMode.Disabled;
+    }
+
 
     private void OnDrawGizmos()
     {
