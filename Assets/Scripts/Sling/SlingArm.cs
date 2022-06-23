@@ -1,0 +1,138 @@
+using ScriptableEvents.Core.Channels;
+using UnityEngine;
+
+namespace Sling
+{
+    [RequireComponent(typeof(Rigidbody))]
+    public class SlingArm : MonoBehaviour
+    {
+        [Header("Event Channels")]
+        [SerializeField] private VoidEventChannel slingArmAttached;
+        [SerializeField] private VoidEventChannel slingArmDetached;
+    
+        [Header("References")]
+        [SerializeField] private SlingShape shape;
+        [SerializeField] private SlingHead head;
+        [SerializeField] private SlingRange range;
+
+        private Rigidbody body;
+        private float lastHandleTime;
+        private bool isThrown;
+
+
+        public Vector3 Position
+        {
+            get => transform.position;
+            set => transform.position = value;
+        }
+    
+        public Vector3 EulerAngles
+        {
+            get => transform.eulerAngles;
+            set => transform.eulerAngles = value;
+        }
+
+        public Vector3 LocalScale
+        {
+            get => transform.localScale;
+            set => transform.localScale = value;
+        }
+    
+        public Handle AttachedHandle { get; private set; }
+        public bool IsAttached { get; private set; }
+        
+        public bool IsAttachedToHandle => AttachedHandle != null;
+        public bool HasAttachSpotNearBy => range.ClosestAttachSpot.HasValue;
+
+
+        private void Start()
+        {
+            body = GetComponent<Rigidbody>();
+        }
+
+        private void FixedUpdate()
+        {
+            FollowHead();
+        }
+
+        private void Update()
+        {
+            TryDetach();
+            FollowHandle();
+        }
+
+
+        public void OnSlingDragStart()
+        {
+            if (IsAttachedToHandle) return;
+            
+            var attachSpot = range.ClosestAttachSpot;
+        
+            if (!attachSpot.HasValue) return;
+        
+            Attach(attachSpot.Value);
+        }
+    
+        public void OnSlingDragEnd()
+        {
+            isThrown = true;
+        }
+
+        public void OnAutoAttached(Handle handle)
+        {
+            lastHandleTime = Time.time;
+            AttachedHandle = handle;
+            Attach(handle.Position);
+        }
+
+
+        public void ClearHandle()
+        {
+            if (Time.time - lastHandleTime < 0.5f) return;
+            
+            AttachedHandle = null;
+        }
+        
+        
+        private void FollowHead()
+        {
+            if (IsAttached) return;
+        
+            Position = head.Position + head.transform.up * 0.5f;
+        }
+
+        private void FollowHandle()
+        {
+            if (!IsAttachedToHandle) return;
+
+            Position = AttachedHandle.Position;
+        }
+    
+        private void TryDetach()
+        {
+            if (!isThrown) return;
+
+            if (shape.SqrArmLength > 1.5f) return;
+            
+            Detach();
+        }
+    
+        private void Attach(Vector3 position)
+        {
+            IsAttached = true;
+        
+            transform.position = position;
+            slingArmAttached.RaiseEvent();
+        }
+
+        private void Detach()
+        {
+            if (!IsAttached) return;
+
+            IsAttached = false;
+        
+            isThrown = false;
+            slingArmDetached.RaiseEvent();
+        }
+    }
+}
