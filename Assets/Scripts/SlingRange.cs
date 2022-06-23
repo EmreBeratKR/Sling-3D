@@ -31,7 +31,7 @@ public class SlingRange : MonoBehaviour
     {
         get
         {
-            var origin = arm.Position;
+            var origin = head.Position;
             var overlaps = Physics.OverlapSphere(origin, rangeCollider.radius, groundLayers);
 
             if (overlaps.Length == 0) return null;
@@ -45,7 +45,7 @@ public class SlingRange : MonoBehaviour
 
             for (int i = 1; i < overlaps.Length; i++)
             {
-                var point = overlaps[i].ClosestPoint(origin);
+                var point = overlaps[i].ClosestPointOnBounds(origin);
                 var distance = Vector3.Distance(point, origin);
                 
                 if (distance >= closestDistance) continue;
@@ -54,6 +54,7 @@ public class SlingRange : MonoBehaviour
                 closestDistance = distance;
             }
 
+            direction = (origin - closestPoint).normalized;
             return closestPoint + direction * DistanceError;
         }
     }
