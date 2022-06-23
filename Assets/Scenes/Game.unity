@@ -848,6 +848,7 @@ MonoBehaviour:
   slingArmDetached: {fileID: 11400000, guid: fa1f363c7860d49fb8ba39041c9732ad, type: 2}
   shape: {fileID: 1226224063}
   head: {fileID: 1962531237}
+  range: {fileID: 548187477}
 --- !u!1 &960077545
 GameObject:
   m_ObjectHideFlags: 0

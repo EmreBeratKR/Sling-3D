@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class SlingRange : MonoBehaviour
 {
-    public static float DistanceError = 0.01f;
+    public const float DistanceError = 0.01f;
     
     [Header("Event Channels")]
     [SerializeField] private VoidEventChannel slingHeadDragStart;
@@ -22,12 +22,44 @@ public class SlingRange : MonoBehaviour
 
     
     private SphereCollider rangeCollider;
+    private bool isDragging;
 
 
     public float Radius => rangeCollider.radius;
 
+    public Vector3? ClosestAttachSpot
+    {
+        get
+        {
+            var origin = arm.Position;
+            var overlaps = Physics.OverlapSphere(origin, rangeCollider.radius, groundLayers);
 
+            if (overlaps.Length == 0) return null;
 
+            var closestPoint = overlaps[0].ClosestPointOnBounds(origin);
+            var direction = (origin - closestPoint).normalized;
+
+            if (overlaps.Length == 1) return closestPoint + direction * DistanceError;
+
+            var closestDistance = Vector3.Distance(closestPoint, origin);
+
+            for (int i = 1; i < overlaps.Length; i++)
+            {
+                var point = overlaps[i].ClosestPoint(origin);
+                var distance = Vector3.Distance(point, origin);
+                
+                if (distance >= closestDistance) continue;
+
+                closestPoint = point;
+                closestDistance = distance;
+            }
+
+            return closestPoint + direction * DistanceError;
+        }
+    }
+    
+    
+    
     private Vector3 ValidatePosition(Vector3 mousePosition)
     {
         var armPosition = arm.Position;
@@ -40,7 +72,7 @@ public class SlingRange : MonoBehaviour
 
         foreach (var initialHit in initialHits)
         {
-            var point = initialHit.ClosestPoint(armPosition);
+            var point = initialHit.ClosestPointOnBounds(armPosition);
             var pointDistance = Vector3.Distance(point, armPosition);
             origin += (armPosition - point).normalized * (headRadius - pointDistance + DistanceError);
         }
@@ -69,11 +101,17 @@ public class SlingRange : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!arm.IsAttached && !arm.HasAttachSpotNearBy) return;
+
+        isDragging = true;
+        
         slingHeadDragStart.RaiseEvent();
     }
 
     private void OnMouseDrag()
     {
+        if (!isDragging) return;
+        
         var mousePosition = MouseRaycaster.GetWorldPosition();
         
         if (!mousePosition.HasValue) return;
@@ -85,6 +123,10 @@ public class SlingRange : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (!isDragging) return;
+
+        isDragging = false;
+        
         slingHeadDragEnd.RaiseEvent();
     }
 

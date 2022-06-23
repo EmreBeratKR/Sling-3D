@@ -1,4 +1,3 @@
-using System;
 using ScriptableEvents.Core.Channels;
 using UnityEngine;
 
@@ -12,10 +11,10 @@ public class SlingArm : MonoBehaviour
     [Header("References")]
     [SerializeField] private SlingShape shape;
     [SerializeField] private SlingHead head;
+    [SerializeField] private SlingRange range;
 
     private Rigidbody body;
     private bool isThrown;
-    private bool isAttached;
 
 
     public Vector3 Position
@@ -35,6 +34,10 @@ public class SlingArm : MonoBehaviour
         get => transform.localScale;
         set => transform.localScale = value;
     }
+    
+    public bool IsAttached { get; private set; }
+
+    public bool HasAttachSpotNearBy => range.ClosestAttachSpot.HasValue;
 
 
     private void Start()
@@ -56,7 +59,11 @@ public class SlingArm : MonoBehaviour
 
     public void OnSlingDragStart()
     {
-        Attach(Position);
+        var attachSpot = range.ClosestAttachSpot;
+        
+        if (!attachSpot.HasValue) return;
+        
+        Attach(attachSpot.Value);
     }
     
     public void OnSlingDragEnd()
@@ -67,7 +74,7 @@ public class SlingArm : MonoBehaviour
 
     private void FollowHead()
     {
-        if (isAttached) return;
+        if (IsAttached) return;
         
         Position = head.Position + head.transform.up * 0.5f;
     }
@@ -76,16 +83,16 @@ public class SlingArm : MonoBehaviour
     {
         if (!isThrown) return;
 
-        if (shape.SqrArmLength > 0.25f) return;
+        if (shape.SqrArmLength > 1f) return;
         
         Detach();
     }
     
     private void Attach(Vector3 position)
     {
-        if (isAttached) return;
+        if (IsAttached) return;
 
-        isAttached = true;
+        IsAttached = true;
         
         transform.position = position;
         slingArmAttached.RaiseEvent();
@@ -93,9 +100,9 @@ public class SlingArm : MonoBehaviour
 
     private void Detach()
     {
-        if (!isAttached) return;
+        if (!IsAttached) return;
 
-        isAttached = false;
+        IsAttached = false;
         
         isThrown = false;
         slingArmDetached.RaiseEvent();
