@@ -3,13 +3,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SlingHead : MonoBehaviour
 {
-    private const int BounceLimit = 15;
+    private const int MidBounceLimit = 5;
+    private const int LowBounceLimit = 10;
     
     [Header("References")]
     [SerializeField] private SphereCollider mainCollider;
     [SerializeField] private SlingArm arm;
     [SerializeField] private PhysicMaterial fullBouncy;
-    [SerializeField] private PhysicMaterial lessBouncy;
+    [SerializeField] private PhysicMaterial midBouncy;
+    [SerializeField] private PhysicMaterial lowBouncy;
     
     [Header("Gravity")]
     [SerializeField] private float gravityScale;
@@ -23,7 +25,7 @@ public class SlingHead : MonoBehaviour
     [SerializeField, Min(0f)] private float throwForce;
 
     private Rigidbody body;
-    private int bouncCount;
+    private int bounceCount;
 
     
     public float Radius => mainCollider.radius;
@@ -55,12 +57,14 @@ public class SlingHead : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        bouncCount++;
+        bounceCount++;
 
-        if (bouncCount >= BounceLimit)
+        mainCollider.material = bounceCount switch
         {
-            mainCollider.material = lessBouncy;
-        }
+            >= LowBounceLimit => lowBouncy,
+            >= MidBounceLimit => midBouncy,
+            _ => mainCollider.material
+        };
     }
 
 
@@ -69,7 +73,7 @@ public class SlingHead : MonoBehaviour
         useGravity = false;
         body.drag = 0;
         body.velocity = Vector3.zero;
-        bouncCount = 0;
+        bounceCount = 0;
         mainCollider.material = fullBouncy;
     }
 

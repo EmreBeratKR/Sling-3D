@@ -539,6 +539,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   minRadius: 0.5
+  useMinRadius: 0
 --- !u!135 &548187478
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1852,7 +1853,8 @@ MonoBehaviour:
   mainCollider: {fileID: 1962531238}
   arm: {fileID: 872326846}
   fullBouncy: {fileID: 13400000, guid: e2c527f0cd7c6442fa62989fd538730a, type: 2}
-  lessBouncy: {fileID: 13400000, guid: 0dc10f3b94e5442e091af032be76b586, type: 2}
+  midBouncy: {fileID: 13400000, guid: 74dd91e6a2e314d64a0fef8187552bd3, type: 2}
+  lowBouncy: {fileID: 13400000, guid: 0dc10f3b94e5442e091af032be76b586, type: 2}
   gravityScale: 3
   useGravity: 1
   attachedDrag: 5

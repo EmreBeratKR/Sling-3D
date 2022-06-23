@@ -17,7 +17,8 @@ public class SlingRange : MonoBehaviour
     [SerializeField] private LayerMask groundLayers;
 
     [Header("Values")]
-    [SerializeField, Min(0f)] private float minRadius;
+    [SerializeField, Min(0.1f)] private float minRadius;
+    [SerializeField] private bool useMinRadius;
 
     
     private SphereCollider rangeCollider;
@@ -49,6 +50,8 @@ public class SlingRange : MonoBehaviour
         var validDistance = isHit ? hitInfo.distance : Vector3.Distance(mousePosition, origin);
         validDistance = Mathf.Clamp(validDistance, 0f, Radius);
 
+        if (!useMinRadius) return armPosition + direction * validDistance;
+        
         var rawResult = origin + direction * validDistance;
         var rawDirection = (rawResult - armPosition).normalized;
         var rawDistance = Vector3.Distance(rawResult, armPosition);
