@@ -78,12 +78,12 @@ public class SlingRange : MonoBehaviour
             origin += (armPosition - point).normalized * (headRadius - pointDistance + DistanceError);
         }
 
-        var direction = (mousePosition - origin).normalized;
+        var direction = (mousePosition - armPosition).normalized;
         var isHit = Physics.SphereCast(origin, headRadius, direction, out var hitInfo, distance, groundLayers);
         var validDistance = isHit ? hitInfo.distance : Vector3.Distance(mousePosition, origin);
         validDistance = Mathf.Clamp(validDistance, 0f, Radius);
 
-        if (!useMinRadius) return armPosition + direction * validDistance;
+        if (!useMinRadius) return origin + direction * validDistance;
         
         var rawResult = origin + direction * validDistance;
         var rawDirection = (rawResult - armPosition).normalized;
