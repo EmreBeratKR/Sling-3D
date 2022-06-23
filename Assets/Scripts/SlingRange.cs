@@ -90,7 +90,7 @@ public class SlingRange : MonoBehaviour
         var rawDistance = Vector3.Distance(rawResult, armPosition);
         rawDistance = Mathf.Clamp(rawDistance, minRadius, Radius);
 
-        return armPosition + rawDirection * rawDistance;
+        return origin + rawDirection * rawDistance;
     }
     
     
