@@ -6,6 +6,8 @@ namespace Sling
     [RequireComponent(typeof(Rigidbody))]
     public class SlingHead : MonoBehaviour
     {
+        public const float StrongPullRateThreshold = 0.5f;
+        
         private const int MidBounceLimit = 5;
         private const int LowBounceLimit = 10;
 
@@ -28,8 +30,9 @@ namespace Sling
         [SerializeField, Min(0f)] private float attachedDrag;
         [SerializeField, Min(0f)] private float detachedDrag;
 
-        [Header("Force")]
-        [SerializeField, Min(0f)] private float throwForce;
+        [Header("Force")] 
+        [SerializeField] private AnimationCurve throwForceGraph;
+        [SerializeField, Min(0f)] private float throwForceMultiplier;
 
         private Rigidbody body;
         private int bounceCount;
@@ -111,7 +114,16 @@ namespace Sling
         public void OnSlingHeadDragEnd()
         {
             var force = arm.Position - Position;
-            AddForce(force * throwForce, ForceMode.VelocityChange);
+            var pullLength = force.magnitude;
+            var pullRate = Mathf.Clamp01(pullLength / range.Radius);
+            var forceAmount = throwForceGraph.Evaluate(pullRate) * throwForceMultiplier;
+            var throwDirection = force.normalized;
+            AddForce(throwDirection * forceAmount, ForceMode.VelocityChange);
+
+            if (pullRate < StrongPullRateThreshold)
+            {
+                arm.ClearHandle();
+            }
         }
 
         public void OnSlingArmAttached()
