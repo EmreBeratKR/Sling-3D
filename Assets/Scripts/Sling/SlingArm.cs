@@ -16,8 +16,8 @@ namespace Sling
         [SerializeField] private SlingRange range;
 
         private Rigidbody body;
-        private float lastHandleTime;
         private bool isThrown;
+        private SlingAction lastAction;
 
 
         public Vector3 Position
@@ -75,12 +75,13 @@ namespace Sling
     
         public void OnSlingDragEnd()
         {
+            lastAction = SlingAction.Throw;
             isThrown = true;
         }
 
         public void OnAutoAttached(Handle handle)
         {
-            lastHandleTime = Time.time;
+            lastAction = SlingAction.AutoAttach;
             AttachedHandle = handle;
             Attach(handle.Position);
         }
@@ -88,7 +89,7 @@ namespace Sling
 
         public void ClearHandle()
         {
-            if (Time.time - lastHandleTime < 0.5f) return;
+            if (lastAction != SlingAction.Throw) return;
             
             AttachedHandle = null;
         }
@@ -133,6 +134,14 @@ namespace Sling
         
             isThrown = false;
             slingArmDetached.RaiseEvent();
+        }
+        
+        
+        private enum SlingAction
+        {
+            None,
+            Throw,
+            AutoAttach
         }
     }
 }
