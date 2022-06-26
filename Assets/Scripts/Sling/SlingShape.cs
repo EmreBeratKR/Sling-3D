@@ -17,7 +17,13 @@ namespace Sling
         {
             UpdateShape();
         }
-    
+
+
+        public void OnPortalEnteringStarted()
+        {
+            Destroy(this);
+        }
+        
     
         private void UpdateShape()
         {

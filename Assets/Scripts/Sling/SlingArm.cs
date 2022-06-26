@@ -1,3 +1,4 @@
+using Handle_System;
 using ScriptableEvents.Core.Channels;
 using UnityEngine;
 
@@ -88,6 +89,16 @@ namespace Sling
         }
 
 
+        public void EnablePhysics()
+        {
+            body.isKinematic = false;
+        }
+
+        public void DisablePhysics()
+        {
+            body.isKinematic = true;
+        }
+        
         public void ClearHandle()
         {
             if (lastAction != SlingAction.Throw) return;

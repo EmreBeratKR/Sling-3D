@@ -104,6 +104,8 @@ namespace Sling
 
         private void OnMouseDown()
         {
+            if (!LevelSystem.IsPlaying) return;
+            
             if (!arm.IsAttached && !arm.HasAttachSpotNearBy) return;
 
             IsDragging = true;
@@ -113,6 +115,8 @@ namespace Sling
 
         private void OnMouseDrag()
         {
+            if (!LevelSystem.IsPlaying) return;
+            
             if (!IsDragging) return;
         
             var mousePosition = MouseRaycaster.GetWorldPosition();
@@ -126,6 +130,8 @@ namespace Sling
 
         private void OnMouseUp()
         {
+            if (!LevelSystem.IsPlaying) return;
+            
             if (!IsDragging) return;
 
             IsDragging = false;

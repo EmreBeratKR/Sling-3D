@@ -58,6 +58,11 @@ namespace Sling
             mode = SpringMode.Disabled;
         }
 
+        public void OnPortalEnteringStarted()
+        {
+            mode = SpringMode.Disabled;
+        }
+
 
         private void OnDrawGizmos()
         {

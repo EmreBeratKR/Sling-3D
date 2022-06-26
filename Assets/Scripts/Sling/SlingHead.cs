@@ -1,3 +1,4 @@
+using Handle_System;
 using ScriptableEvents.Core.Channels;
 using UnityEngine;
 
@@ -6,8 +7,7 @@ namespace Sling
     [RequireComponent(typeof(Rigidbody))]
     public class SlingHead : MonoBehaviour
     {
-        public const float StrongPullRateThreshold = 0.5f;
-        
+        private const float StrongPullRateThreshold = 0.5f;
         private const int MidBounceLimit = 5;
         private const int LowBounceLimit = 10;
 
@@ -79,6 +79,8 @@ namespace Sling
 
         private void OnTriggerEnter(Collider other)
         {
+            if (LevelSystem.IsLevelEnd) return;
+            
             if (other.TryGetComponent(out Handle handle))
             {
                 if (handle == arm.AttachedHandle)
@@ -90,7 +92,7 @@ namespace Sling
                 }
                 else
                 {
-                    handle.InfectSlime();
+                    handle.OnAttached();
                     slimeArmAutoAttached.RaiseEvent(handle);
                 }
             }
@@ -146,6 +148,18 @@ namespace Sling
         public void AddForce(Vector3 force, ForceMode forceMode)
         {
             body.AddForce(force, forceMode);
+        }
+
+        public void EnablePhysics()
+        {
+            useGravity = true;
+            body.isKinematic = false;
+        }
+
+        public void DisablePhysics()
+        {
+            useGravity = false;
+            body.isKinematic = true;
         }
 
     
