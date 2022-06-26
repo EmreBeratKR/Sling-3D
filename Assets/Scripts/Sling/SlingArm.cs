@@ -14,6 +14,7 @@ namespace Sling
         [SerializeField] private SlingShape shape;
         [SerializeField] private SlingHead head;
         [SerializeField] private SlingRange range;
+        [SerializeField] private Transform armModel;
 
         private Rigidbody body;
         private bool isThrown;
@@ -34,8 +35,8 @@ namespace Sling
 
         public Vector3 LocalScale
         {
-            get => transform.localScale;
-            set => transform.localScale = value;
+            get => armModel.localScale;
+            set => armModel.localScale = value;
         }
     
         public Handle AttachedHandle { get; private set; }
@@ -99,7 +100,7 @@ namespace Sling
         {
             if (IsAttached) return;
         
-            Position = head.Position + head.transform.up * 0.5f;
+            Position = head.Position + head.transform.up * 0.6f;
         }
 
         private void FollowHandle()
