@@ -9,8 +9,10 @@ public class Portal : MonoBehaviour
     [Header("Event Channels")]
     [SerializeField] private Vector3EventChannel portalSpawned;
 
-    [Header("References")]
+    [Header("References")] 
+    [SerializeField] private Transform model;
     [SerializeField] private GameObject handle;
+    [SerializeField] private Transform exit;
     
     [Header("Animation Settings")]
     [SerializeField] private Ease openEasing;
@@ -18,9 +20,13 @@ public class Portal : MonoBehaviour
     [SerializeField] private float duration;
 
 
+    private Vector3 ExitPosition => exit.position;
+    
+
     private State state;
     private bool isSpawned;
 
+    
     private IEnumerator Start()
     {
         InstantClose();
@@ -37,6 +43,7 @@ public class Portal : MonoBehaviour
 
     public void OnAllGoalsAchieved()
     {
+        transform.position = ExitPosition;
         Open();
     }
 
@@ -44,6 +51,7 @@ public class Portal : MonoBehaviour
     {
         Close();
     }
+    
     
     [Button(enabledMode: EButtonEnableMode.Playmode)]
     private void Open()
@@ -56,7 +64,7 @@ public class Portal : MonoBehaviour
             handle.SetActive(true);
         }
 
-        transform.DOScale(Vector3.one, duration)
+        model.DOScale(Vector3.one, duration)
             .SetEase(openEasing)
             .OnComplete(() =>
             {
@@ -77,7 +85,7 @@ public class Portal : MonoBehaviour
         state = State.Close;
         handle.SetActive(false);
         
-        transform.DOScale(Vector3.zero, duration)
+        model.DOScale(Vector3.zero, duration)
             .SetEase(closeEasing);
     }
 
@@ -88,7 +96,7 @@ public class Portal : MonoBehaviour
         state = State.Close;
         handle.SetActive(false);
         
-        transform.localScale = Vector3.zero;
+        model.localScale = Vector3.zero;
     }
     
     private enum State

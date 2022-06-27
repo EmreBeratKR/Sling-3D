@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551bfbf6a9be4c43a5cdd92e73f398ca, type: 3}
+  m_Name: Level Data Container
+  m_EditorClassIdentifier: 
+  elements:
+  - tag: Level 1
+    name: strechting
+    prefab: {fileID: 5550017291362640947, guid: f9f56dc08d1bd4a2297bece5e81892c2,
+      type: 3}
+    goldTime: 40
+  - tag: Level 2
+    name: slinging
+    prefab: {fileID: 810366123783297428, guid: cc958e94593314d069adf8594a26835f, type: 3}
+    goldTime: 34

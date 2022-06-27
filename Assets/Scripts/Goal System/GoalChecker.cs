@@ -9,22 +9,32 @@ namespace Goal_System
         [SerializeField] private VoidEventChannel allGoalsAchieved;
         
         private Goal[] goals;
-
-
-        private void Awake()
+        private bool goalsSearched;
+        
+        
+        public void OnLevelLoaded()
         {
-            goals = FindObjectsOfType<Goal>();
+            SearchGoals();
         }
-
-
+        
         public void OnGoalAchieved()
         {
             CheckAllGoals();
         }
 
 
+        private void SearchGoals()
+        {
+            if (goalsSearched) return;
+            
+            goals = FindObjectsOfType<Goal>();
+            goalsSearched = true;
+        }
+
         private void CheckAllGoals()
         {
+            if (!goalsSearched) return;
+            
             var allAchieved = goals.All(goal => goal.IsAchieved);
             
             if (!allAchieved) return;
