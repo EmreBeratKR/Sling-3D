@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elements:
   - tag: Level 1
-    name: strechting
+    name: stretching
     prefab: {fileID: 5550017291362640947, guid: f9f56dc08d1bd4a2297bece5e81892c2,
       type: 3}
     goldTime: 40
