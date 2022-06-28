@@ -20,7 +20,13 @@ namespace UI
         
         private LevelButton[] levelButtons;
         private LevelSave[] levelSave;
-        private int selectedLevelIndex;
+
+        
+        private static int SelectedLevelIndex
+        {
+            get => LevelSystem.SelectedLevel;
+            set => LevelSystem.SelectedLevel = value;
+        }
 
 
         private void Awake()
@@ -32,8 +38,8 @@ namespace UI
         private void Start()
         {
             UpdateAllLevelButtons();
-            SelectLevelButton(selectedLevelIndex);
-            UpdateLevelInfo(selectedLevelIndex);
+            SelectLevelButton(SelectedLevelIndex);
+            UpdateLevelInfo(SelectedLevelIndex);
         }
 
 
@@ -45,12 +51,13 @@ namespace UI
 
         public void OnLevelPointerExit()
         {
-            UpdateLevelInfo(selectedLevelIndex);
+            UpdateLevelInfo(SelectedLevelIndex);
         }
 
         public void OnLevelButtonClicked(LevelButton levelButton)
         {
-            SelectLevelButton(levelButton.Index);
+            var levelIndex = levelButton.Index;
+            SelectLevelButton(levelIndex);
         }
 
 
@@ -96,9 +103,9 @@ namespace UI
 
         private void SelectLevelButton(int buttonIndex)
         {
-            UpdateLevelButton(selectedLevelIndex);
-            selectedLevelIndex = buttonIndex;
-            levelButtons[selectedLevelIndex].UpdateIcon(levelButtonSprites.selected);
+            UpdateLevelButton(SelectedLevelIndex);
+            SelectedLevelIndex = buttonIndex;
+            levelButtons[SelectedLevelIndex].UpdateIcon(levelButtonSprites.selected);
         }
         
         private void UpdateLevelInfo(int buttonIndex)

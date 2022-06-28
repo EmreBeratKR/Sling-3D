@@ -22,6 +22,13 @@ public class LevelSystem : Scenegleton<LevelSystem>
     
     public static LevelData CurrentLevelData { get; private set; }
     
+    
+    public static int SelectedLevel
+    {
+        get => PlayerPrefs.GetInt(EnteredLevelKey, 0);
+        set => PlayerPrefs.SetInt(EnteredLevelKey, value);
+    }
+    
     public static LevelStatus LevelStatus
     {
         get => Instance.levelStatus;
@@ -54,13 +61,6 @@ public class LevelSystem : Scenegleton<LevelSystem>
     public static bool IsLevelEnd => LevelStatus is LevelStatus.Failed or LevelStatus.Completed;
 
 
-    private int EnteredLevel
-    {
-        get => PlayerPrefs.GetInt(EnteredLevelKey, 0);
-        set => PlayerPrefs.SetInt(EnteredLevelKey, value);
-    }
-
-
     private LevelStatus levelStatus;
     private float startTime;
     private float completeTime;
@@ -88,7 +88,7 @@ public class LevelSystem : Scenegleton<LevelSystem>
 
     private void LoadLevel()
     {
-        CurrentLevelData = levelDataContainer[EnteredLevel];
+        CurrentLevelData = levelDataContainer[SelectedLevel];
         StartCoroutine(Loading());
         
         IEnumerator Loading()

@@ -13,6 +13,7 @@ namespace Sling
 
         [Header("Event Channels")]
         [SerializeField] private HandleEventChannel slimeArmAutoAttached;
+        [SerializeField] private VoidEventChannel levelFailed;
     
         [Header("References")]
         [SerializeField] private SphereCollider mainCollider;
@@ -98,6 +99,17 @@ namespace Sling
             }
         }
 
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Game Area"))
+            {
+                if (LevelSystem.IsPlaying)
+                {
+                    levelFailed.RaiseEvent();
+                }
+            }
+        }
+        
 
         public void OnSlingHeadDragStart()
         {
