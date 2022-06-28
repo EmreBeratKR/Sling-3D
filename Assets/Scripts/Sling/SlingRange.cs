@@ -17,6 +17,7 @@ namespace Sling
         [SerializeField] private SlingArm arm;
         [SerializeField] private SlingHead head;
         [SerializeField] private LayerMask groundLayers;
+        [SerializeField] private LayerMask attachSpotLayers;
 
         [Header("Values")]
         [SerializeField, Min(0.1f)] private float minRadius;
@@ -34,7 +35,7 @@ namespace Sling
             get
             {
                 var origin = head.Position;
-                var overlaps = Physics.OverlapSphere(origin, rangeCollider.radius, groundLayers);
+                var overlaps = Physics.OverlapSphere(origin, rangeCollider.radius, attachSpotLayers);
 
                 if (overlaps.Length == 0) return null;
 
