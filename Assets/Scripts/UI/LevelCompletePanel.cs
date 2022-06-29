@@ -54,6 +54,36 @@ namespace UI
 
             var levelScore = levelCompleteScore + timeBonus; 
             levelScoreField.text = LevelScorePrefix + levelScore;
+            
+            var isGoldTime = timeLeft >= 0.1f;
+
+            var completedLevelIndex = LevelSystem.SelectedLevel;
+            var oldSave = LevelMap.LevelSave[completedLevelIndex];
+
+            if (oldSave.bestScore < levelScore)
+            {
+                oldSave.state = isGoldTime ? LevelState.CompletedGold : LevelState.CompletedNormal;
+                oldSave.bestScore = levelScore;
+                LevelSaveSystem.Save(oldSave, completedLevelIndex);
+            }
+
+            if (LevelSystem.IsLastLevel(completedLevelIndex))
+            {
+                Debug.Log("Congratz, You have Completed all the Levels!");
+            }
+
+            else
+            {
+                var nextLevelIndex = completedLevelIndex + 1;
+                var nextLevelOldSave = LevelMap.LevelSave[nextLevelIndex];
+                LevelSystem.SelectedLevel++;
+
+                if (nextLevelOldSave.state == LevelState.Locked)
+                {
+                    nextLevelOldSave = LevelSave.NewUnlocked;
+                    LevelSaveSystem.Save(nextLevelOldSave, nextLevelIndex);
+                }
+            }
         }
     }
 }

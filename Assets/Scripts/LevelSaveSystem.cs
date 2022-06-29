@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class LevelSaveSystem
 {
-    private const int LevelCount = 50;
     private const string LevelSaveKey = "Level_Save";
     private const string LevelSaveCreatedKey = "Level_Save_Created";
 
@@ -37,11 +36,11 @@ public static class LevelSaveSystem
 
     private static LevelSave[] CreateLevelSave()
     {
-        var levelSave = new LevelSave[LevelCount];
+        var levelSave = new LevelSave[LevelSystem.LevelCount];
         
         levelSave[0] = LevelSave.NewUnlocked;
 
-        for (int i = 1; i < LevelCount; i++)
+        for (int i = 1; i < LevelSystem.LevelCount; i++)
         {
             levelSave[i] = LevelSave.Default;
         }

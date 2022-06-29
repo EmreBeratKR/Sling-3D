@@ -8,6 +8,7 @@ using UnityEngine;
 public class LevelSystem : Scenegleton<LevelSystem>
 {
     public const int LevelCompleteScore = 500;
+    public const int LevelCount = 50;
     
     private const string EnteredLevelKey = "Entered_Level";
 
@@ -83,6 +84,12 @@ public class LevelSystem : Scenegleton<LevelSystem>
     {
         LevelStatus = LevelStatus.Completed;
         completeTime = Time.time;
+    }
+
+    public static bool IsLastLevel(int levelIndex)
+    {
+        var level = levelIndex + 1;
+        return level == LevelCount;
     }
 
 

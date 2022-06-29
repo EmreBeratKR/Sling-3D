@@ -19,7 +19,7 @@ namespace UI
 
         
         private LevelButton[] levelButtons;
-        private LevelSave[] levelSave;
+        public static LevelSave[] LevelSave;
 
         
         private static int SelectedLevelIndex
@@ -31,7 +31,7 @@ namespace UI
 
         private void Awake()
         {
-            levelSave = LevelSaveSystem.Load();
+            LevelSave = LevelSaveSystem.Load();
             CacheLevelButtons();
         }
 
@@ -74,7 +74,7 @@ namespace UI
         private void UpdateLevelButton(int buttonIndex)
         {
             var levelButton = levelButtons[buttonIndex];
-            var levelState = levelSave[buttonIndex].state;
+            var levelState = LevelSave[buttonIndex].state;
                 
                 
             if (levelState == LevelState.Locked)
@@ -116,11 +116,11 @@ namespace UI
 
             var levelInfo = NotPlayedYet;
             
-            var levelState = levelSave[buttonIndex].state;
+            var levelState = LevelSave[buttonIndex].state;
 
             if (levelState is LevelState.CompletedNormal or LevelState.CompletedGold)
             {
-                levelInfo = BestScorePrefix + levelSave[buttonIndex].bestScore;
+                levelInfo = BestScorePrefix + LevelSave[buttonIndex].bestScore;
             }
 
             levelInfoField.text = levelInfo;
