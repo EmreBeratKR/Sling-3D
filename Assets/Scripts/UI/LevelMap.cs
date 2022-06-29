@@ -9,12 +9,14 @@ namespace UI
     {
         private const string NotPlayedYet = "Not played yet";
         private const string BestScorePrefix = "Best Score: ";
+        private const string GameScorePrefix = "Game Score: ";
         
         
         [SerializeField] private LevelDataContainer levelDataContainer;
         [SerializeField] private LevelButtonSprites levelButtonSprites;
         [SerializeField] private TMP_Text levelNameField;
         [SerializeField] private TMP_Text levelInfoField;
+        [SerializeField] private TMP_Text gameScoreField;
         [SerializeField] private Transform levels;
 
         
@@ -40,6 +42,7 @@ namespace UI
             UpdateAllLevelButtons();
             SelectLevelButton(SelectedLevelIndex);
             UpdateLevelInfo(SelectedLevelIndex);
+            UpdateGameScore();
         }
 
 
@@ -124,6 +127,20 @@ namespace UI
             }
 
             levelInfoField.text = levelInfo;
+        }
+
+        private void UpdateGameScore()
+        {
+            var gameScore = 0;
+
+            foreach (var levelSave in LevelSave)
+            {
+                if (levelSave.state is LevelState.Locked or LevelState.NotPlayed) break;
+
+                gameScore += levelSave.bestScore;
+            }
+
+            gameScoreField.text = GameScorePrefix + gameScore;
         }
     }
 
