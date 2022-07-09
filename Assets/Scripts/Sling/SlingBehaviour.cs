@@ -10,6 +10,7 @@ namespace Sling
         [Header("Event Channels")]
         [SerializeField] private VoidEventChannel levelStarted;
         [SerializeField] private VoidEventChannel levelCompleted;
+        [SerializeField] private VoidEventChannel levelFailed;
         
         [Header("References")]
         [SerializeField] private GameObject[] functionalParts;
@@ -49,6 +50,11 @@ namespace Sling
                 {
                     levelCompleted.RaiseEvent();
                 });
+        }
+
+        public void OnSlingDied()
+        {
+            levelFailed.RaiseEvent();
         }
 
         

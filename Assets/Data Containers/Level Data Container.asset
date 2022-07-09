@@ -21,14 +21,37 @@ MonoBehaviour:
   - tag: Level 2
     name: Slinging
     prefab: {fileID: 810366123783297428, guid: cc958e94593314d069adf8594a26835f, type: 3}
-    goldTime: 34
+    goldTime: 35
   - tag: Level 3
     name: Springing
     prefab: {fileID: 3821007625362313060, guid: 52552e0713bba4631ad8a872dc95f869,
       type: 3}
-    goldTime: 44
+    goldTime: 45
   - tag: Level 4
     name: Rebounding
     prefab: {fileID: 4963855095418123181, guid: 79f3add048b9948018f4b5f6cb763a9c,
       type: 3}
-    goldTime: 49
+    goldTime: 50
+  - tag: Level 5
+    name: Bad Guys
+    prefab: {fileID: 283116443060412387, guid: 0e1619501a5ef4e1480ef29e8cd737c1, type: 3}
+    goldTime: 40
+  - tag: Level 6
+    name: Popping Pus Leap
+    prefab: {fileID: 1152354701667028922, guid: 5f6964caffc20482eb0b1f5c955909c4,
+      type: 3}
+    goldTime: 40
+  - tag: Level 7
+    name: Spiked Floors
+    prefab: {fileID: 4549985357722049281, guid: 33dd5e30ee85b42faa95b23135a01e92,
+      type: 3}
+    goldTime: 45
+  - tag: Level 8
+    name: Spiked Grabs
+    prefab: {fileID: 145795879163706779, guid: d812d7275ce984db69dcadbb36d00314, type: 3}
+    goldTime: 45
+  - tag: Level 9
+    name: Moving Walls
+    prefab: {fileID: 2459957549538658924, guid: 3b22a8baf5d1741f5a9d84ce7505775f,
+      type: 3}
+    goldTime: 45

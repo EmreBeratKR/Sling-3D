@@ -14,6 +14,7 @@ namespace Sling
         [Header("Event Channels")]
         [SerializeField] private HandleEventChannel slimeArmAutoAttached;
         [SerializeField] private VoidEventChannel levelFailed;
+        [SerializeField] private VoidEventChannel slingLostLife;
     
         [Header("References")]
         [SerializeField] private SphereCollider mainCollider;
@@ -35,8 +36,12 @@ namespace Sling
         [SerializeField] private AnimationCurve throwForceGraph;
         [SerializeField, Min(0f)] private float throwForceMultiplier;
 
+        [Header("Values")]
+        [SerializeField, Min(0f)] private float loseLifeInterval;
+
         private Rigidbody body;
         private int bounceCount;
+        private float lastLifeLostTime;
 
 
         public float Radius => mainCollider.radius;
@@ -96,6 +101,11 @@ namespace Sling
                     handle.OnAttached();
                     slimeArmAutoAttached.RaiseEvent(handle);
                 }
+            }
+
+            else if (other.TryGetComponent(out Harmful _))
+            {
+                TryLoseLife();
             }
         }
 
@@ -180,6 +190,17 @@ namespace Sling
             if (!useGravity) return;
         
             body.AddForce(Physics.gravity * gravityScale, ForceMode.Acceleration);
+        }
+
+        private bool TryLoseLife()
+        {
+            var elapsedTime = Time.time - lastLifeLostTime;
+
+            if (elapsedTime < loseLifeInterval) return false;
+
+            lastLifeLostTime = Time.time;
+            slingLostLife.RaiseEvent();
+            return true;
         }
     }
 }
