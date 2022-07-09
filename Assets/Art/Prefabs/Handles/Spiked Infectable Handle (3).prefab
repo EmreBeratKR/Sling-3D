@@ -2869,6 +2869,7 @@ MonoBehaviour:
   renderer: {fileID: 6292421487245543358}
   slimeMaterial: {fileID: 2100000, guid: f043dc1e36513455caf33847ad1e511e, type: 2}
   spikes: {fileID: 2027315682025884087}
+  mainCollider: {fileID: 6292421487225586474}
   toggleInterval: 1
   toggleDuration: 0.25
 --- !u!114 &7873382044860139090

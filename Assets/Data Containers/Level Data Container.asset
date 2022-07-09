@@ -55,3 +55,7 @@ MonoBehaviour:
     prefab: {fileID: 2459957549538658924, guid: 3b22a8baf5d1741f5a9d84ce7505775f,
       type: 3}
     goldTime: 45
+  - tag: Level 10
+    name: Moving Bad Guys
+    prefab: {fileID: 343877196029413592, guid: fb43da7e1aba04cfd97ccb1974f2d578, type: 3}
+    goldTime: 40
