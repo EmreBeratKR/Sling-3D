@@ -11,6 +11,8 @@ namespace Sling
         [Header("Event Channels")]
         [SerializeField] private VoidEventChannel slingHeadDragStart;
         [SerializeField] private VoidEventChannel slingHeadDragEnd;
+        [SerializeField] private VoidEventChannel enteredStretchRange;
+        [SerializeField] private VoidEventChannel exitedStretchRange;
         [SerializeField] private Vector3EventChannel slingHeadDrag;
     
         [Header("References")]
@@ -138,6 +140,16 @@ namespace Sling
             IsDragging = false;
         
             slingHeadDragEnd.RaiseEvent();
+        }
+
+        private void OnMouseEnter()
+        {
+            enteredStretchRange.RaiseEvent();
+        }
+
+        private void OnMouseExit()
+        {
+            exitedStretchRange.RaiseEvent();
         }
 
         private void Update()

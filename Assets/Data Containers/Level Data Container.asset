@@ -14,11 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elements:
   - tag: Level 1
-    name: stretching
+    name: Stretching
     prefab: {fileID: 5550017291362640947, guid: f9f56dc08d1bd4a2297bece5e81892c2,
       type: 3}
     goldTime: 40
   - tag: Level 2
-    name: slinging
+    name: Slinging
     prefab: {fileID: 810366123783297428, guid: cc958e94593314d069adf8594a26835f, type: 3}
     goldTime: 34
+  - tag: Level 3
+    name: Springing
+    prefab: {fileID: 3821007625362313060, guid: 52552e0713bba4631ad8a872dc95f869,
+      type: 3}
+    goldTime: 44
+  - tag: Level 4
+    name: Rebounding
+    prefab: {fileID: 4963855095418123181, guid: 79f3add048b9948018f4b5f6cb763a9c,
+      type: 3}
+    goldTime: 49
