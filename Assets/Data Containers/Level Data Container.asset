@@ -59,3 +59,7 @@ MonoBehaviour:
     name: Moving Bad Guys
     prefab: {fileID: 343877196029413592, guid: fb43da7e1aba04cfd97ccb1974f2d578, type: 3}
     goldTime: 40
+  - tag: Level 11
+    name: Levers
+    prefab: {fileID: 521525916199071808, guid: 0fdf260d2a0e8487f824fd267a13dd82, type: 3}
+    goldTime: 45

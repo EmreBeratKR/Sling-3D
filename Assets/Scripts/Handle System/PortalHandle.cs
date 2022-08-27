@@ -12,6 +12,8 @@ namespace Handle_System
     
         public override void OnAttached()
         {
+            base.OnAttached();
+            
             slingAttachedToPortal.RaiseEvent();
 
             StartCoroutine(Routine());

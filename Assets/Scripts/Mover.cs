@@ -4,8 +4,10 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [SerializeField] private Transform endAnchor;
-    [SerializeField] private float motionInterval;
-    [SerializeField] private float motionDuration;
+    [SerializeField] private float motionInterval = 0.2f;
+    [SerializeField] private float motionDuration = 0.5f;
+    [SerializeField] private bool playOnStart = true;
+    [SerializeField] private bool looping = true;
     
     private Vector3 startPosition;
     private Vector3 endPosition;
@@ -15,29 +17,38 @@ public class Mover : MonoBehaviour
         startPosition = transform.position;
         endPosition = endAnchor.position;
 
-        MoveToEnd();
+        if (playOnStart)
+        {
+            MoveToEnd();
+        }
     }
     
 
-    private void MoveToEnd()
+    public void MoveToEnd()
     {
         transform.DOMove(endPosition, motionDuration)
             .SetDelay(motionInterval)
             .SetEase(Ease.InOutSine)
             .OnComplete(() =>
             {
-                MoveToStart();
+                if (looping)
+                {
+                    MoveToStart();
+                }
             });
     }
 
-    private void MoveToStart()
+    public void MoveToStart()
     {
         transform.DOMove(startPosition, motionDuration)
             .SetDelay(motionInterval)
             .SetEase(Ease.InOutSine)
             .OnComplete(() =>
             {
-                MoveToEnd();
+                if (looping)
+                {
+                    MoveToEnd();
+                }
             });
     }
 }

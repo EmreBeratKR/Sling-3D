@@ -22,6 +22,8 @@ namespace Handle_System
             
             IsInfected = true;
             
+            base.OnAttached();
+            
             renderer.material = slimeMaterial;
             
             goalAchieved.RaiseEvent();

@@ -26,6 +26,7 @@ namespace Handle_System
         public override void OnAttached()
         {
             base.OnAttached();
+            
             StopToggle();
         }
 
