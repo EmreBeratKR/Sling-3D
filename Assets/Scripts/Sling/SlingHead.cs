@@ -192,7 +192,7 @@ namespace Sling
             body.AddForce(Physics.gravity * gravityScale, ForceMode.Acceleration);
         }
 
-        private bool TryLoseLife()
+        public bool TryLoseLife()
         {
             var elapsedTime = Time.time - lastLifeLostTime;
 

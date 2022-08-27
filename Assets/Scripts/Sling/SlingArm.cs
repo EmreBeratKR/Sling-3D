@@ -1,3 +1,4 @@
+using System;
 using Handle_System;
 using ScriptableEvents.Core.Channels;
 using UnityEngine;
@@ -61,6 +62,14 @@ namespace Sling
         {
             TryDetach();
             FollowHandle();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out Harmful _))
+            {
+                head.TryLoseLife();
+            }
         }
 
 

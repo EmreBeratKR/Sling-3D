@@ -2817,7 +2817,7 @@ GameObject:
   - component: {fileID: 7873382044860139101}
   - component: {fileID: 7873382044860139090}
   m_Layer: 0
-  m_Name: Spiked Infectable Handle (3)
+  m_Name: Spiked Infectable Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

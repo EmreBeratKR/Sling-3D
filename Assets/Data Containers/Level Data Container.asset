@@ -63,3 +63,8 @@ MonoBehaviour:
     name: Levers
     prefab: {fileID: 521525916199071808, guid: 0fdf260d2a0e8487f824fd267a13dd82, type: 3}
     goldTime: 45
+  - tag: Level 12
+    name: Red Spiked Grabs
+    prefab: {fileID: 6262335771976841336, guid: 1d28aeaf96cf3403ca3b87432bf800c2,
+      type: 3}
+    goldTime: 55
