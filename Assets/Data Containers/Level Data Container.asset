@@ -68,3 +68,7 @@ MonoBehaviour:
     prefab: {fileID: 6262335771976841336, guid: 1d28aeaf96cf3403ca3b87432bf800c2,
       type: 3}
     goldTime: 55
+  - tag: Level 13
+    name: Multiple Spiked Grabs
+    prefab: {fileID: 342200054070285782, guid: a0a2dabef4fcc424a8877aba7306db06, type: 3}
+    goldTime: 45
