@@ -77,3 +77,8 @@ MonoBehaviour:
     prefab: {fileID: 6227677296469081999, guid: 75f9c3c745cc64d17a15816add1d777c,
       type: 3}
     goldTime: 55
+  - tag: Level 15
+    name: Multiple Bad Guys
+    prefab: {fileID: 7034744782613099480, guid: e8d7dc0f4a83740139f0237e21978f5f,
+      type: 3}
+    goldTime: 50
