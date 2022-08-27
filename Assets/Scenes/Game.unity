@@ -2685,6 +2685,7 @@ GameObject:
   - component: {fileID: 1201413005}
   - component: {fileID: 1201413006}
   - component: {fileID: 1201413007}
+  - component: {fileID: 1201413008}
   m_Layer: 0
   m_Name: Event Listener
   m_TagString: Untagged
@@ -3059,6 +3060,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Sling.SlingBehaviour, Assembly-CSharp
         m_MethodName: OnSlingDied
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1201413008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201412996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23908f1efbd940ef9951c5404cef7be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: 3f9e46a2f61ee4d9fb96fab89f773b79, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 872326846}
+        m_TargetAssemblyTypeName: Sling.SlingArm, Assembly-CSharp
+        m_MethodName: OnHandleGrabbed
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4856,7 +4885,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 1465d84532835459aa35af7b24dffaec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3dee7271e1674077b6bdc30c365ddfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4864,7 +4893,7 @@ SpriteRenderer:
   m_Size: {x: 12.92, y: 9.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2126778952

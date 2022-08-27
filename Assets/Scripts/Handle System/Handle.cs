@@ -11,6 +11,22 @@ namespace Handle_System
         public UnityEvent onAttached;
 
 
+        private SphereCollider m_SphereCollider;
+
+        private SphereCollider Collider
+        {
+            get
+            {
+                if (!m_SphereCollider)
+                {
+                    m_SphereCollider = GetComponent<SphereCollider>();
+                }
+
+                return m_SphereCollider;
+            }
+        }
+
+
         public virtual void OnAttached()
         {
             onAttached?.Invoke();
@@ -19,6 +35,16 @@ namespace Handle_System
         public virtual void MoveTo(Vector3 position)
         {
             transform.position = position;
+        }
+
+        public virtual void Enable()
+        {
+            Collider.enabled = true;
+        }
+
+        public virtual void Disable()
+        {
+            Collider.enabled = false;
         }
     }
 }

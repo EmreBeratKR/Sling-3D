@@ -1,4 +1,3 @@
-using System;
 using Handle_System;
 using ScriptableEvents.Core.Channels;
 using UnityEngine;
@@ -95,6 +94,15 @@ namespace Sling
             lastAction = SlingAction.AutoAttach;
             AttachedHandle = handle;
             Attach(handle.Position);
+        }
+
+        public void OnHandleGrabbed(Handle grabbedHandle)
+        {
+            if (AttachedHandle != grabbedHandle) return;
+            
+            Detach();
+
+            AttachedHandle = null;
         }
 
 

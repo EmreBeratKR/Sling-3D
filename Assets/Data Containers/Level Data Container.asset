@@ -82,3 +82,8 @@ MonoBehaviour:
     prefab: {fileID: 7034744782613099480, guid: e8d7dc0f4a83740139f0237e21978f5f,
       type: 3}
     goldTime: 50
+  - tag: Level 16
+    name: Grab Grabbers
+    prefab: {fileID: 8119976146609723768, guid: 7828674b56a5f42cea7eb3daa3d4f320,
+      type: 3}
+    goldTime: 60
