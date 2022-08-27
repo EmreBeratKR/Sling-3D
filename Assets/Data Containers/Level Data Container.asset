@@ -72,3 +72,8 @@ MonoBehaviour:
     name: Multiple Spiked Grabs
     prefab: {fileID: 342200054070285782, guid: a0a2dabef4fcc424a8877aba7306db06, type: 3}
     goldTime: 45
+  - tag: Level 14
+    name: Multiple Levers
+    prefab: {fileID: 6227677296469081999, guid: 75f9c3c745cc64d17a15816add1d777c,
+      type: 3}
+    goldTime: 55
