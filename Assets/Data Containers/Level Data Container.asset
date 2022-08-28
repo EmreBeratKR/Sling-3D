@@ -101,3 +101,8 @@ MonoBehaviour:
     prefab: {fileID: 2198934781505336239, guid: f9dfffbf49c784929b91666c88c78b2b,
       type: 3}
     goldTime: 90
+  - tag: Level 20
+    name: Mini Boss
+    prefab: {fileID: 4032754456111846423, guid: 47400d223d6eb454388e518803d72d2b,
+      type: 3}
+    goldTime: 45
