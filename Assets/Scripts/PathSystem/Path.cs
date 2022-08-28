@@ -137,6 +137,8 @@ namespace PathSystem
 
         private static readonly Color PathPointColor = Color.grey;
         private static readonly Color PathColor = Color.blue;
+        private static readonly Color AddPathPointColor = Color.green;
+        private static readonly Color RemovePathPointColor = Color.red;
     
     
         private Vector3 m_Point;
@@ -255,7 +257,7 @@ namespace PathSystem
         {
             const string addText = "Add";
 
-            Handles.color = Color.green;
+            Handles.color = AddPathPointColor;
             if (Handles.Button(
                     position,
                     Quaternion.identity,
@@ -281,7 +283,7 @@ namespace PathSystem
             var point = path[index];
             var position = point + Vector3.down * (PathPointRadius * 2f);
         
-            Handles.color = Color.red;
+            Handles.color = RemovePathPointColor;
             if (Handles.Button(
                     position,
                     Quaternion.identity,
