@@ -96,3 +96,8 @@ MonoBehaviour:
     prefab: {fileID: 4425730901890448198, guid: fe99c60b1314c4ac98cd6964b18b565f,
       type: 3}
     goldTime: 65
+  - tag: Level 19
+    name: Ups and Downs
+    prefab: {fileID: 2198934781505336239, guid: f9dfffbf49c784929b91666c88c78b2b,
+      type: 3}
+    goldTime: 90
