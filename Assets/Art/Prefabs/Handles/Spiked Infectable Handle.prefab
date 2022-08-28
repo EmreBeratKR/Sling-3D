@@ -2865,12 +2865,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fdfff88cc94a66a41be11fd88e1e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAttached:
+    m_PersistentCalls:
+      m_Calls: []
   goalAchieved: {fileID: 11400000, guid: 28f890d354d1d45818f6bafaaee1e5ed, type: 2}
   renderer: {fileID: 6292421487245543358}
   slimeMaterial: {fileID: 2100000, guid: f043dc1e36513455caf33847ad1e511e, type: 2}
   spikes: {fileID: 2027315682025884087}
-  mainCollider: {fileID: 6292421487225586474}
-  toggleInterval: 1
+  toggleInterval: 2
   toggleDuration: 0.25
 --- !u!114 &7873382044860139090
 MonoBehaviour:

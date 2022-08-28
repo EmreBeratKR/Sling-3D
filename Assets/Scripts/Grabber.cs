@@ -14,6 +14,7 @@ public class Grabber : MonoBehaviour
     [SerializeField] private Transform grabAnchor;
     [SerializeField] private Transform leftHand;
     [SerializeField] private Transform rightHand;
+    [SerializeField] private Transform web;
 
     [Header("Values")]
     [SerializeField, Min(0f)] private float interval;
@@ -43,6 +44,8 @@ public class Grabber : MonoBehaviour
     {
         m_StartLocalPosition = transform.localPosition;
         m_EndLocalPosition = m_StartLocalPosition + (targetHandle.Position - GrabPosition);
+        
+        UpdateWeb();
 
         if (playOnStart)
         {
@@ -115,13 +118,15 @@ public class Grabber : MonoBehaviour
     private void MoveTo(Vector3 position, float delay, TweenCallback callback)
     {
         m_MoveTween?.Kill();
-        m_MoveTween = transform.DOMove(position, duration);
+        m_MoveTween = transform.DOLocalMove(position, duration);
 
         m_MoveTween
             .SetDelay(delay)
             .SetEase(Ease.OutSine)
             .OnUpdate(() =>
             {
+                UpdateWeb();
+                
                 if (m_IsGrabbed)
                 {
                     targetHandle.MoveTo(GrabPosition);
@@ -141,5 +146,13 @@ public class Grabber : MonoBehaviour
         hand.DOLocalRotate(eulerAngles, handDuration)
             .SetEase(Ease.OutSine)
             .onComplete = callback;
+    }
+
+    private void UpdateWeb()
+    {
+        var length = m_StartLocalPosition.y - transform.localPosition.y;
+        var webScale = web.localScale;
+        webScale.y = length;
+        web.localScale = webScale;
     }
 }

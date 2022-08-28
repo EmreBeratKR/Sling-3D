@@ -147,8 +147,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   spikes: {fileID: 5920471886462038163}
-  mainCollider: {fileID: 1826465896024455694}
-  toggleInterval: 1
+  toggleInterval: 2
   toggleDuration: 0.25
 --- !u!1 &5920471886236999019
 GameObject:
