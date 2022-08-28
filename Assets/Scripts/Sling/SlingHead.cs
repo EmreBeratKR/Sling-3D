@@ -98,8 +98,10 @@ namespace Sling
                 }
                 else
                 {
-                    handle.OnAttached();
-                    slimeArmAutoAttached.RaiseEvent(handle);
+                    if (handle.TryAttach())
+                    {
+                        slimeArmAutoAttached.RaiseEvent(handle);
+                    }
                 }
             }
 

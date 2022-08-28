@@ -8,9 +8,9 @@ namespace Handle_System
     {
         [SerializeField] private VoidEventChannel slingAttachedToPortal;
         [SerializeField] private VoidEventChannel portalEnteringStart;
-    
-    
-        public override void OnAttached()
+
+
+        protected override void OnAttached()
         {
             base.OnAttached();
             

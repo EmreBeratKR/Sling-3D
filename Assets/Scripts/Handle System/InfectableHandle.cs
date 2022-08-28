@@ -16,7 +16,7 @@ namespace Handle_System
         public bool IsInfected { get; private set; }
 
 
-        public override void OnAttached()
+        protected override void OnAttached()
         {
             if (IsInfected) return;
             

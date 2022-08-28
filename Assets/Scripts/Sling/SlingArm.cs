@@ -63,7 +63,7 @@ namespace Sling
             FollowHandle();
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.TryGetComponent(out Harmful _))
             {

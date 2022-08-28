@@ -10,24 +10,20 @@ namespace Handle_System
 
         public UnityEvent onAttached;
 
+        
+        private bool m_IsAttachable = true;
 
-        private SphereCollider m_SphereCollider;
 
-        private SphereCollider Collider
+        public bool TryAttach()
         {
-            get
-            {
-                if (!m_SphereCollider)
-                {
-                    m_SphereCollider = GetComponent<SphereCollider>();
-                }
+            if (!m_IsAttachable) return false;
+            
+            OnAttached();
 
-                return m_SphereCollider;
-            }
+            return true;
         }
 
-
-        public virtual void OnAttached()
+        protected virtual void OnAttached()
         {
             onAttached?.Invoke();
         }
@@ -37,14 +33,14 @@ namespace Handle_System
             transform.position = position;
         }
 
-        public virtual void Enable()
+        public virtual void EnableHandle()
         {
-            Collider.enabled = true;
+            m_IsAttachable = true;
         }
 
-        public virtual void Disable()
+        public virtual void DisableHandle()
         {
-            Collider.enabled = false;
+            m_IsAttachable = false;
         }
     }
 }

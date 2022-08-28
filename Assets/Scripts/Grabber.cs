@@ -86,7 +86,7 @@ public class Grabber : MonoBehaviour
 
         m_IsGrabbed = true;
         
-        targetHandle.Disable();
+        targetHandle.DisableHandle();
         onHandleGrabbed.RaiseEvent(targetHandle);
         RotateBothHand(LeftHandGrabEulerAngles, RightHandGrabEulerAngles, MoveToStart);
     }
@@ -97,7 +97,7 @@ public class Grabber : MonoBehaviour
 
         m_IsGrabbed = false;
         
-        targetHandle.Enable();
+        targetHandle.EnableHandle();
         RotateBothHand(LeftHandFreeEulerAngles, RightHandFreeEulerAngles, MoveToStart);
     }
 

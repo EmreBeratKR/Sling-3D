@@ -8,8 +8,7 @@ namespace Handle_System
     {
         [Header("References")]
         [SerializeField] private Transform spikes;
-        [SerializeField] private Collider mainCollider;
-        
+
         [Header("Values")]
         [SerializeField] private float toggleInterval;
         [SerializeField] private float toggleDuration;
@@ -55,7 +54,7 @@ namespace Handle_System
         private void EnableSpikes()
         {
             spikes.gameObject.SetActive(true);
-            mainCollider.enabled = false;
+            DisableHandle();
             spikes.DOScale(Vector3.one, toggleDuration)
                 .SetEase(Ease.OutSine);
         }
@@ -67,7 +66,7 @@ namespace Handle_System
                 .OnComplete(() =>
                 {
                     spikes.gameObject.SetActive(false);
-                    mainCollider.enabled = true;
+                    EnableHandle();
                 });
         }
 
