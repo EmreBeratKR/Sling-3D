@@ -44,7 +44,10 @@ namespace Sling
                 var closestPoint = overlaps[0].ClosestPointOnBounds(origin);
                 var direction = (origin - closestPoint).normalized;
 
-                if (overlaps.Length == 1) return closestPoint + direction * DistanceError;
+                if (overlaps.Length == 1)
+                {
+                    return ValidateAttachSpot(origin, closestPoint + direction * DistanceError);
+                }
 
                 var closestDistance = Vector3.Distance(closestPoint, origin);
 
@@ -60,12 +63,23 @@ namespace Sling
                 }
 
                 direction = (origin - closestPoint).normalized;
-                return closestPoint + direction * DistanceError;
+                return ValidateAttachSpot(origin, closestPoint + direction * DistanceError);
             }
         }
-    
-    
-    
+
+
+        private Vector3? ValidateAttachSpot(Vector3 origin, Vector3? attachSpot)
+        {
+            if (!attachSpot.HasValue) return null;
+
+            var direction = attachSpot.Value - origin;
+            var distance = direction.magnitude;
+
+            var isHit = Physics.Raycast(origin, direction, distance, groundLayers);
+
+            return isHit ? null : attachSpot;
+        }
+        
         private Vector3 ValidatePosition(Vector3 mousePosition)
         {
             var armPosition = arm.Position;
