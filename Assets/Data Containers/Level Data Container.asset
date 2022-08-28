@@ -91,3 +91,8 @@ MonoBehaviour:
     name: Multiple Grab Grabbers
     prefab: {fileID: 239728316323219821, guid: 9bb62f36f899041749f1f4b84823a7e7, type: 3}
     goldTime: 45
+  - tag: Level 18
+    name: Red Spiky Grabs
+    prefab: {fileID: 4425730901890448198, guid: fe99c60b1314c4ac98cd6964b18b565f,
+      type: 3}
+    goldTime: 65
