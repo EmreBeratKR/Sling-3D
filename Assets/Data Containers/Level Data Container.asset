@@ -141,3 +141,8 @@ MonoBehaviour:
     prefab: {fileID: 5411547506031433999, guid: e83f35d6536c2464e979778af4af58ea,
       type: 3}
     goldTime: 55
+  - tag: Level 28
+    name: Multiple Moving Grabs
+    prefab: {fileID: 4423052547069153202, guid: 252ca27574f8e466baa2a907a58bbfb9,
+      type: 3}
+    goldTime: 55

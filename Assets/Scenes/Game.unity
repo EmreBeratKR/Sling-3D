@@ -4753,7 +4753,7 @@ Rigidbody:
   m_GameObject: {fileID: 1962531234}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 5
+  m_Drag: 1
   m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -4945,12 +4945,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ed2e7d2ad782248bbbf7face11a96727, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7927e46e1ced9428cb932ca6cf5ac483, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.92, y: 9.74}
+  m_Size: {x: 13.02, y: 9.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
