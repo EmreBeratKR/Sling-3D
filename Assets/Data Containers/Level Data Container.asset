@@ -106,3 +106,8 @@ MonoBehaviour:
     prefab: {fileID: 4032754456111846423, guid: 47400d223d6eb454388e518803d72d2b,
       type: 3}
     goldTime: 45
+  - tag: Level 21
+    name: Moving Spiked Floors
+    prefab: {fileID: 6730154140962327925, guid: 96de17a26442f4a39b735a53116b629b,
+      type: 3}
+    goldTime: 55
