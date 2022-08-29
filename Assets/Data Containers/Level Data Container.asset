@@ -136,3 +136,8 @@ MonoBehaviour:
     prefab: {fileID: 9179053707650910131, guid: 6542eb951d7aa4e548e6a056627832fd,
       type: 3}
     goldTime: 60
+  - tag: Level 27
+    name: Moving Grabs
+    prefab: {fileID: 5411547506031433999, guid: e83f35d6536c2464e979778af4af58ea,
+      type: 3}
+    goldTime: 55
