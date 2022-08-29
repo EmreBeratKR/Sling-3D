@@ -146,3 +146,8 @@ MonoBehaviour:
     prefab: {fileID: 4423052547069153202, guid: 252ca27574f8e466baa2a907a58bbfb9,
       type: 3}
     goldTime: 55
+  - tag: Level 29
+    name: Movers and Shakers
+    prefab: {fileID: 6277637453062079911, guid: 97163501507284bba8b29586777369df,
+      type: 3}
+    goldTime: 55
