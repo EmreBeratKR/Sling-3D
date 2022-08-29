@@ -1,5 +1,6 @@
 using Handle_System;
 using ScriptableEvents.Core.Channels;
+using TubeSystem;
 using UnityEngine;
 
 namespace Sling
@@ -108,6 +109,11 @@ namespace Sling
             else if (other.TryGetComponent(out Harmful _))
             {
                 TryLoseLife();
+            }
+            
+            else if (other.TryGetComponent(out TubeEntrance tubeEntrance))
+            {
+                tubeEntrance.TryEnter();
             }
         }
 

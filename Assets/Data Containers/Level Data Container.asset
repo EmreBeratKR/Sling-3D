@@ -156,3 +156,8 @@ MonoBehaviour:
     prefab: {fileID: 3746644747388905657, guid: eb3864ec7055f475fa62ea80da2af292,
       type: 3}
     goldTime: 50
+  - tag: Level 31
+    name: Super Slime Cannons
+    prefab: {fileID: 8429963895881493267, guid: cb29c7ffc7fc8406a9b12f6b8b15c686,
+      type: 3}
+    goldTime: 45
