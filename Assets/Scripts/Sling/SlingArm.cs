@@ -10,6 +10,7 @@ namespace Sling
         [Header("Event Channels")]
         [SerializeField] private VoidEventChannel slingArmAttached;
         [SerializeField] private VoidEventChannel slingArmDetached;
+        [SerializeField] private VoidEventChannel slingArmAutoDetached;
     
         [Header("References")]
         [SerializeField] private SlingShape shape;
@@ -146,6 +147,8 @@ namespace Sling
             Detach();
 
             AttachedHandle = null;
+            
+            slingArmAutoDetached.RaiseEvent();
         }
     
         private void TryDetach()

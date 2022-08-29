@@ -176,6 +176,11 @@ namespace Sling
         {
             IsDragging = false;
         }
+
+        public void OnSlingArmAutoDetached()
+        {
+            IsDragging = false;
+        }
         
 
         private void FollowArm()
