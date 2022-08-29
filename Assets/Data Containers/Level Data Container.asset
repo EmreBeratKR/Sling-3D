@@ -131,3 +131,8 @@ MonoBehaviour:
     prefab: {fileID: 7889346363084496808, guid: 9d5a02d503692467e8e3a89fb13816a1,
       type: 3}
     goldTime: 50
+  - tag: Level 26
+    name: Wobbler Grabs
+    prefab: {fileID: 9179053707650910131, guid: 6542eb951d7aa4e548e6a056627832fd,
+      type: 3}
+    goldTime: 60

@@ -98,11 +98,12 @@ namespace Sling
 
         public void OnHandleGrabbed(Handle grabbedHandle)
         {
-            if (AttachedHandle != grabbedHandle) return;
-            
-            Detach();
+            TryAutoDetach(grabbedHandle);
+        }
 
-            AttachedHandle = null;
+        public void OnHandleWobbling(Handle wobblingHandle)
+        {
+            TryAutoDetach(wobblingHandle);
         }
 
 
@@ -136,6 +137,15 @@ namespace Sling
             if (!IsAttachedToHandle) return;
 
             Position = AttachedHandle.Position;
+        }
+
+        private void TryAutoDetach(Handle handle)
+        {
+            if (AttachedHandle != handle) return;
+            
+            Detach();
+
+            AttachedHandle = null;
         }
     
         private void TryDetach()

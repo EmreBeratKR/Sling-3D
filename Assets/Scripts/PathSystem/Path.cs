@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -17,12 +18,13 @@ namespace PathSystem
 
         [SerializeField] private List<Vector3> points = new List<Vector3>();
         [SerializeField] private bool isClosed = true;
+        [SerializeField] private bool isLocalSpace;
 
 
         public Vector3 this[int index]
         {
-            get => points[index];
-            set => points[index] = value;
+            get => ToWorldSpace(points[index]);
+            set => points[index] = ToCurrentSpace(value);
         }
 
         public int Size => points.Count;
@@ -81,8 +83,20 @@ namespace PathSystem
             return Mathf.Clamp(index, FirstPointIndex, LastPointIndex);
         }
 
+        public bool IsFirstPoint(Vector3 point)
+        {
+            return point == this[FirstPointIndex];
+        }
+
+        public bool IsLastPoint(Vector3 point)
+        {
+            return point == this[LastPointIndex];
+        }
+
         public void AddPointByIndex(int index, Vector3 point)
         {
+            point = ToCurrentSpace(point);
+            
             if (index > LastPointIndex)
             {
                 points.Add(point);
@@ -113,8 +127,23 @@ namespace PathSystem
             points.Add(FirstDefaultPoint);
             points.Add(SecondDefaultPoint);
         }
-    
-    
+
+
+        private Vector3 ToCurrentSpace(Vector3 point)
+        {
+            return isLocalSpace 
+                ? point - transform.position 
+                : point;
+        }
+
+        private Vector3 ToWorldSpace(Vector3 point)
+        {
+            return isLocalSpace
+                ? transform.position + point
+                : point;
+        }
+
+
 #if UNITY_EDITOR
 
         private void OnValidate()
@@ -142,8 +171,20 @@ namespace PathSystem
     
     
         private Vector3 m_Point;
-    
-    
+        private Tool m_LastTool;
+
+
+        private void OnEnable()
+        {
+            m_LastTool = Tools.current;
+            Tools.current = Tool.None;
+        }
+
+        private void OnDisable()
+        {
+            Tools.current = m_LastTool;
+        }
+
         private void OnSceneGUI()
         {
             if (targets.Length != 1) return;
@@ -237,7 +278,7 @@ namespace PathSystem
                     if (previousPoint != null)
                     {
                         var direction = currentPoint - previousPoint.Value;
-                        var position = currentPoint + direction * 0.5f;
+                        var position = currentPoint + direction.normalized;
                         AddPathPointButton(path, i, position);
                     }
                 }

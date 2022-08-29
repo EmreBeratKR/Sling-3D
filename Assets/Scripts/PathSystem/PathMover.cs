@@ -1,20 +1,36 @@
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PathSystem
 {
     public class PathMover : MonoBehaviour
     {
+        private const string EventsFo = "Events";
+        
+        
         [Header("References")]
         [SerializeField] private Path optionalPath;
     
         [Header("Values")]
         [SerializeField] private PathMoveDirection startDirection;
+        [SerializeField] private Ease moveEase = Ease.OutSine;
         [SerializeField] private float speed = 10f;
         [SerializeField] private float interval = 0.2f;
         [SerializeField] private int startIndex = 0;
         [SerializeField] private bool playOnStart = true;
+        [SerializeField] private bool looping = true;
+
+
+        [Foldout(EventsFo)] public UnityEvent
+            onPlay,
+            onPlaying,
+            onStop,
+            onInvert,
+            onReachedPoint,
+            onReachedPathEnd,
+            onLapCompleted;
 
 
         private Path Path
@@ -63,6 +79,7 @@ namespace PathSystem
             if (m_IsPlaying) return;
 
             m_IsPlaying = true;
+            onPlay?.Invoke();
             
             MoveToPoint();
         }
@@ -73,6 +90,7 @@ namespace PathSystem
             if (!m_IsPlaying) return;
 
             m_IsPlaying = false;
+            onStop?.Invoke();
             
             KillMoveTween();
         }
@@ -91,6 +109,8 @@ namespace PathSystem
             {
                 IncrementPointIndex();
             }
+            
+            onInvert?.Invoke();
 
             if (m_IsPlaying)
             {
@@ -107,11 +127,34 @@ namespace PathSystem
             {
                 point = Path.NextPoint(m_CurrentPointIndex);
 
-                if (!point.HasValue) return;
+                if (!point.HasValue)
+                {
+                    m_IsPlaying = looping;
+                    onReachedPathEnd?.Invoke();
+
+                    if (looping)
+                    {
+                        m_Direction = m_Direction.Inverted();
+                        MoveToPoint();
+                    }
+                    
+                    return;
+                }
 
                 void OnNextPointReached()
                 {
                     IncrementPointIndex();
+
+                    onReachedPoint?.Invoke();
+                    
+                    if (Path.IsFirstPoint(point.Value))
+                    {
+                        m_IsPlaying = looping;
+                        onLapCompleted?.Invoke();
+
+                        if (!looping) return;
+                    }
+
                     MoveToPoint();
                 }
                 
@@ -121,12 +164,35 @@ namespace PathSystem
             }
 
             point = Path.PreviousPoint(m_CurrentPointIndex);
-            
-            if (!point.HasValue) return;
+
+            if (!point.HasValue)
+            {
+                m_IsPlaying = looping;
+                onReachedPathEnd?.Invoke();
+
+                if (looping)
+                {
+                    m_Direction = m_Direction.Inverted();
+                    MoveToPoint();
+                }
+                
+                return;
+            }
 
             void OnPreviousPointReached()
             {
                 DecrementPointIndex();
+                
+                onReachedPoint?.Invoke();
+                
+                if (Path.IsLastPoint(point.Value))
+                {
+                    m_IsPlaying = looping;
+                    onLapCompleted?.Invoke();
+                    
+                    if (!looping) return;
+                }
+                
                 MoveToPoint();
             }
             
@@ -141,7 +207,11 @@ namespace PathSystem
             m_MoveTween
                 .SetDelay(interval)
                 .SetSpeedBased()
-                .SetEase(Ease.OutSine)
+                .SetEase(moveEase)
+                .OnUpdate(() =>
+                {
+                    onPlaying?.Invoke();
+                })
                 .onComplete = callback;
         }
 
