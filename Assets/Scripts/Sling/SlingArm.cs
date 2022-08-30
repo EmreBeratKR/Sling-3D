@@ -117,6 +117,12 @@ namespace Sling
 
         public void OnHandleWobbling(Handle wobblingHandle)
         {
+            if (AttachedHandle == wobblingHandle)
+            {
+                Vector3 randomForce = Random.insideUnitCircle.normalized * 20f;
+                head.AddForce(randomForce, ForceMode.VelocityChange);
+            }
+            
             TryAutoDetach(wobblingHandle);
         }
 
