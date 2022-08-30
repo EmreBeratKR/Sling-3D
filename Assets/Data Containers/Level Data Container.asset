@@ -175,3 +175,8 @@ MonoBehaviour:
     prefab: {fileID: 8863152667682164453, guid: 082b7926a2a114a4caa5ac48e1ee5235,
       type: 3}
     goldTime: 45
+  - tag: Level 35
+    name: Slime Mini Bosses
+    prefab: {fileID: 8863152667682164453, guid: 082b7926a2a114a4caa5ac48e1ee5235,
+      type: 3}
+    goldTime: 60
