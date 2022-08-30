@@ -1,6 +1,7 @@
 using DG.Tweening;
 using NaughtyAttributes;
 using ScriptableEvents.Core.Channels;
+using TubeSystem;
 using UnityEngine;
 
 namespace Sling
@@ -26,7 +27,35 @@ namespace Sling
             Deactivate();
         }
 
+        private void OnEnable()
+        {
+            Tube.OnSlingEntered += OnSlingEnteredTube;
+            Tube.OnSlingThrown += OnSlingThrownFromTube;
+        }
 
+        private void OnDisable()
+        {
+            Tube.OnSlingEntered -= OnSlingEnteredTube;
+            Tube.OnSlingThrown -= OnSlingThrownFromTube;
+        }
+
+        private void OnSlingEnteredTube(EnterTubeResponse response)
+        {
+            var enteredTube = response.enteredTube;
+
+            Move(enteredTube.ChargingSpot);
+            Deactivate();
+        }
+
+        private void OnSlingThrownFromTube(ThrownFromTubeResponse response)
+        {
+            var thrownFrom = response.thrownFrom;
+            var throwForce = thrownFrom.ThrowForce - head.Velocity;
+            Activate();
+            head.AddForce(throwForce, ForceMode.VelocityChange);
+        }
+        
+        
         public void OnPortalSpawned(Vector3 position)
         {
             transform.position = position;
@@ -57,6 +86,12 @@ namespace Sling
             levelFailed.RaiseEvent();
         }
 
+
+        private void Move(Vector3 position)
+        {
+            head.Position = position;
+            arm.ForceFollowHead();
+        }
         
         [Button]
         private void Activate()

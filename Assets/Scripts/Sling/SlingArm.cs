@@ -1,5 +1,6 @@
 using Handle_System;
 using ScriptableEvents.Core.Channels;
+using TubeSystem;
 using UnityEngine;
 
 namespace Sling
@@ -51,6 +52,16 @@ namespace Sling
         private void Start()
         {
             body = GetComponent<Rigidbody>();
+        }
+
+        private void OnEnable()
+        {
+            Tube.OnSlingEntered += OnSlingEnteredTube;
+        }
+
+        private void OnDisable()
+        {
+            Tube.OnSlingEntered -= OnSlingEnteredTube;
         }
 
         private void FixedUpdate()
@@ -107,6 +118,16 @@ namespace Sling
             TryAutoDetach(wobblingHandle);
         }
 
+        public void OnAttachedToDirtyHandle(Handle dirtyHandle)
+        {
+            TryAutoDetach(dirtyHandle);
+        }
+
+        private void OnSlingEnteredTube(EnterTubeResponse response)
+        {
+            AutoDetach();
+        }
+
 
         public void EnablePhysics()
         {
@@ -123,6 +144,11 @@ namespace Sling
             if (lastAction != SlingAction.Throw) return;
             
             AttachedHandle = null;
+        }
+
+        public void ForceFollowHead()
+        {
+            Position = head.Position + head.transform.up * 0.6f;
         }
         
         
@@ -144,11 +170,7 @@ namespace Sling
         {
             if (AttachedHandle != handle) return;
             
-            Detach();
-
-            AttachedHandle = null;
-            
-            slingArmAutoDetached.RaiseEvent();
+            AutoDetach();
         }
     
         private void TryDetach()
@@ -166,6 +188,17 @@ namespace Sling
         
             transform.position = position;
             slingArmAttached.RaiseEvent();
+        }
+
+        private void AutoDetach()
+        {
+            if (!IsAttached) return;
+            
+            Detach();
+
+            AttachedHandle = null;
+            
+            slingArmAutoDetached.RaiseEvent();
         }
 
         private void Detach()

@@ -1,12 +1,16 @@
-using UnityEngine;
+using UnityEngine.Events;
 
 namespace TubeSystem
 {
     public class SlimeTube : Tube
     {
+        public static UnityAction OnCharged;
+
+
         protected override void Charge()
         {
-            Debug.Log("Slimed!");
+            base.Charge();
+            OnCharged?.Invoke();
         }
     }
 }

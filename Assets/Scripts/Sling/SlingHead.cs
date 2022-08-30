@@ -1,3 +1,4 @@
+using EffectSystem;
 using Handle_System;
 using ScriptableEvents.Core.Channels;
 using TubeSystem;
@@ -14,6 +15,7 @@ namespace Sling
 
         [Header("Event Channels")]
         [SerializeField] private HandleEventChannel slimeArmAutoAttached;
+        [SerializeField] private HandleEventChannel attachedToDirtyHandle;
         [SerializeField] private VoidEventChannel levelFailed;
         [SerializeField] private VoidEventChannel slingLostLife;
     
@@ -21,6 +23,7 @@ namespace Sling
         [SerializeField] private SphereCollider mainCollider;
         [SerializeField] private SlingArm arm;
         [SerializeField] private SlingRange range;
+        [SerializeField] private SlimeEffect slimeEffect;
         [SerializeField] private PhysicMaterial fullBouncy;
         [SerializeField] private PhysicMaterial midBouncy;
         [SerializeField] private PhysicMaterial lowBouncy;
@@ -40,11 +43,13 @@ namespace Sling
         [Header("Values")]
         [SerializeField, Min(0f)] private float loseLifeInterval;
 
+
         private Rigidbody body;
         private int bounceCount;
         private float lastLifeLostTime;
 
 
+        public Vector3 Velocity => body.velocity;
         public float Radius => mainCollider.radius;
     
 
@@ -87,8 +92,13 @@ namespace Sling
         private void OnTriggerEnter(Collider other)
         {
             if (LevelSystem.IsLevelEnd) return;
+
+            if (other.TryGetComponent(out GameAreaBorder _))
+            {
+                levelFailed.RaiseEvent();
+            }
             
-            if (other.TryGetComponent(out Handle handle))
+            else if (other.TryGetComponent(out Handle handle))
             {
                 if (handle == arm.AttachedHandle)
                 {
@@ -102,6 +112,8 @@ namespace Sling
                     if (handle.TryAttach())
                     {
                         slimeArmAutoAttached.RaiseEvent(handle);
+
+                        TryCleanHandle(handle);
                     }
                 }
             }
@@ -113,21 +125,13 @@ namespace Sling
             
             else if (other.TryGetComponent(out TubeEntrance tubeEntrance))
             {
-                tubeEntrance.TryEnter();
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Game Area"))
-            {
-                if (LevelSystem.IsPlaying)
+                if (tubeEntrance.TryEnter())
                 {
-                    levelFailed.RaiseEvent();
+                    
                 }
             }
         }
-        
+
 
         public void OnSlingHeadDragStart()
         {
@@ -209,6 +213,24 @@ namespace Sling
             lastLifeLostTime = Time.time;
             slingLostLife.RaiseEvent();
             return true;
+        }
+
+
+        private void TryCleanHandle(Handle handle)
+        {
+            if (handle is not ICleanable cleanable) return;
+            
+            if (!cleanable.IsDirty) return;
+            
+            if (slimeEffect.IsActive)
+            {
+                cleanable.Clean();
+            }
+
+            else
+            {
+                attachedToDirtyHandle.RaiseEvent(handle);
+            }
         }
     }
 }
