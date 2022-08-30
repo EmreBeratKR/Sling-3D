@@ -1,4 +1,6 @@
+using System;
 using EffectSystem;
+using EnemySystem;
 using Handle_System;
 using ScriptableEvents.Core.Channels;
 using TubeSystem;
@@ -12,6 +14,7 @@ namespace Sling
         private const float StrongPullRateThreshold = 0.5f;
         private const int MidBounceLimit = 5;
         private const int LowBounceLimit = 10;
+        private const int Damage = 1;
 
         [Header("Event Channels")]
         [SerializeField] private HandleEventChannel slimeArmAutoAttached;
@@ -92,7 +95,12 @@ namespace Sling
         private void OnTriggerEnter(Collider other)
         {
             if (LevelSystem.IsLevelEnd) return;
-
+            
+            if (other.TryGetComponent(out IDamageable damageable))
+            {
+                TryDamage(damageable);
+            }
+            
             if (other.TryGetComponent(out GameAreaBorder _))
             {
                 levelFailed.RaiseEvent();
@@ -118,17 +126,17 @@ namespace Sling
                 }
             }
 
-            else if (other.TryGetComponent(out Harmful _))
-            {
-                TryLoseLife();
-            }
-            
             else if (other.TryGetComponent(out TubeEntrance tubeEntrance))
             {
-                if (tubeEntrance.TryEnter())
-                {
-                    
-                }
+                TryEnterTube(tubeEntrance);
+            }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.TryGetComponent(out Harmful _))
+            {
+                TryLoseLife();
             }
         }
 
@@ -232,6 +240,25 @@ namespace Sling
             else
             {
                 attachedToDirtyHandle.RaiseEvent(handle);
+            }
+        }
+
+        private void TryDamage(IDamageable damageable)
+        {
+            if (range.IsDragging) return;
+            
+            if (!slimeEffect.IsActive) return;
+            
+            damageable.Damage(Damage);
+        }
+
+        private void TryEnterTube(TubeEntrance tubeEntrance)
+        {
+            if (range.IsDragging) return;
+            
+            if (tubeEntrance.TryEnter())
+            {
+                    
             }
         }
     }
