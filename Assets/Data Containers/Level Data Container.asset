@@ -161,3 +161,8 @@ MonoBehaviour:
     prefab: {fileID: 8429963895881493267, guid: cb29c7ffc7fc8406a9b12f6b8b15c686,
       type: 3}
     goldTime: 45
+  - tag: Level 32
+    name: Spiked Walls
+    prefab: {fileID: 3179892121843748609, guid: 36b38d1bb718c4eb0bc533d7a5aace7b,
+      type: 3}
+    goldTime: 50
