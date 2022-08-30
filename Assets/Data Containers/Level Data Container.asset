@@ -122,7 +122,7 @@ MonoBehaviour:
       type: 3}
     goldTime: 60
   - tag: Level 24
-    name: Activated Spikes
+    name: Activated Spikes!
     prefab: {fileID: 4114452072837002624, guid: 8e19f27666a034ea2bc5e57f622a0868,
       type: 3}
     goldTime: 60
@@ -157,7 +157,7 @@ MonoBehaviour:
       type: 3}
     goldTime: 50
   - tag: Level 31
-    name: Super Slime Cannons
+    name: Super Slime Cannons!
     prefab: {fileID: 8429963895881493267, guid: cb29c7ffc7fc8406a9b12f6b8b15c686,
       type: 3}
     goldTime: 45
@@ -193,5 +193,10 @@ MonoBehaviour:
   - tag: Level 38
     name: Goo-Mazing
     prefab: {fileID: 4377498241045295134, guid: 44ac93085817647ac9f608c9e61143a6,
+      type: 3}
+    goldTime: 50
+  - tag: Level 39
+    name: Flinga Mania!
+    prefab: {fileID: 2882656160164718396, guid: e9cf3640bf23149539ad9385a63552c6,
       type: 3}
     goldTime: 50
