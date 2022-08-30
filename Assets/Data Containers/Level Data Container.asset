@@ -181,7 +181,7 @@ MonoBehaviour:
       type: 3}
     goldTime: 60
   - tag: Level 36
-    name: Flingas
+    name: Flingas!
     prefab: {fileID: 9196685073278825662, guid: 7ed07bfe629fa408da1c52e474cf9cca,
       type: 3}
     goldTime: 50
