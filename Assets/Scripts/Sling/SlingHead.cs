@@ -206,6 +206,8 @@ namespace Sling
 
         public bool TryLoseLife()
         {
+            if (slimeEffect.IsActive) return false;
+            
             var elapsedTime = Time.time - lastLifeLostTime;
 
             if (elapsedTime < loseLifeInterval) return false;
