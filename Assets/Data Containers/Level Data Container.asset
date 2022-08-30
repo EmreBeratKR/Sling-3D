@@ -205,3 +205,8 @@ MonoBehaviour:
     prefab: {fileID: 5758261145975101968, guid: 4246483dae5cd4e2a9406c93c6d5a569,
       type: 3}
     goldTime: 65
+  - tag: Level 41
+    name: Get a Hold of Yourself!
+    prefab: {fileID: 2337212164767790979, guid: e77b4ec6300874b1bb8376035076ce4f,
+      type: 3}
+    goldTime: 60
