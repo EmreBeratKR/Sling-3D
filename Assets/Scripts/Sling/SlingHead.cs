@@ -12,6 +12,7 @@ namespace Sling
     public class SlingHead : MonoBehaviour
     {
         private const float StrongPullRateThreshold = 0.5f;
+        private const float KnockBackForce = 10f;
         private const int MidBounceLimit = 5;
         private const int LowBounceLimit = 10;
         private const int Damage = 1;
@@ -134,9 +135,17 @@ namespace Sling
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.TryGetComponent(out Harmful _))
+            if (other.TryGetComponent(out Harmful harmful))
             {
-                TryLoseLife();
+                if (TryLoseLife())
+                {
+                    
+                }
+                
+                if (other.TryGetComponent(out Enemy enemy))
+                {
+                    KnockBackFromEnemy(enemy);
+                }
             }
         }
 
@@ -190,6 +199,14 @@ namespace Sling
         public void AddForce(Vector3 force, ForceMode forceMode)
         {
             body.AddForce(force, forceMode);
+        }
+
+        public void KnockBackFromEnemy(Enemy enemy)
+        {
+            var direction = transform.position - enemy.Position;
+            direction.z = 0f;
+            var force = direction.normalized * KnockBackForce - Velocity;
+            AddForce(force, ForceMode.VelocityChange);
         }
 
         public void EnablePhysics()
@@ -248,6 +265,11 @@ namespace Sling
             if (range.IsDragging) return;
             
             if (!slimeEffect.IsActive) return;
+
+            if (damageable is Enemy enemy)
+            {
+                KnockBackFromEnemy(enemy);
+            }
             
             damageable.Damage(Damage);
         }

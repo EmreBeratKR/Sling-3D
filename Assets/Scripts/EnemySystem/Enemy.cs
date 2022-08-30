@@ -12,6 +12,7 @@ namespace EnemySystem
         [SerializeField, Min(0)] private int health;
 
 
+        public Vector3 Position => transform.position;
         public bool IsDead => m_CurrentHealth <= 0;
 
 
