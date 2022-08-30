@@ -57,11 +57,13 @@ namespace Sling
         private void OnEnable()
         {
             Tube.OnSlingEntered += OnSlingEnteredTube;
+            SlingBehaviour.OnThrownByThrowerHandle += OnSlingThrownByThrowerHandle;
         }
 
         private void OnDisable()
         {
             Tube.OnSlingEntered -= OnSlingEnteredTube;
+            SlingBehaviour.OnThrownByThrowerHandle -= OnSlingThrownByThrowerHandle;
         }
 
         private void FixedUpdate()
@@ -128,7 +130,17 @@ namespace Sling
             AutoDetach();
         }
 
+        private void OnSlingThrownByThrowerHandle()
+        {
+            AttachedHandle.IgnoreFor(0.1f);
+            AutoDetach();
+        }
 
+        public bool IsAttachedTo(Handle handle)
+        {
+            return AttachedHandle == handle;
+        }
+        
         public void EnablePhysics()
         {
             body.isKinematic = false;

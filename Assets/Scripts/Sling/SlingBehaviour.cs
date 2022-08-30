@@ -1,8 +1,10 @@
 using DG.Tweening;
+using Handle_System;
 using NaughtyAttributes;
 using ScriptableEvents.Core.Channels;
 using TubeSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Sling
 {
@@ -20,6 +22,9 @@ namespace Sling
 
         [Header("Animation Settings")]
         [SerializeField] private float portalTravelDuration;
+
+
+        public static UnityAction OnThrownByThrowerHandle;
         
         
         private void Start()
@@ -31,12 +36,14 @@ namespace Sling
         {
             Tube.OnSlingEntered += OnSlingEnteredTube;
             Tube.OnSlingThrown += OnSlingThrownFromTube;
+            ThrowerHandle.OnThrow += OnThrowerHandleThrow;
         }
 
         private void OnDisable()
         {
             Tube.OnSlingEntered -= OnSlingEnteredTube;
             Tube.OnSlingThrown -= OnSlingThrownFromTube;
+            ThrowerHandle.OnThrow -= OnThrowerHandleThrow;
         }
 
         private void OnSlingEnteredTube(EnterTubeResponse response)
@@ -53,6 +60,19 @@ namespace Sling
             var throwForce = thrownFrom.ThrowForce - head.Velocity;
             Activate();
             head.AddForce(throwForce, ForceMode.VelocityChange);
+        }
+
+        private void OnThrowerHandleThrow(ThrowerHandleThrowResponse response)
+        {
+            var throwerHandle = response.throwerHandle;
+            
+            if (!arm.IsAttachedTo(throwerHandle)) return;
+
+            var throwForce = response.force - head.Velocity;
+            Debug.Log($"{response.force} => {throwForce}");
+            head.AddForce(throwForce, ForceMode.VelocityChange);
+            
+            OnThrownByThrowerHandle?.Invoke();
         }
         
         
