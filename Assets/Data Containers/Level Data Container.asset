@@ -185,3 +185,8 @@ MonoBehaviour:
     prefab: {fileID: 9196685073278825662, guid: 7ed07bfe629fa408da1c52e474cf9cca,
       type: 3}
     goldTime: 50
+  - tag: Level 37
+    name: Multiple Flingas
+    prefab: {fileID: 7725518504386333306, guid: fc5d72fe8e93a4ae58fde3cf3c291485,
+      type: 3}
+    goldTime: 50

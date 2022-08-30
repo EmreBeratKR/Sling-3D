@@ -69,7 +69,6 @@ namespace Sling
             if (!arm.IsAttachedTo(throwerHandle)) return;
 
             var throwForce = response.force - head.Velocity;
-            Debug.Log($"{response.force} => {throwForce}");
             head.AddForce(throwForce, ForceMode.VelocityChange);
             
             OnThrownByThrowerHandle?.Invoke();
