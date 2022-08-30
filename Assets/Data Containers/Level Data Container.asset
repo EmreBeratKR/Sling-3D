@@ -166,3 +166,7 @@ MonoBehaviour:
     prefab: {fileID: 3179892121843748609, guid: 36b38d1bb718c4eb0bc533d7a5aace7b,
       type: 3}
     goldTime: 50
+  - tag: Level 33
+    name: Slime Time
+    prefab: {fileID: 172787102905570943, guid: c50d295e2bb8f4264b5b2ab1ee52d8d1, type: 3}
+    goldTime: 55
