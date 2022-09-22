@@ -210,3 +210,8 @@ MonoBehaviour:
     prefab: {fileID: 2337212164767790979, guid: e77b4ec6300874b1bb8376035076ce4f,
       type: 3}
     goldTime: 60
+  - tag: Level 42
+    name: Moving Spiked Walls
+    prefab: {fileID: 4434411321460515870, guid: 6c5a8044f5dd04fce9694baa6a7f659b,
+      type: 3}
+    goldTime: 60

@@ -91,6 +91,13 @@ namespace Sling
                 >= MidBounceLimit => midBouncy,
                 _ => mainCollider.material
             };
+
+            var other = collision.collider;
+            
+            if (other.TryGetComponent(out AutoDetacher _))
+            {
+                arm.ForceAutoDetach();
+            }
         }
 
         private void OnTriggerEnter(Collider other)

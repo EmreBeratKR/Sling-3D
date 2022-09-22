@@ -169,6 +169,11 @@ namespace Sling
             Position = head.Position + head.transform.up * 0.6f;
         }
         
+        public void ForceAutoDetach()
+        {
+            AutoDetach();
+        }
+        
         
         private void FollowHead()
         {
@@ -190,7 +195,7 @@ namespace Sling
             
             AutoDetach();
         }
-    
+
         private void TryDetach()
         {
             if (!isThrown) return;
