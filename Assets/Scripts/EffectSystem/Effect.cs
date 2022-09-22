@@ -56,6 +56,11 @@ namespace EffectSystem
             Activation(time, ActivationType.Additive);
         }
 
+        public void Clear()
+        {
+            m_TimeLeft = 0f;
+        }
+
 
         private void Activation(float time, ActivationType activationType)
         {

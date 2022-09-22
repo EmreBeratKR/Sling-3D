@@ -220,3 +220,8 @@ MonoBehaviour:
     prefab: {fileID: 7556463026637049042, guid: d9da65a948ad344d5a7b676978ac7644,
       type: 3}
     goldTime: 50
+  - tag: Level 44
+    name: Think Quick! Move Quicker!
+    prefab: {fileID: 2143651370234748934, guid: 57eea9dca56994fe686fa0e225b46f50,
+      type: 3}
+    goldTime: 40

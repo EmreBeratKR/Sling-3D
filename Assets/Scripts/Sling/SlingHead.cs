@@ -142,16 +142,20 @@ namespace Sling
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.TryGetComponent(out Harmful harmful))
+            if (other.TryGetComponent(out Harmful _))
             {
-                if (TryLoseLife())
-                {
-                    
-                }
-                
                 if (other.TryGetComponent(out Enemy enemy))
                 {
                     KnockBackFromEnemy(enemy);
+                    TryLoseLife();
+                }
+
+                else
+                {
+                    if (TryLoseLife(true))
+                    {
+                        slimeEffect.Clear();
+                    }
                 }
             }
         }
@@ -236,9 +240,9 @@ namespace Sling
             body.AddForce(Physics.gravity * gravityScale, ForceMode.Acceleration);
         }
 
-        public bool TryLoseLife()
+        public bool TryLoseLife(bool ignoreEffects = false)
         {
-            if (slimeEffect.IsActive) return false;
+            if (slimeEffect.IsActive && !ignoreEffects) return false;
             
             var elapsedTime = Time.time - lastLifeLostTime;
 
