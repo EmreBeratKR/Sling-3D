@@ -240,3 +240,8 @@ MonoBehaviour:
     prefab: {fileID: 2891047532882095159, guid: 5dcde5591ceb44b77a64e9a8c6bc87d8,
       type: 3}
     goldTime: 75
+  - tag: Level 48
+    name: Mini Boss Frenzy 3
+    prefab: {fileID: 7535917932690013971, guid: ab7ad945b5eb8472d90a2448b5937a77,
+      type: 3}
+    goldTime: 60
