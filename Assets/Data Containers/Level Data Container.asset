@@ -215,3 +215,8 @@ MonoBehaviour:
     prefab: {fileID: 4434411321460515870, guid: 6c5a8044f5dd04fce9694baa6a7f659b,
       type: 3}
     goldTime: 60
+  - tag: Level 43
+    name: Spike Slime Combo
+    prefab: {fileID: 7556463026637049042, guid: d9da65a948ad344d5a7b676978ac7644,
+      type: 3}
+    goldTime: 50
