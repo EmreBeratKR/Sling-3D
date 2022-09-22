@@ -15,7 +15,7 @@ namespace Sling
         private const float KnockBackForce = 10f;
         private const int MidBounceLimit = 5;
         private const int LowBounceLimit = 10;
-        private const int Damage = 1;
+        private const float Damage = 1f;
 
         [Header("Event Channels")]
         [SerializeField] private HandleEventChannel slimeArmAutoAttached;

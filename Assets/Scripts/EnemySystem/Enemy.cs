@@ -5,24 +5,26 @@ namespace EnemySystem
 {
     public abstract class Enemy : MonoBehaviour, IDamageable
     {
+        [Header(nameof(Enemy))]
         [Header("Event Channels")] 
         [SerializeField] private VoidEventChannel goalAchieved;
         
         [Header("Values")]
-        [SerializeField, Min(0)] private int health;
+        [SerializeField, Min(0)] private float health;
 
 
         public Vector3 Position => transform.position;
         public bool IsDead => m_CurrentHealth <= 0;
 
 
-        protected float HealthRate => (float) m_CurrentHealth / health;
+        protected float HealthRate => m_CurrentHealth / health;
         
         
-        private int m_CurrentHealth;
+        private float m_CurrentHealth;
         
         
         protected virtual void OnDamaged(){}
+        protected virtual void OnHealed(){}
 
         protected virtual void OnDead()
         {
@@ -36,11 +38,11 @@ namespace EnemySystem
         }
 
 
-        public void Damage(int damageAmount)
+        public void Damage(float damageAmount)
         {
             if (IsDead) return;
             
-            m_CurrentHealth = Mathf.Max(0, m_CurrentHealth - damageAmount);
+            m_CurrentHealth = Mathf.Max(0f, m_CurrentHealth - damageAmount);
             
             OnDamaged();
             
@@ -50,7 +52,15 @@ namespace EnemySystem
         }
 
 
-        private void SetHealth(int healthAmount)
+        protected void Heal(float amount)
+        {
+            m_CurrentHealth = Mathf.Clamp(m_CurrentHealth + amount, 0f, health);
+            
+            OnHealed();
+        }
+
+
+        private void SetHealth(float healthAmount)
         {
             m_CurrentHealth = healthAmount;
         }

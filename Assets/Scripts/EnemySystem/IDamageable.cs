@@ -2,6 +2,6 @@ namespace EnemySystem
 {
     public interface IDamageable
     {
-        void Damage(int damageAmount);
+        void Damage(float damageAmount);
     }
 }

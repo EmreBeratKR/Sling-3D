@@ -5,8 +5,9 @@ namespace EnemySystem
 {
     public abstract class Boss : Enemy
     {
+        [Header(nameof(Boss))]
         [Header("References")] 
-        [SerializeField] private EnemyHealthBar healthBar;
+        [SerializeField] protected EnemyHealthBar healthBar;
         [SerializeField] private Collider trigger;
         [SerializeField] private Transform main;
 

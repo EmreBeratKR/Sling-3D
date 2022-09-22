@@ -20,8 +20,16 @@ namespace EnemySystem
             base.UpdateBar(fillAmount);
 
             bar.fillAmount = fillAmount;
-            
-            TryAwake();
+
+            if (fillAmount < 1f)
+            {
+                TryAwake();
+            }
+
+            else
+            {
+                TrySleep();
+            }
         }
 
 
@@ -30,6 +38,13 @@ namespace EnemySystem
             if (IsAwake) return;
 
             IsAwake = true;
+        }
+
+        private void TrySleep()
+        {
+            if (!IsAwake) return;
+
+            IsAwake = false;
         }
     }
 }

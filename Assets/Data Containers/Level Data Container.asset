@@ -250,3 +250,8 @@ MonoBehaviour:
     prefab: {fileID: 7864254503530250924, guid: 8a7ad6f48e69e4c31a7bf00ddf417d0f,
       type: 3}
     goldTime: 65
+  - tag: Level 50
+    name: BIG BAD BOSS!
+    prefab: {fileID: 2293848432092756654, guid: a03a147a1eb2243eebc39963beba20b2,
+      type: 3}
+    goldTime: 90
