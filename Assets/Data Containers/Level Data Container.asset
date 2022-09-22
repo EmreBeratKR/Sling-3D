@@ -225,3 +225,8 @@ MonoBehaviour:
     prefab: {fileID: 2143651370234748934, guid: 57eea9dca56994fe686fa0e225b46f50,
       type: 3}
     goldTime: 40
+  - tag: Level 45
+    name: Divided Bad Guys
+    prefab: {fileID: 3824592098118692870, guid: 81149433d1fde46799da9742847b01bf,
+      type: 3}
+    goldTime: 90
