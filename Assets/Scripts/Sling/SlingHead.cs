@@ -56,12 +56,15 @@ namespace Sling
         [SerializeField] private SoundPlayer sfxStretch;
         [SerializeField] private AudioClipContainer flingClipContainer;
         [SerializeField] private SoundPlayer sfxFling;
+        [SerializeField] private AudioClipContainer bounceClipContainer;
+        [SerializeField] private SoundPlayer sfxBounce;
         [SerializeField] private AudioClipContainer takeDamageClipContainer;
         [SerializeField] private SoundPlayer sfxTakeDamage;
 
 
         private AudioClip RandomStretchAudioClip => stretchClipContainer.Random;
         private AudioClip RandomFlingAudioClip => flingClipContainer.Random;
+        private AudioClip RandomBounceAudioClip => bounceClipContainer.Random;
         private AudioClip RandomTakeDamageAudioClip => takeDamageClipContainer.Random;
         
 
@@ -101,6 +104,7 @@ namespace Sling
         private void OnCollisionEnter(Collision collision)
         {
             bounceCount++;
+            sfxBounce.PlayClip(RandomBounceAudioClip);
 
             mainCollider.material = bounceCount switch
             {
@@ -233,6 +237,7 @@ namespace Sling
             direction.z = 0f;
             var force = direction.normalized * KnockBackForce - Velocity;
             AddForce(force, ForceMode.VelocityChange);
+            sfxBounce.PlayClip(RandomBounceAudioClip);
         }
 
         public void EnablePhysics()

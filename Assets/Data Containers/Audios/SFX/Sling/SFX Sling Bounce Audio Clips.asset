@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5338064242a74934aaedaaaf1e7c5ca0, type: 3}
+  m_Name: SFX Sling Bounce Audio Clips
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 8300000, guid: 912d99666e3474dba89e9c7188de58ab, type: 3}
+  - {fileID: 8300000, guid: 2aeef0ace0a38423187e490bf039e347, type: 3}
+  - {fileID: 8300000, guid: 9005c0529f4fc4aeea18cc30af5f96bb, type: 3}
+  - {fileID: 8300000, guid: 1329520af46f348d19dc93b39e19edc6, type: 3}
+  - {fileID: 8300000, guid: a02d6aa3180614cf5bd3dec0b85a7e21, type: 3}
