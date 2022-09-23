@@ -1,8 +1,9 @@
-using System;
+using Data_Container;
 using EffectSystem;
 using EnemySystem;
 using Handle_System;
 using ScriptableEvents.Core.Channels;
+using SoundSystem;
 using TubeSystem;
 using UnityEngine;
 
@@ -16,7 +17,10 @@ namespace Sling
         private const int MidBounceLimit = 5;
         private const int LowBounceLimit = 10;
         private const float Damage = 1f;
+        
+        private const float StretchSoundSqrThreshold = 0.0001f;
 
+        
         [Header("Event Channels")]
         [SerializeField] private HandleEventChannel slimeArmAutoAttached;
         [SerializeField] private HandleEventChannel attachedToDirtyHandle;
@@ -47,6 +51,13 @@ namespace Sling
         [Header("Values")]
         [SerializeField, Min(0f)] private float loseLifeInterval;
 
+        [Header("SFX")] 
+        [SerializeField] private AudioClipContainer stretchClipContainer;
+        [SerializeField] private SoundPlayer sfxStretch;
+
+
+        private AudioClip RandomStretchAudioClip => stretchClipContainer.Random;
+        
 
         private Rigidbody body;
         private int bounceCount;
@@ -172,7 +183,13 @@ namespace Sling
 
         public void OnSlingHeadDrag(Vector3 mousePosition)
         {
+            var sqrDistance = Vector3.SqrMagnitude(Position - mousePosition);
             Position = mousePosition;
+
+            if (sqrDistance > StretchSoundSqrThreshold)
+            {
+                sfxStretch.TryPlayClip(RandomStretchAudioClip);
+            }
         }
     
         public void OnSlingHeadDragEnd()

@@ -90,7 +90,7 @@ public class LevelSystem : Scenegleton<LevelSystem>
     {
         LevelStatus = LevelStatus.Completed;
         completeTime = Time.time;
-        levelSoundPlayer.ChangeAudioClip(LevelCompleteAudioClip);
+        levelSoundPlayer.PlayClip(LevelCompleteAudioClip);
     }
 
     public static bool IsLastLevel(int levelIndex)
@@ -104,7 +104,7 @@ public class LevelSystem : Scenegleton<LevelSystem>
     {
         CurrentLevelData = levelDataContainer[SelectedLevel];
         var levelAudioClip = levelAudioClipContainer[(int) CurrentLevelData.type];
-        levelSoundPlayer.ChangeAudioClip(levelAudioClip);
+        levelSoundPlayer.PlayClip(levelAudioClip);
         StartCoroutine(Loading());
         
         IEnumerator Loading()
