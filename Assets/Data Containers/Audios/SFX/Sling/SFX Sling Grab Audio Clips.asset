@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5338064242a74934aaedaaaf1e7c5ca0, type: 3}
+  m_Name: SFX Sling Grab Audio Clips
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 8300000, guid: 86c1e6453769745e7a6536b3b894535a, type: 3}
+  - {fileID: 8300000, guid: dcf583b9b0d074fceb66dfccff1d4399, type: 3}
+  - {fileID: 8300000, guid: 71d4dfc25981747eb958c620ac9e9645, type: 3}
+  - {fileID: 8300000, guid: 89b94ca94cb134d52815feab98d9a436, type: 3}
+  - {fileID: 8300000, guid: 84eeb725bf06143f5b86c34a614d981f, type: 3}
+  - {fileID: 8300000, guid: 441b3e059322e488d918420bf7830fac, type: 3}

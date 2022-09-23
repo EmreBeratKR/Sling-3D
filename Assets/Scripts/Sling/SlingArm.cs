@@ -1,5 +1,7 @@
+using Data_Container;
 using Handle_System;
 using ScriptableEvents.Core.Channels;
+using SoundSystem;
 using TubeSystem;
 using UnityEngine;
 
@@ -18,6 +20,14 @@ namespace Sling
         [SerializeField] private SlingHead head;
         [SerializeField] private SlingRange range;
         [SerializeField] private Transform armModel;
+        
+        [Header("SFX")] 
+        [SerializeField] private AudioClipContainer grabClipContainer;
+        [SerializeField] private SoundPlayer sfxGrab;
+        
+        
+        private AudioClip RandomGrabAudioClip => grabClipContainer.Random;
+        
 
         private Rigidbody body;
         private bool isThrown;
@@ -211,6 +221,7 @@ namespace Sling
         
             transform.position = position;
             slingArmAttached.RaiseEvent();
+            sfxGrab.PlayClip(RandomGrabAudioClip);
         }
 
         private void AutoDetach()
