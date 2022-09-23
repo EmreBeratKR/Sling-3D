@@ -19,12 +19,22 @@ namespace SoundSystem
             GameSettings.OnSoundToggled += OnSoundToggled;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             GameSettings.OnSoundToggled -= OnSoundToggled;
         }
 
 
+        public void Play()
+        {
+            audioSource.Play();
+        }
+
+        public void Stop()
+        {
+            audioSource.Stop();
+        }
+        
         public void ChangeAudioClip(AudioClip audioClip)
         {
             audioSource.clip = audioClip;
@@ -34,16 +44,6 @@ namespace SoundSystem
         private void OnSoundToggled(bool isEnabled)
         {
             ToggleMute(!isEnabled);
-        }
-
-        private void Play()
-        {
-            audioSource.Play();
-        }
-
-        private void Stop()
-        {
-            audioSource.Stop();
         }
 
         private void ToggleMute(bool isMuted)

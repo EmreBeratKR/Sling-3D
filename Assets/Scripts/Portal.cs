@@ -2,6 +2,7 @@ using System.Collections;
 using DG.Tweening;
 using NaughtyAttributes;
 using ScriptableEvents.Core.Channels;
+using SoundSystem;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
@@ -18,6 +19,9 @@ public class Portal : MonoBehaviour
     [SerializeField] private Ease openEasing;
     [SerializeField] private Ease closeEasing;
     [SerializeField] private float duration;
+
+    [Header("SFX")] 
+    [SerializeField] private SoundPlayer sfxOpening;
 
 
     private Vector3 ExitPosition => exit.position;
@@ -75,6 +79,8 @@ public class Portal : MonoBehaviour
                 spawnPosition.z = 0f;
                 portalSpawned.RaiseEvent(spawnPosition);
             });
+        
+        sfxOpening.Play();
     }
 
     [Button(enabledMode: EButtonEnableMode.Playmode)]

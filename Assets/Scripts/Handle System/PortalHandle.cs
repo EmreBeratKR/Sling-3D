@@ -1,5 +1,6 @@
 using System.Collections;
 using ScriptableEvents.Core.Channels;
+using SoundSystem;
 using UnityEngine;
 
 namespace Handle_System
@@ -8,6 +9,9 @@ namespace Handle_System
     {
         [SerializeField] private VoidEventChannel slingAttachedToPortal;
         [SerializeField] private VoidEventChannel portalEnteringStart;
+        
+        [Header("SFX")]
+        [SerializeField] private SoundPlayer sfxSlingEntering;
 
 
         protected override void OnAttached()
@@ -22,6 +26,7 @@ namespace Handle_System
             {
                 yield return new WaitForSeconds(1f);
                 portalEnteringStart.RaiseEvent();
+                sfxSlingEntering.Play();
             }
         }
     }
