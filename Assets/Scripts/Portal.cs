@@ -11,6 +11,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private Vector3EventChannel portalSpawned;
 
     [Header("References")] 
+    [SerializeField] private PortalSound sound;
     [SerializeField] private Transform model;
     [SerializeField] private GameObject handle;
     [SerializeField] private Transform exit;
@@ -19,9 +20,6 @@ public class Portal : MonoBehaviour
     [SerializeField] private Ease openEasing;
     [SerializeField] private Ease closeEasing;
     [SerializeField] private float duration;
-
-    [Header("SFX")] 
-    [SerializeField] private SoundPlayer sfxOpening;
 
 
     private Vector3 ExitPosition => exit.position;
@@ -80,7 +78,7 @@ public class Portal : MonoBehaviour
                 portalSpawned.RaiseEvent(spawnPosition);
             });
         
-        sfxOpening.Play();
+        sound.PlayOpening();
     }
 
     [Button(enabledMode: EButtonEnableMode.Playmode)]

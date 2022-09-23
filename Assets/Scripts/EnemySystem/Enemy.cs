@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EnemySystem
 {
-    public abstract class Enemy : MonoBehaviour, IDamageable
+    public abstract class Enemy : MonoBehaviour, IDamageable, IBounce
     {
         [Header(nameof(Enemy))]
         [Header("Event Channels")] 
@@ -49,6 +49,13 @@ namespace EnemySystem
             if (!IsDead) return;
             
             OnDead();
+        }
+        
+        public Vector3 CalculateDirection(Vector3 impactPoint)
+        {
+            var direction = impactPoint - Position;
+            direction.z = 0f;
+            return direction.normalized;
         }
 
 

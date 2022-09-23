@@ -19,15 +19,9 @@ namespace Sling
         [SerializeField] private SlingShape shape;
         [SerializeField] private SlingHead head;
         [SerializeField] private SlingRange range;
+        [SerializeField] private SlingSound sound;
         [SerializeField] private Transform armModel;
-        
-        [Header("SFX")] 
-        [SerializeField] private AudioClipContainer grabClipContainer;
-        [SerializeField] private SoundPlayer sfxGrab;
-        
-        
-        private AudioClip RandomGrabAudioClip => grabClipContainer.Random;
-        
+
 
         private Rigidbody body;
         private bool isThrown;
@@ -221,7 +215,7 @@ namespace Sling
         
             transform.position = position;
             slingArmAttached.RaiseEvent();
-            sfxGrab.PlayClip(RandomGrabAudioClip);
+            sound.PlayGrab();
         }
 
         private void AutoDetach()

@@ -31,6 +31,7 @@ namespace Sling
         [SerializeField] private SphereCollider mainCollider;
         [SerializeField] private SlingArm arm;
         [SerializeField] private SlingRange range;
+        [SerializeField] private SlingSound sound;
         [SerializeField] private SlimeEffect slimeEffect;
         [SerializeField] private PhysicMaterial fullBouncy;
         [SerializeField] private PhysicMaterial midBouncy;
@@ -51,22 +52,6 @@ namespace Sling
         [Header("Values")]
         [SerializeField, Min(0f)] private float loseLifeInterval;
 
-        [Header("SFX")] 
-        [SerializeField] private AudioClipContainer stretchClipContainer;
-        [SerializeField] private SoundPlayer sfxStretch;
-        [SerializeField] private AudioClipContainer flingClipContainer;
-        [SerializeField] private SoundPlayer sfxFling;
-        [SerializeField] private AudioClipContainer bounceClipContainer;
-        [SerializeField] private SoundPlayer sfxBounce;
-        [SerializeField] private AudioClipContainer takeDamageClipContainer;
-        [SerializeField] private SoundPlayer sfxTakeDamage;
-
-
-        private AudioClip RandomStretchAudioClip => stretchClipContainer.Random;
-        private AudioClip RandomFlingAudioClip => flingClipContainer.Random;
-        private AudioClip RandomBounceAudioClip => bounceClipContainer.Random;
-        private AudioClip RandomTakeDamageAudioClip => takeDamageClipContainer.Random;
-        
 
         private Rigidbody body;
         private int bounceCount;
@@ -104,7 +89,7 @@ namespace Sling
         private void OnCollisionEnter(Collision collision)
         {
             bounceCount++;
-            sfxBounce.PlayClip(RandomBounceAudioClip);
+            sound.PlayBounce();
 
             mainCollider.material = bounceCount switch
             {
@@ -127,12 +112,20 @@ namespace Sling
             
             if (other.TryGetComponent(out IDamageable damageable))
             {
-                TryDamage(damageable);
+                if (TryDamage(damageable))
+                {
+                    
+                }
             }
             
             if (other.TryGetComponent(out GameAreaBorder _))
             {
-                levelFailed.RaiseEvent();
+                ExitedFromGameArea();
+            }
+            
+            if (other.TryGetComponent(out IBounce bounce))
+            {
+                KnockBackFromBounce(bounce);
             }
             
             else if (other.TryGetComponent(out Handle handle))
@@ -167,7 +160,6 @@ namespace Sling
             {
                 if (other.TryGetComponent(out Enemy enemy))
                 {
-                    KnockBackFromEnemy(enemy);
                     TryLoseLife();
                 }
 
@@ -198,7 +190,7 @@ namespace Sling
 
             if (sqrDistance > StretchSoundSqrThreshold)
             {
-                sfxStretch.TryPlayClip(RandomStretchAudioClip);
+                sound.PlayStretch();
             }
         }
     
@@ -206,7 +198,7 @@ namespace Sling
         {
             var pullForce = arm.Position - Position;
             Fling(pullForce);
-            sfxFling.PlayClip(RandomFlingAudioClip);
+            sound.PlayFling();
         }
 
         public void OnSlingArmAttached()
@@ -231,15 +223,6 @@ namespace Sling
             body.AddForce(force, forceMode);
         }
 
-        public void KnockBackFromEnemy(Enemy enemy)
-        {
-            var direction = transform.position - enemy.Position;
-            direction.z = 0f;
-            var force = direction.normalized * KnockBackForce - Velocity;
-            AddForce(force, ForceMode.VelocityChange);
-            sfxBounce.PlayClip(RandomBounceAudioClip);
-        }
-
         public void EnablePhysics()
         {
             useGravity = true;
@@ -262,7 +245,7 @@ namespace Sling
 
             lastLifeLostTime = Time.time;
             slingLostLife.RaiseEvent();
-            sfxTakeDamage.PlayClip(RandomTakeDamageAudioClip);
+            sound.PlayTakeDamage();
             return true;
         }
 
@@ -305,18 +288,29 @@ namespace Sling
             }
         }
 
-        private void TryDamage(IDamageable damageable)
+        private bool TryDamage(IDamageable damageable)
         {
-            if (range.IsDragging) return;
+            if (range.IsDragging) return false;
             
-            if (!slimeEffect.IsActive) return;
+            if (!slimeEffect.IsActive) return false;
 
-            if (damageable is Enemy enemy)
+            /*if (damageable is Enemy enemy)
             {
-                KnockBackFromEnemy(enemy);
-            }
+                KnockBackFromBounce(enemy);
+            }*/
             
             damageable.Damage(Damage);
+
+            return true;
+        }
+        
+        private void KnockBackFromBounce(IBounce bounce)
+        {
+            var direction = bounce.CalculateDirection(transform.position);
+            direction.z = 0f;
+            var force = direction.normalized * KnockBackForce - Velocity;
+            AddForce(force, ForceMode.VelocityChange);
+            sound.PlayBounce();
         }
 
         private void TryEnterTube(TubeEntrance tubeEntrance)
@@ -327,6 +321,12 @@ namespace Sling
             {
                     
             }
+        }
+
+        private void ExitedFromGameArea()
+        {
+            levelFailed.RaiseEvent();
+            sound.PlayTakeDamage();
         }
     }
 }
