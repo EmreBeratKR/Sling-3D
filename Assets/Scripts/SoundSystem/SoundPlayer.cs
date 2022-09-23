@@ -10,6 +10,7 @@ namespace SoundSystem
 
         private void Start()
         {
+            ToggleMute(!GameSettings.IsSoundEnabled);
             TryPlayOnStart();
         }
 
@@ -61,7 +62,6 @@ namespace SoundSystem
             if (!playOnStart) return;
             
             Play();
-            ToggleMute(!GameSettings.IsSoundEnabled);
         }
     }
 }
