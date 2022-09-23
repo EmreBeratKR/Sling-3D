@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5338064242a74934aaedaaaf1e7c5ca0, type: 3}
+  m_Name: SFX Sling Fling Audio Clips
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 8300000, guid: 9bff4c2c7e6ad472fb6ace00f2f6531f, type: 3}
+  - {fileID: 8300000, guid: 69c66e9bf08b8496abf0d8b04a7726ff, type: 3}
+  - {fileID: 8300000, guid: 0833255c8da784469983c539b1b700e4, type: 3}
+  - {fileID: 8300000, guid: 833aae19a4f9b4f918c3b35de5f5b70a, type: 3}
+  - {fileID: 8300000, guid: bb435d4bd93e84fd99f53b64fb06e0f0, type: 3}
+  - {fileID: 8300000, guid: 71dc66426e8dc4d589574d9c380f2907, type: 3}
+  - {fileID: 8300000, guid: 1e823f79218e548909e181bf89ed5c82, type: 3}
+  - {fileID: 8300000, guid: e9d91a9ed228548a6acdb6bf63e2e10b, type: 3}
+  - {fileID: 8300000, guid: 3009961e3fae24f2094df42b06076319, type: 3}

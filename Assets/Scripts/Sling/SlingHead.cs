@@ -54,11 +54,14 @@ namespace Sling
         [Header("SFX")] 
         [SerializeField] private AudioClipContainer stretchClipContainer;
         [SerializeField] private SoundPlayer sfxStretch;
+        [SerializeField] private AudioClipContainer flingClipContainer;
+        [SerializeField] private SoundPlayer sfxFling;
         [SerializeField] private AudioClipContainer takeDamageClipContainer;
         [SerializeField] private SoundPlayer sfxTakeDamage;
 
 
         private AudioClip RandomStretchAudioClip => stretchClipContainer.Random;
+        private AudioClip RandomFlingAudioClip => flingClipContainer.Random;
         private AudioClip RandomTakeDamageAudioClip => takeDamageClipContainer.Random;
         
 
@@ -197,17 +200,9 @@ namespace Sling
     
         public void OnSlingHeadDragEnd()
         {
-            var force = arm.Position - Position;
-            var pullLength = force.magnitude;
-            var pullRate = Mathf.Clamp01(pullLength / range.Radius);
-            var forceAmount = throwForceGraph.Evaluate(pullRate) * throwForceMultiplier;
-            var throwDirection = force.normalized;
-            AddForce(throwDirection * forceAmount, ForceMode.VelocityChange);
-
-            if (pullRate < StrongPullRateThreshold)
-            {
-                arm.ClearHandle();
-            }
+            var pullForce = arm.Position - Position;
+            Fling(pullForce);
+            sfxFling.PlayClip(RandomFlingAudioClip);
         }
 
         public void OnSlingArmAttached()
@@ -252,14 +247,6 @@ namespace Sling
             body.isKinematic = true;
         }
 
-    
-        private void ApplyGravity()
-        {
-            if (!useGravity) return;
-        
-            body.AddForce(Physics.gravity * gravityScale, ForceMode.Acceleration);
-        }
-
         public bool TryLoseLife(bool ignoreEffects = false)
         {
             if (slimeEffect.IsActive && !ignoreEffects) return false;
@@ -274,6 +261,27 @@ namespace Sling
             return true;
         }
 
+        
+        private void ApplyGravity()
+        {
+            if (!useGravity) return;
+        
+            body.AddForce(Physics.gravity * gravityScale, ForceMode.Acceleration);
+        }
+
+        private void Fling(Vector3 pullForce)
+        {
+            var pullLength = pullForce.magnitude;
+            var pullRate = Mathf.Clamp01(pullLength / range.Radius);
+            var forceAmount = throwForceGraph.Evaluate(pullRate) * throwForceMultiplier;
+            var throwDirection = pullForce.normalized;
+            AddForce(throwDirection * forceAmount, ForceMode.VelocityChange);
+
+            if (pullRate < StrongPullRateThreshold)
+            {
+                arm.ClearHandle();
+            }
+        }
 
         private void TryCleanHandle(Handle handle)
         {
