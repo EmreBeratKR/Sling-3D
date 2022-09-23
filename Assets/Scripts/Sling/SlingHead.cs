@@ -54,9 +54,12 @@ namespace Sling
         [Header("SFX")] 
         [SerializeField] private AudioClipContainer stretchClipContainer;
         [SerializeField] private SoundPlayer sfxStretch;
+        [SerializeField] private AudioClipContainer takeDamageClipContainer;
+        [SerializeField] private SoundPlayer sfxTakeDamage;
 
 
         private AudioClip RandomStretchAudioClip => stretchClipContainer.Random;
+        private AudioClip RandomTakeDamageAudioClip => takeDamageClipContainer.Random;
         
 
         private Rigidbody body;
@@ -267,6 +270,7 @@ namespace Sling
 
             lastLifeLostTime = Time.time;
             slingLostLife.RaiseEvent();
+            sfxTakeDamage.PlayClip(RandomTakeDamageAudioClip);
             return true;
         }
 
