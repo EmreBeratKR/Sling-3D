@@ -65,6 +65,9 @@ public class LevelSystem : Scenegleton<LevelSystem>
     public static bool IsLevelEnd => LevelStatus is LevelStatus.Failed or LevelStatus.Completed;
 
 
+    private AudioClip LevelCompleteAudioClip => levelAudioClipContainer[3];
+    
+    
     private LevelStatus levelStatus;
     private float startTime;
     private float completeTime;
@@ -87,6 +90,7 @@ public class LevelSystem : Scenegleton<LevelSystem>
     {
         LevelStatus = LevelStatus.Completed;
         completeTime = Time.time;
+        levelSoundPlayer.ChangeAudioClip(LevelCompleteAudioClip);
     }
 
     public static bool IsLastLevel(int levelIndex)

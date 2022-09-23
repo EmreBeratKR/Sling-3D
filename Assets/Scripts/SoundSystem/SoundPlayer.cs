@@ -36,9 +36,19 @@ namespace SoundSystem
             audioSource.Stop();
         }
         
-        public void ChangeAudioClip(AudioClip audioClip)
+        public void ChangeAudioClip(AudioClip audioClip, bool playing = true)
         {
             audioSource.clip = audioClip;
+            
+            if (playing)
+            {
+                Play();
+            }
+
+            else
+            {
+                Stop();
+            }
         }
         
 
