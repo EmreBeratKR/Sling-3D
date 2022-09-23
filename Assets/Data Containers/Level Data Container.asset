@@ -18,240 +18,290 @@ MonoBehaviour:
     prefab: {fileID: 5550017291362640947, guid: f9f56dc08d1bd4a2297bece5e81892c2,
       type: 3}
     goldTime: 40
+    type: 0
   - tag: Level 2
     name: Slinging
     prefab: {fileID: 810366123783297428, guid: cc958e94593314d069adf8594a26835f, type: 3}
     goldTime: 35
+    type: 0
   - tag: Level 3
     name: Springing
     prefab: {fileID: 3821007625362313060, guid: 52552e0713bba4631ad8a872dc95f869,
       type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 4
     name: Rebounding
     prefab: {fileID: 4963855095418123181, guid: 79f3add048b9948018f4b5f6cb763a9c,
       type: 3}
     goldTime: 50
+    type: 0
   - tag: Level 5
     name: Bad Guys
     prefab: {fileID: 283116443060412387, guid: 0e1619501a5ef4e1480ef29e8cd737c1, type: 3}
     goldTime: 40
+    type: 1
   - tag: Level 6
     name: Popping Pus Leap
     prefab: {fileID: 1152354701667028922, guid: 5f6964caffc20482eb0b1f5c955909c4,
       type: 3}
     goldTime: 40
+    type: 0
   - tag: Level 7
     name: Spiked Floors
     prefab: {fileID: 4549985357722049281, guid: 33dd5e30ee85b42faa95b23135a01e92,
       type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 8
     name: Spiked Grabs
     prefab: {fileID: 145795879163706779, guid: d812d7275ce984db69dcadbb36d00314, type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 9
     name: Moving Walls
     prefab: {fileID: 2459957549538658924, guid: 3b22a8baf5d1741f5a9d84ce7505775f,
       type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 10
     name: Moving Bad Guys
     prefab: {fileID: 343877196029413592, guid: fb43da7e1aba04cfd97ccb1974f2d578, type: 3}
     goldTime: 40
+    type: 1
   - tag: Level 11
     name: Levers
     prefab: {fileID: 521525916199071808, guid: 0fdf260d2a0e8487f824fd267a13dd82, type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 12
     name: Red Spiked Grabs
     prefab: {fileID: 6262335771976841336, guid: 1d28aeaf96cf3403ca3b87432bf800c2,
       type: 3}
     goldTime: 55
+    type: 0
   - tag: Level 13
     name: Multiple Spiked Grabs
     prefab: {fileID: 342200054070285782, guid: a0a2dabef4fcc424a8877aba7306db06, type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 14
     name: Multiple Levers
     prefab: {fileID: 6227677296469081999, guid: 75f9c3c745cc64d17a15816add1d777c,
       type: 3}
     goldTime: 55
+    type: 0
   - tag: Level 15
     name: Multiple Bad Guys
     prefab: {fileID: 7034744782613099480, guid: e8d7dc0f4a83740139f0237e21978f5f,
       type: 3}
     goldTime: 50
+    type: 1
   - tag: Level 16
     name: Grab Grabbers
     prefab: {fileID: 8119976146609723768, guid: 7828674b56a5f42cea7eb3daa3d4f320,
       type: 3}
     goldTime: 60
+    type: 0
   - tag: Level 17
     name: Multiple Grab Grabbers
     prefab: {fileID: 239728316323219821, guid: 9bb62f36f899041749f1f4b84823a7e7, type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 18
     name: Red Spiky Grabs
     prefab: {fileID: 4425730901890448198, guid: fe99c60b1314c4ac98cd6964b18b565f,
       type: 3}
     goldTime: 65
+    type: 0
   - tag: Level 19
     name: Ups and Downs
     prefab: {fileID: 2198934781505336239, guid: f9dfffbf49c784929b91666c88c78b2b,
       type: 3}
     goldTime: 90
+    type: 0
   - tag: Level 20
     name: Mini Boss
     prefab: {fileID: 4032754456111846423, guid: 47400d223d6eb454388e518803d72d2b,
       type: 3}
     goldTime: 45
+    type: 1
   - tag: Level 21
     name: Moving Spiked Floors
     prefab: {fileID: 6730154140962327925, guid: 96de17a26442f4a39b735a53116b629b,
       type: 3}
     goldTime: 55
+    type: 0
   - tag: Level 22
     name: Climbing
     prefab: {fileID: 5825165366867060460, guid: 4922af96cddc44f5f8e73abf11ac1897,
       type: 3}
     goldTime: 60
+    type: 0
   - tag: Level 23
     name: Creeping
     prefab: {fileID: 4963388675478562424, guid: b8290a43dd339433f9b051f3eed583c5,
       type: 3}
     goldTime: 60
+    type: 0
   - tag: Level 24
     name: Activated Spikes!
     prefab: {fileID: 4114452072837002624, guid: 8e19f27666a034ea2bc5e57f622a0868,
       type: 3}
     goldTime: 60
+    type: 0
   - tag: Level 25
     name: Mini Bosses
     prefab: {fileID: 7889346363084496808, guid: 9d5a02d503692467e8e3a89fb13816a1,
       type: 3}
     goldTime: 50
+    type: 1
   - tag: Level 26
     name: Wobbler Grabs
     prefab: {fileID: 9179053707650910131, guid: 6542eb951d7aa4e548e6a056627832fd,
       type: 3}
     goldTime: 60
+    type: 0
   - tag: Level 27
     name: Moving Grabs
     prefab: {fileID: 5411547506031433999, guid: e83f35d6536c2464e979778af4af58ea,
       type: 3}
     goldTime: 55
+    type: 0
   - tag: Level 28
     name: Multiple Moving Grabs
     prefab: {fileID: 4423052547069153202, guid: 252ca27574f8e466baa2a907a58bbfb9,
       type: 3}
     goldTime: 55
+    type: 0
   - tag: Level 29
     name: Movers and Shakers
     prefab: {fileID: 6277637453062079911, guid: 97163501507284bba8b29586777369df,
       type: 3}
     goldTime: 55
+    type: 0
   - tag: Level 30
     name: More Mini Bosses
     prefab: {fileID: 3746644747388905657, guid: eb3864ec7055f475fa62ea80da2af292,
       type: 3}
     goldTime: 50
+    type: 1
   - tag: Level 31
     name: Super Slime Cannons!
     prefab: {fileID: 8429963895881493267, guid: cb29c7ffc7fc8406a9b12f6b8b15c686,
       type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 32
     name: Spiked Walls
     prefab: {fileID: 3179892121843748609, guid: 36b38d1bb718c4eb0bc533d7a5aace7b,
       type: 3}
     goldTime: 50
+    type: 0
   - tag: Level 33
     name: Slime Time
     prefab: {fileID: 172787102905570943, guid: c50d295e2bb8f4264b5b2ab1ee52d8d1, type: 3}
     goldTime: 55
+    type: 0
   - tag: Level 34
     name: Slime Combo
     prefab: {fileID: 8863152667682164453, guid: 082b7926a2a114a4caa5ac48e1ee5235,
       type: 3}
     goldTime: 45
+    type: 0
   - tag: Level 35
     name: Slime Mini Bosses
     prefab: {fileID: 5750532111760620715, guid: c020805021254411ea9f99cbfdeeafdd,
       type: 3}
     goldTime: 60
+    type: 1
   - tag: Level 36
     name: Flingas!
     prefab: {fileID: 9196685073278825662, guid: 7ed07bfe629fa408da1c52e474cf9cca,
       type: 3}
     goldTime: 50
+    type: 0
   - tag: Level 37
     name: Multiple Flingas
     prefab: {fileID: 7725518504386333306, guid: fc5d72fe8e93a4ae58fde3cf3c291485,
       type: 3}
     goldTime: 50
+    type: 0
   - tag: Level 38
     name: Goo-Mazing
     prefab: {fileID: 4377498241045295134, guid: 44ac93085817647ac9f608c9e61143a6,
       type: 3}
     goldTime: 50
+    type: 0
   - tag: Level 39
     name: Flinga Mania!
     prefab: {fileID: 2882656160164718396, guid: e9cf3640bf23149539ad9385a63552c6,
       type: 3}
     goldTime: 50
+    type: 0
   - tag: Level 40
     name: More Slime Mini Bosses
     prefab: {fileID: 5758261145975101968, guid: 4246483dae5cd4e2a9406c93c6d5a569,
       type: 3}
     goldTime: 65
+    type: 1
   - tag: Level 41
     name: Get a Hold of Yourself!
     prefab: {fileID: 2337212164767790979, guid: e77b4ec6300874b1bb8376035076ce4f,
       type: 3}
     goldTime: 60
+    type: 0
   - tag: Level 42
     name: Moving Spiked Walls
     prefab: {fileID: 4434411321460515870, guid: 6c5a8044f5dd04fce9694baa6a7f659b,
       type: 3}
     goldTime: 60
+    type: 0
   - tag: Level 43
     name: Spike Slime Combo
     prefab: {fileID: 7556463026637049042, guid: d9da65a948ad344d5a7b676978ac7644,
       type: 3}
     goldTime: 50
+    type: 0
   - tag: Level 44
     name: Think Quick! Move Quicker!
     prefab: {fileID: 2143651370234748934, guid: 57eea9dca56994fe686fa0e225b46f50,
       type: 3}
     goldTime: 40
+    type: 0
   - tag: Level 45
     name: Divided Bad Guys
     prefab: {fileID: 3824592098118692870, guid: 81149433d1fde46799da9742847b01bf,
       type: 3}
     goldTime: 90
+    type: 1
   - tag: Level 46
     name: Mini Boss Frenzy 1
     prefab: {fileID: 7606609433915819380, guid: 5d925a80a76fc481298e86d6c741b447,
       type: 3}
     goldTime: 90
+    type: 1
   - tag: Level 47
     name: Mini Boss Frenzy 2
     prefab: {fileID: 2891047532882095159, guid: 5dcde5591ceb44b77a64e9a8c6bc87d8,
       type: 3}
     goldTime: 75
+    type: 1
   - tag: Level 48
     name: Mini Boss Frenzy 3
     prefab: {fileID: 7535917932690013971, guid: ab7ad945b5eb8472d90a2448b5937a77,
       type: 3}
     goldTime: 60
+    type: 1
   - tag: Level 49
     name: Mini Boss Frenzy 4
     prefab: {fileID: 7864254503530250924, guid: 8a7ad6f48e69e4c31a7bf00ddf417d0f,
       type: 3}
     goldTime: 65
+    type: 1
   - tag: Level 50
     name: BIG BAD BOSS!
     prefab: {fileID: 2293848432092756654, guid: a03a147a1eb2243eebc39963beba20b2,
       type: 3}
     goldTime: 90
+    type: 1

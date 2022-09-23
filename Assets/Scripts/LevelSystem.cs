@@ -3,6 +3,7 @@ using System.Collections;
 using Data_Container;
 using Helpers;
 using ScriptableEvents.Core.Channels;
+using SoundSystem;
 using UnityEngine;
 
 public class LevelSystem : Scenegleton<LevelSystem>
@@ -18,6 +19,8 @@ public class LevelSystem : Scenegleton<LevelSystem>
     
     [Header("References")]
     [SerializeField] private LevelDataContainer levelDataContainer;
+    [SerializeField] private AudioClipContainer levelAudioClipContainer;
+    [SerializeField] private SoundPlayer levelSoundPlayer;
     [SerializeField] private Transform levelParent;
     
     
@@ -96,6 +99,8 @@ public class LevelSystem : Scenegleton<LevelSystem>
     private void LoadLevel()
     {
         CurrentLevelData = levelDataContainer[SelectedLevel];
+        var levelAudioClip = levelAudioClipContainer[(int) CurrentLevelData.type];
+        levelSoundPlayer.ChangeAudioClip(levelAudioClip);
         StartCoroutine(Loading());
         
         IEnumerator Loading()

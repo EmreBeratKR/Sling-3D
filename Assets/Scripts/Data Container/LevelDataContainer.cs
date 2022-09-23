@@ -16,5 +16,13 @@ namespace Data_Container
         public string name;
         public GameObject prefab;
         public float goldTime;
+        public LevelType type;
+    }
+
+    public enum LevelType
+    {
+        Normal,
+        BossFight,
+        Bonus
     }
 }
