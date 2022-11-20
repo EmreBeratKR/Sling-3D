@@ -21,24 +21,33 @@ namespace CustomPlayables
         
         public ClipCaps clipCaps => ClipCaps.Blending;
 
+
+        private TransformClipBehaviour m_Behaviour;
+        
         
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {
             var playable = ScriptPlayable<TransformClipBehaviour>.Create(graph);
-            var playableBehaviour = playable.GetBehaviour();
+            m_Behaviour = playable.GetBehaviour();
 
-            playableBehaviour.from = from;
-            playableBehaviour.to = to;
+            m_Behaviour.from = from;
+            m_Behaviour.to = to;
             
-            playableBehaviour.positionCurve = positionCurve;
-            playableBehaviour.rotationCurve = rotationCurve;
-            playableBehaviour.scaleCurve = scaleCurve;
+            m_Behaviour.positionCurve = positionCurve;
+            m_Behaviour.rotationCurve = rotationCurve;
+            m_Behaviour.scaleCurve = scaleCurve;
 
-            playableBehaviour.positionConstraints = positionConstraints;
-            playableBehaviour.rotationConstraints = rotationConstraints;
-            playableBehaviour.scaleConstraints = scaleConstraints;
+            m_Behaviour.positionConstraints = positionConstraints;
+            m_Behaviour.rotationConstraints = rotationConstraints;
+            m_Behaviour.scaleConstraints = scaleConstraints;
             
             return playable;
+        }
+
+
+        public void RestoreDefaultValues()
+        {
+            m_Behaviour.RestoreDefaultValues();
         }
         
         

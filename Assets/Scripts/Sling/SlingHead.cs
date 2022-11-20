@@ -14,8 +14,8 @@ namespace Sling
     {
         private const float StrongPullRateThreshold = 0.5f;
         private const float KnockBackForce = 10f;
-        private const int MidBounceLimit = 5;
-        private const int LowBounceLimit = 10;
+        public const int MidBounceLimit = 5;
+        public const int LowBounceLimit = 10;
         private const float Damage = 1f;
         
         private const float StretchSoundSqrThreshold = 0.0001f;

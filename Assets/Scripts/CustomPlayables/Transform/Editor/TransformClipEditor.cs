@@ -32,14 +32,14 @@ namespace CustomPlayables.Editor
             var targetObj = (TransformClip) target;
             
 
-            DrawFoldout(targetObj, ToLabel, ref ms_ShowFrom, _ =>
+            DrawFoldout(targetObj, FromLabel, ref ms_ShowFrom, _ =>
             {
                 DrawTransformData(targetObj, ref targetObj.from);
             });
             
             EditorGUILayout.Space();
             
-            DrawFoldout(targetObj, FromLabel, ref ms_ShowTo, _ =>
+            DrawFoldout(targetObj, ToLabel, ref ms_ShowTo, _ =>
             {
                 DrawTransformData(targetObj, ref targetObj.to);
             });
@@ -51,6 +51,10 @@ namespace CustomPlayables.Editor
             EditorGUILayout.Space();
             
             DrawFoldout(targetObj, ConstraintsLabel, ref ms_ShowConstraints, DrawConstraints);
+            
+            EditorGUILayout.Space();
+            
+            DrawRestoreDefaultButton(targetObj);
         }
         
 
@@ -109,6 +113,14 @@ namespace CustomPlayables.Editor
             DrawCurveGroup(RotationLabel, ref target.rotationCurve, target.rotationConstraints);
             DrawCurveGroup(ScaleLabel, ref target.scaleCurve, target.scaleConstraints);
         }
+
+        private static void DrawRestoreDefaultButton(TransformClip target)
+        {
+            if (GUILayout.Button("Restore Default Values"))
+            {
+                target.RestoreDefaultValues();
+            }
+        }
         
         private static void DrawCurveGroup(string title, ref TransformClip.AnimationCurveGroup value, TransformClip.Vector3Constraints constraints)
         {
@@ -117,8 +129,7 @@ namespace CustomPlayables.Editor
             
             EditorGUILayout.LabelField(title, GUILayout.Width(80f));
 
-
-            Debug.Log(constraints);
+            
             if (constraints.IsNone())
             {
                 EditorGUILayout.LabelField(AllAxisesAreConstrained);

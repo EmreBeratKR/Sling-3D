@@ -45,53 +45,61 @@ namespace CustomPlayables
             
             var normalizedTime = playable.GetNormalizedTime();
             
-            var position = ProcessVector3(m_BindingTransform.position, from.position, to.position, positionConstraints, normalizedTime);
+            var position = ProcessVector3(m_BindingTransform.position, from.position, to.position, positionConstraints, positionCurve, normalizedTime);
             m_BindingTransform.position = position;
 
-            var rotation = ProcessQuaternion(m_BindingTransform.rotation, from.rotation, to.rotation, rotationConstraints, normalizedTime);
+            var rotation = ProcessQuaternion(m_BindingTransform.rotation, from.rotation, to.rotation, rotationConstraints, rotationCurve, normalizedTime);
             m_BindingTransform.rotation = rotation;
             
-            var scale = ProcessVector3(m_BindingTransform.localScale, from.scale, to.scale, scaleConstraints, normalizedTime);
+            var scale = ProcessVector3(m_BindingTransform.localScale, from.scale, to.scale, scaleConstraints, scaleCurve, normalizedTime);
             m_BindingTransform.localScale = scale;
         }
+        
 
-        public override void OnBehaviourPause(Playable playable, FrameData info)
-        {
-            RestoreDefaultValues();
-        }
-
-        private static Vector3 ProcessVector3(Vector3 current, Vector3 from, Vector3 to, TransformClip.Vector3Constraints constraints, float t)
+        private static Vector3 ProcessVector3(
+            Vector3 current, 
+            Vector3 from, 
+            Vector3 to, 
+            TransformClip.Vector3Constraints constraints, 
+            TransformClip.AnimationCurveGroup curveGroup, 
+            float t)
         {
             var result = current;
 
             if (constraints.ContainsX())
             {
-                result.x = Mathf.Lerp(from.x, to.x, t);
+                result.x = Mathf.Lerp(from.x, to.x, curveGroup.x.Evaluate(t));
             }
             
             if (constraints.ContainsY())
             {
-                result.y = Mathf.Lerp(from.y, to.y, t);
+                result.y = Mathf.Lerp(from.y, to.y, curveGroup.y.Evaluate(t));
             }
             
             if (constraints.ContainsZ())
             {
-                result.z = Mathf.Lerp(from.z, to.z, t);
+                result.z = Mathf.Lerp(from.z, to.z, curveGroup.z.Evaluate(t));
             }
 
             return result;
         }
 
-        private static Quaternion ProcessQuaternion(Quaternion current, Vector3 from, Vector3 to, TransformClip.Vector3Constraints constraints, float t)
+        private static Quaternion ProcessQuaternion(
+            Quaternion current, 
+            Vector3 from, 
+            Vector3 to, 
+            TransformClip.Vector3Constraints constraints, 
+            TransformClip.AnimationCurveGroup curveGroup,
+            float t)
         {
             var currentEulerAngles = current.eulerAngles;
-            var constrainedFrom = ProcessVector3(currentEulerAngles, from, from, constraints, t);
-            var constrainedTo = ProcessVector3(currentEulerAngles, to, to, constraints, t);
+            var constrainedFrom = ProcessVector3(currentEulerAngles, from, from, constraints, curveGroup, t);
+            var constrainedTo = ProcessVector3(currentEulerAngles, to, to, constraints, curveGroup, t);
 
             return Quaternion.Lerp(Quaternion.Euler(constrainedFrom), Quaternion.Euler(constrainedTo), t);
         }
 
-        private void RestoreDefaultValues()
+        public void RestoreDefaultValues()
         {
             if (!m_BindingTransform) return;
 
