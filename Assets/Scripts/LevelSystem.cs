@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using CutsceneSystem;
 using Data_Container;
 using Helpers;
 using ScriptableEvents.Core.Channels;
@@ -22,6 +23,9 @@ public class LevelSystem : Scenegleton<LevelSystem>
     [SerializeField] private AudioClipContainer levelAudioClipContainer;
     [SerializeField] private SoundPlayer levelSoundPlayer;
     [SerializeField] private Transform levelParent;
+
+    [Header("Values")]
+    [SerializeField] private bool isCutscene;
     
     
     public static LevelData CurrentLevelData { get; private set; }
@@ -76,7 +80,20 @@ public class LevelSystem : Scenegleton<LevelSystem>
     protected override void Awake()
     {
         base.Awake();
+
+        if (isCutscene) return;
+        
         LoadLevel();
+    }
+
+    private void OnEnable()
+    {
+        AddListeners();
+    }
+
+    private void OnDisable()
+    {
+        RemoveListeners();
     }
 
 
@@ -100,6 +117,12 @@ public class LevelSystem : Scenegleton<LevelSystem>
     }
 
 
+    private void OnCutsceneInitialized(CutsceneEventResponse response)
+    {
+        levelStatus = LevelStatus.Playing;
+    }
+    
+
     private void LoadLevel()
     {
         CurrentLevelData = levelDataContainer[SelectedLevel];
@@ -113,6 +136,16 @@ public class LevelSystem : Scenegleton<LevelSystem>
             
             levelLoaded.RaiseEvent();
         }
+    }
+
+    private void AddListeners()
+    {
+        CutsceneManager.OnCutsceneInitialized += OnCutsceneInitialized;
+    }
+
+    private void RemoveListeners()
+    {
+        CutsceneManager.OnCutsceneInitialized -= OnCutsceneInitialized;
     }
 }
 
