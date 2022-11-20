@@ -68,17 +68,17 @@ namespace CustomPlayables
 
             if (constraints.ContainsX())
             {
-                result.x = Mathf.Lerp(from.x, to.x, curveGroup.x.Evaluate(t));
+                result.x = Mathf.LerpUnclamped(from.x, to.x, curveGroup.x.Evaluate(t));
             }
             
             if (constraints.ContainsY())
             {
-                result.y = Mathf.Lerp(from.y, to.y, curveGroup.y.Evaluate(t));
+                result.y = Mathf.LerpUnclamped(from.y, to.y, curveGroup.y.Evaluate(t));
             }
             
             if (constraints.ContainsZ())
             {
-                result.z = Mathf.Lerp(from.z, to.z, curveGroup.z.Evaluate(t));
+                result.z = Mathf.LerpUnclamped(from.z, to.z, curveGroup.z.Evaluate(t));
             }
 
             return result;
@@ -96,7 +96,7 @@ namespace CustomPlayables
             var constrainedFrom = ProcessVector3(currentEulerAngles, from, from, constraints, curveGroup, t);
             var constrainedTo = ProcessVector3(currentEulerAngles, to, to, constraints, curveGroup, t);
 
-            return Quaternion.Lerp(Quaternion.Euler(constrainedFrom), Quaternion.Euler(constrainedTo), t);
+            return Quaternion.LerpUnclamped(Quaternion.Euler(constrainedFrom), Quaternion.Euler(constrainedTo), t);
         }
 
         public void RestoreDefaultValues()
