@@ -25,12 +25,13 @@ namespace Sling
         [SerializeField, Min(0.1f)] private float minRadius;
         [SerializeField] private bool useMinRadius;
 
-    
-        private SphereCollider rangeCollider;
+
+        public bool InputEnabled { get; set; } = true;
         public bool IsDragging { get; private set; }
 
 
         public float Radius => rangeCollider.radius;
+        private SphereCollider rangeCollider;
 
         public Vector3? ClosestAttachSpot
         {
@@ -123,6 +124,8 @@ namespace Sling
         {
             if (!LevelSystem.IsPlaying) return;
             
+            if (!InputEnabled) return;
+            
             if (!arm.IsAttached && !arm.HasAttachSpotNearBy) return;
 
             IsDragging = true;
@@ -158,6 +161,8 @@ namespace Sling
 
         private void OnMouseEnter()
         {
+            if (!InputEnabled) return;
+            
             enteredStretchRange.RaiseEvent();
         }
 

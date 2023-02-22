@@ -1,4 +1,5 @@
 using System;
+using Sling;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +7,9 @@ namespace CutsceneSystem
 {
     public class CutsceneManager : MonoBehaviour
     {
+        [SerializeField] private SlingRange slingRange;
+        
+        
         public static UnityAction<CutsceneEventResponse> OnCutsceneInitialized;
 
 
@@ -14,6 +18,12 @@ namespace CutsceneSystem
             InitializeCutscene();
         }
 
+
+        public void SetActiveSlingInput(bool value)
+        {
+            slingRange.InputEnabled = value;
+        }
+        
 
         private void InitializeCutscene()
         {

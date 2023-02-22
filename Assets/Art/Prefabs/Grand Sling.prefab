@@ -358,7 +358,7 @@ MonoBehaviour:
   arm: {fileID: 1370388615088995169}
   head: {fileID: 1370388613931009146}
   equilibriumOffset: {x: 0, y: -1.7, z: 0}
-  spring: 50
+  spring: 35
 --- !u!1 &1370388614123992704
 GameObject:
   m_ObjectHideFlags: 0
