@@ -1,9 +1,11 @@
+using System;
 using Data_Container;
 using Handle_System;
 using ScriptableEvents.Core.Channels;
 using SoundSystem;
 using TubeSystem;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Sling
 {
@@ -21,6 +23,9 @@ namespace Sling
         [SerializeField] private SlingRange range;
         [SerializeField] private SlingSound sound;
         [SerializeField] private Transform armModel;
+
+
+        public event Action<Handle> OnGrabHandle; 
 
 
         private Rigidbody body;
@@ -221,6 +226,7 @@ namespace Sling
             IsAttached = true;
         
             transform.position = position;
+            OnGrabHandle?.Invoke(AttachedHandle);
             slingArmAttached.RaiseEvent();
             sound.PlayGrab();
         }
