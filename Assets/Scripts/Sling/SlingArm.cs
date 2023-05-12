@@ -62,12 +62,14 @@ namespace Sling
         {
             Tube.OnSlingEntered += OnSlingEnteredTube;
             SlingBehaviour.OnThrownByThrowerHandle += OnSlingThrownByThrowerHandle;
+            Handle.OnAnyHandleDisabled += OnAnyHandleDisabled;
         }
 
         private void OnDisable()
         {
             Tube.OnSlingEntered -= OnSlingEnteredTube;
             SlingBehaviour.OnThrownByThrowerHandle -= OnSlingThrownByThrowerHandle;
+            Handle.OnAnyHandleDisabled -= OnAnyHandleDisabled;
         }
 
         private void FixedUpdate()
@@ -144,6 +146,11 @@ namespace Sling
         {
             AttachedHandle.IgnoreFor(0.1f);
             AutoDetach();
+        }
+
+        private void OnAnyHandleDisabled(Handle.AnyDisabledArgs args)
+        {
+            TryAutoDetach(args.handle);
         }
 
         public bool IsAttachedTo(Handle handle)

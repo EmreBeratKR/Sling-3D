@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,11 +10,25 @@ namespace Handle_System
         public Vector3 Position => transform.position;
 
 
+        public static event Action<AnyDisabledArgs> OnAnyHandleDisabled;
+        public struct AnyDisabledArgs
+        {
+            public Handle handle;
+        }
         public UnityEvent onAttached;
 
         
         private bool m_IsAttachable = true;
         private bool m_IsIgnored;
+
+
+        private void OnDisable()
+        {
+            OnAnyHandleDisabled?.Invoke(new AnyDisabledArgs
+            {
+                handle = this
+            });
+        }
 
 
         public bool TryAttach()
