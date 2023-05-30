@@ -4,7 +4,7 @@ namespace CutsceneSystem
 {
     public class TutorialManager : MonoBehaviour
     {
-        private GrabHandleTutorial[] m_Tutorials;
+        private Tutorial[] m_Tutorials;
 
 
         private int m_TutorialIndex = -1;
@@ -12,7 +12,7 @@ namespace CutsceneSystem
 
         private void Awake()
         {
-            m_Tutorials = GetComponentsInChildren<GrabHandleTutorial>();
+            m_Tutorials = GetComponentsInChildren<Tutorial>();
         }
 
 
@@ -24,7 +24,7 @@ namespace CutsceneSystem
         }
 
 
-        private GrabHandleTutorial GetTutorial(int index)
+        private Tutorial GetTutorial(int index)
         {
             return m_Tutorials[index];
         }

@@ -25,7 +25,8 @@ namespace Sling
         [SerializeField] private Transform armModel;
 
 
-        public event Action<Handle> OnGrabHandle; 
+        public event Action<Handle> OnGrabHandle;
+        public event Action<Handle> OnDetachHandle; 
 
 
         private Rigidbody body;
@@ -250,6 +251,7 @@ namespace Sling
         
             isThrown = false;
             slingArmDetached.RaiseEvent();
+            OnDetachHandle?.Invoke(AttachedHandle);
         }
         
         
