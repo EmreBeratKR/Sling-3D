@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -801,6 +801,7 @@ Transform:
   - {fileID: 1188176890}
   - {fileID: 769163307}
   - {fileID: 1166161492}
+  - {fileID: 1624727258}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1943,6 +1944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1166161492}
   - component: {fileID: 1166161493}
+  - component: {fileID: 1166161494}
   m_Layer: 0
   m_Name: Tutorial (3)
   m_TagString: Untagged
@@ -1982,9 +1984,47 @@ MonoBehaviour:
       m_Calls: []
   onComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1166161494}
+        m_TargetAssemblyTypeName: CutsceneSystem.PlayTimelineAsset, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 437357400}
+        m_TargetAssemblyTypeName: CutsceneSystem.TutorialManager, Assembly-CSharp
+        m_MethodName: NextTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   arm: {fileID: 590686628}
   handle: {fileID: 673308481}
+--- !u!114 &1166161494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166161491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a41528ee6a4d51bec4e306b2320030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 1662546334}
+  timelineAsset: {fileID: 11400000, guid: 221f792c5f4d8634cbb2539eda6a2145, type: 2}
 --- !u!1 &1188176889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,6 +2934,62 @@ Transform:
   m_Father: {fileID: 457829251}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1624727257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624727258}
+  - component: {fileID: 1624727259}
+  m_Layer: 0
+  m_Name: Tutorial (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1624727258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624727257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 437357399}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1624727259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624727257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e456f4acfe4e17b3ffe77c0d65ac35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  arm: {fileID: 590686628}
+  handles:
+  - {fileID: 1925192426}
+  - {fileID: 275645026}
+  - {fileID: 1913409101}
+  - {fileID: 673308481}
 --- !u!1 &1626822831
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,7 +3161,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1662546332}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 3a3cda45dcc9b4365a2075a6bee901b7, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 6caeec568cd4e664c97a0d72576683c4, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -3120,6 +3216,14 @@ PlayableDirector:
   - key: {fileID: -4610657653800054506, guid: 3a3cda45dcc9b4365a2075a6bee901b7, type: 2}
     value: {fileID: 275531417}
   - key: {fileID: 469554705164026446, guid: 3a3cda45dcc9b4365a2075a6bee901b7, type: 2}
+    value: {fileID: 1469211674}
+  - key: {fileID: -5274871008849306527, guid: 221f792c5f4d8634cbb2539eda6a2145, type: 2}
+    value: {fileID: 187320039}
+  - key: {fileID: 8786298126546787530, guid: 221f792c5f4d8634cbb2539eda6a2145, type: 2}
+    value: {fileID: 1277642960}
+  - key: {fileID: -4610657653800054506, guid: 221f792c5f4d8634cbb2539eda6a2145, type: 2}
+    value: {fileID: 275531417}
+  - key: {fileID: 469554705164026446, guid: 221f792c5f4d8634cbb2539eda6a2145, type: 2}
     value: {fileID: 1469211674}
   m_ExposedReferences:
     m_References: []
@@ -3387,6 +3491,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1913409098}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913409100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40453af1ebab483bb78201eaa252b646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1925192426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+    type: 3}
+  m_PrefabInstance: {fileID: 758749961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40453af1ebab483bb78201eaa252b646, type: 3}

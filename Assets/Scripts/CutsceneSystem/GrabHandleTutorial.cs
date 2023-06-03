@@ -1,7 +1,6 @@
 using Handle_System;
 using Sling;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CutsceneSystem
 {

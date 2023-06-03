@@ -7,7 +7,6 @@ namespace CutsceneSystem
     public class DropFromHandleTutorial : Tutorial
     {
         [SerializeField] private SlingArm arm;
-        [SerializeField] private Handle handle;
 
 
         private void Awake()
@@ -26,8 +25,6 @@ namespace CutsceneSystem
             if (!isBegin) return;
             
             if (isComplete) return;
-            
-            if (detachHandle != handle) return;
 
             Complete();
         }
