@@ -23,6 +23,11 @@ namespace CutsceneSystem
         {
             slingRange.InputEnabled = value;
         }
+
+        public void LoadLevelMap()
+        {
+            SceneController.Instance.LoadLevelMap();
+        }
         
 
         private void InitializeCutscene()

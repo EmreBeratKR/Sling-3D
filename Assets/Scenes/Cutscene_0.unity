@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 98e63bc563e32aa4f88bc5c329497ba1,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -172,6 +173,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 42a05e0911d16496e867428dc2803b18, type: 2}
     - {fileID: 11400000, guid: 9629a078f22b445d7b5c34225ceff6e5, type: 2}
     - {fileID: 11400000, guid: 9fb4064fb2807cf40965241e9ef1e7e9, type: 2}
+    - {fileID: 11400000, guid: 400cd2b1d6c6ba647871c88a2efdd503, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -206,6 +208,20 @@ MonoBehaviour:
         - m_Target: {fileID: 437357400}
           m_TargetAssemblyTypeName: CutsceneSystem.TutorialManager, Assembly-CSharp
           m_MethodName: NextTutorial
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1626822833}
+          m_TargetAssemblyTypeName: CutsceneSystem.CutsceneManager, Assembly-CSharp
+          m_MethodName: LoadLevelMap
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -833,6 +849,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CutsceneSystem.PlayTimelineAsset, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 437357400}
+        m_TargetAssemblyTypeName: CutsceneSystem.TutorialManager, Assembly-CSharp
+        m_MethodName: MarkTutorialCompleted
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3762,6 +3790,8 @@ PlayableDirector:
     value: {fileID: 275531417}
   - key: {fileID: 469554705164026446, guid: 74466388fbd20dd418d853c5be825eff, type: 2}
     value: {fileID: 1469211674}
+  - key: {fileID: 8248804849053692666, guid: 74466388fbd20dd418d853c5be825eff, type: 2}
+    value: {fileID: 44644233}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &1681888803

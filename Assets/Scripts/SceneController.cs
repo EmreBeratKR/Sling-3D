@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : Singleton<SceneController>
 {
+    private const int CutSceneStartIndex = 3;
+    
+    
     [SerializeField, Scene] private int 
         mainMenu,
         levelMap,
@@ -31,8 +34,8 @@ public class SceneController : Singleton<SceneController>
     {
         SceneManager.LoadScene(game);
     }
-    
-    
+
+
     private void RestartLevel()
     {
         StartCoroutine(Restart());
@@ -42,5 +45,11 @@ public class SceneController : Singleton<SceneController>
             yield return new WaitForSeconds(1f);
             LoadGame();
         }
+    }
+    
+    
+    public static void LoadCutScene(int index)
+    {
+        SceneManager.LoadScene(CutSceneStartIndex + index);
     }
 }

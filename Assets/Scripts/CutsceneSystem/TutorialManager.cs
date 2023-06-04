@@ -28,5 +28,16 @@ namespace CutsceneSystem
         {
             return m_Tutorials[index];
         }
+
+
+        public static void MarkTutorialCompleted(int index)
+        {
+            PlayerPrefs.SetInt($"Tutorial_{index}", 1);
+        }
+        
+        public static bool IsTutorialCompleted(int index)
+        {
+            return PlayerPrefs.GetInt($"Tutorial_{index}", 0) == 1;
+        }
     }
 }
