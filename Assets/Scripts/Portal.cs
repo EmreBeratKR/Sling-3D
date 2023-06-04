@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using Handle_System;
 using NaughtyAttributes;
 using ScriptableEvents.Core.Channels;
 using SoundSystem;
@@ -52,6 +53,11 @@ public class Portal : MonoBehaviour
     public void OnLevelCompleted()
     {
         Close();
+    }
+
+    public PortalHandle GetHandle()
+    {
+        return handle.GetComponent<PortalHandle>();
     }
     
     

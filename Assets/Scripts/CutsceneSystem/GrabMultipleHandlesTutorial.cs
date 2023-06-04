@@ -42,7 +42,6 @@ namespace CutsceneSystem
                 if (IsCompleted())
                 {
                     Complete();
-                    Debug.Log("completed hurraaa");
                 }
             }
         }

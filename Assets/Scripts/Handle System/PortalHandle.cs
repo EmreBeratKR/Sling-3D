@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using ScriptableEvents.Core.Channels;
-using SoundSystem;
 using UnityEngine;
 
 namespace Handle_System
@@ -12,11 +12,15 @@ namespace Handle_System
         [SerializeField] private PortalSound sound;
 
 
+        public event Action OnSlingAttached;
+        
+
         protected override void OnAttached()
         {
             base.OnAttached();
             
             slingAttachedToPortal.RaiseEvent();
+            OnSlingAttached?.Invoke();
 
             StartCoroutine(Routine());
 

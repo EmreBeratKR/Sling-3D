@@ -14,5 +14,10 @@ namespace CutsceneSystem
         {
             director.Play(timelineAsset);
         }
+
+        public void Stop()
+        {
+            director.Stop();
+        }
     }
 }
