@@ -545,6 +545,7 @@ MonoBehaviour:
     type: 2}
   levelSoundPlayer: {fileID: 1988967770}
   levelParent: {fileID: 1788459477}
+  isCutscene: 0
 --- !u!1 &206658471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,7 +1571,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 75007737}
         m_TargetAssemblyTypeName: ButtonCallbacks, Assembly-CSharp
-        m_MethodName: RaiseLoadLevelMap
+        m_MethodName: OnClickNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

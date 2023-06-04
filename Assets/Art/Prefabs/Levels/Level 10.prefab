@@ -78,6 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 343877196029413599}
+  - component: {fileID: -4928306526532004442}
   m_Layer: 0
   m_Name: Level 10
   m_TagString: Untagged
@@ -104,6 +105,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4928306526532004442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343877196029413592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd19b0f4ca504608972d88d93ad7776a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutSceneIndex: 2
 --- !u!1 &7891521123402988466
 GameObject:
   m_ObjectHideFlags: 0

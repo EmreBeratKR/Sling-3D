@@ -28,6 +28,12 @@ namespace CutsceneSystem
         {
             SceneController.Instance.LoadLevelMap();
         }
+
+        public void SkipCutscene(int index)
+        {
+            TutorialManager.MarkTutorialCompleted(index);
+            LoadLevelMap();
+        }
         
 
         private void InitializeCutscene()

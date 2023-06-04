@@ -20,6 +20,19 @@ public class ButtonCallbacks : MonoBehaviour
         
         SceneController.LoadCutScene(0);
     }
+
+    public void OnClickNextButton()
+    {
+        var loadCutScene = FindObjectOfType<LoadLevelCutScene>();
+
+        if (loadCutScene)
+        {
+            loadCutScene.Load();
+            return;
+        }
+        
+        RaiseLoadLevelMap();
+    }
     
     
     public void RaiseLoadMainMenu()
