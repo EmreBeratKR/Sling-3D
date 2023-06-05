@@ -12,5 +12,10 @@ namespace CutsceneSystem
         {
             SceneController.LoadCutScene(cutSceneIndex);
         }
+
+        public bool IsCompleted()
+        {
+            return TutorialManager.IsTutorialCompleted(cutSceneIndex);
+        }
     }
 }

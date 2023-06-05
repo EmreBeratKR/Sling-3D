@@ -27,8 +27,11 @@ public class ButtonCallbacks : MonoBehaviour
 
         if (loadCutScene)
         {
-            loadCutScene.Load();
-            return;
+            if (!loadCutScene.IsCompleted())
+            {
+                loadCutScene.Load();
+                return;
+            }
         }
         
         RaiseLoadLevelMap();
