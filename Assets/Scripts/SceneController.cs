@@ -44,12 +44,20 @@ public class SceneController : Singleton<SceneController>
         {
             yield return new WaitForSeconds(1f);
             LoadGame();
+            SceneTransition.FadeInOutSlime();
         }
     }
     
     
     public static void LoadCutScene(int index)
     {
-        SceneManager.LoadScene(CutSceneStartIndex + index);
+        Instance.StartCoroutine(Routine());
+        
+        IEnumerator Routine()
+        {
+            SceneManager.LoadScene(CutSceneStartIndex + index);
+            yield return null;
+            SceneTransition.FadeInOutSlime();
+        }
     }
 }
