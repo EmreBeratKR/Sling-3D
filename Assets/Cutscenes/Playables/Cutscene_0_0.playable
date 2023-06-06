@@ -1194,13 +1194,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 3
-        value: -4.07
+        value: -5.21
         inSlope: 0
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1463,13 +1463,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 3
-        value: -4.07
+        value: -5.21
         inSlope: 0
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -3530,7 +3530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    fontSize: 5
+    fontSize: 4
     text: '"...creating a doorway to
 
       our world, through which,
@@ -9044,7 +9044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
-    fontSize: 5
+    fontSize: 4
     text: '"CLICK and HOLD the
 
       mouse over your ''HEAD''
