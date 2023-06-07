@@ -55,6 +55,14 @@ public class Portal : MonoBehaviour
         Close();
     }
 
+    public void CloseAndGoBackToInitialPosition()
+    {
+        Close(() =>
+        {
+            transform.position -= exit.localPosition;
+        });
+    }
+
     public PortalHandle GetHandle()
     {
         return handle.GetComponent<PortalHandle>();
@@ -88,7 +96,7 @@ public class Portal : MonoBehaviour
     }
 
     [Button(enabledMode: EButtonEnableMode.Playmode)]
-    private void Close()
+    private void Close(TweenCallback onCompleted = default)
     {
         if (state == State.Close) return;
 
@@ -96,7 +104,8 @@ public class Portal : MonoBehaviour
         handle.SetActive(false);
         
         model.DOScale(Vector3.zero, duration)
-            .SetEase(closeEasing);
+            .SetEase(closeEasing)
+            .OnComplete(onCompleted);
     }
 
     private void InstantClose()

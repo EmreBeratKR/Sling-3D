@@ -268,7 +268,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1598245132}
           m_TargetAssemblyTypeName: Portal, Assembly-CSharp
-          m_MethodName: OnLevelCompleted
+          m_MethodName: CloseAndGoBackToInitialPosition
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
