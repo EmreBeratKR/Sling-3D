@@ -2489,7 +2489,7 @@ PrefabInstance:
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
@@ -2504,6 +2504,11 @@ PrefabInstance:
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
@@ -2523,6 +2528,11 @@ PrefabInstance:
       objectReference: {fileID: 690738480}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 690738484}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2534,6 +2544,11 @@ PrefabInstance:
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
@@ -2553,6 +2568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Talk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CutsceneSystem.PlayTimelineAsset, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2568,6 +2588,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CutsceneSystem.TalkGrandSlingForSeconds, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -2579,6 +2604,11 @@ PrefabInstance:
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2650,6 +2680,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   director: {fileID: 1662546334}
   timelineAsset: {fileID: 0}
+--- !u!114 &690738484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690738475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d9a7983c44dcb96c64ea5c06d7138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grandSling: {fileID: 2978579531205290365}
+  seconds: 0.86
 --- !u!1 &691349484
 GameObject:
   m_ObjectHideFlags: 0
@@ -11766,7 +11810,7 @@ PrefabInstance:
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
@@ -11781,6 +11825,11 @@ PrefabInstance:
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
@@ -11800,6 +11849,11 @@ PrefabInstance:
       objectReference: {fileID: 1847464039}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1847464043}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -11811,6 +11865,11 @@ PrefabInstance:
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
@@ -11830,6 +11889,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Talk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CutsceneSystem.PlayTimelineAsset, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -11845,6 +11909,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CutsceneSystem.TalkGrandSlingForSeconds, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -11856,6 +11925,11 @@ PrefabInstance:
     - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11927,6 +12001,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   director: {fileID: 1662546334}
   timelineAsset: {fileID: 0}
+--- !u!114 &1847464043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847464034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d9a7983c44dcb96c64ea5c06d7138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grandSling: {fileID: 2978579531205290365}
+  seconds: 1.35
 --- !u!1 &1872801498
 GameObject:
   m_ObjectHideFlags: 0
