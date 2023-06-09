@@ -180,6 +180,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4d9ab41ee759227428e0ec78ac3a47dc, type: 2}
     - {fileID: 11400000, guid: 1c0f6cb1b9e77a3489ac95d373157725, type: 2}
     - {fileID: 11400000, guid: b2218dac01f814f4bb68ad10f892e000, type: 2}
+    - {fileID: 11400000, guid: d4729104f2182de4db96deccd14ab781, type: 2}
+    - {fileID: 11400000, guid: 586d3f77e49cc0f4ab94dab173200ef4, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -337,6 +339,34 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
           m_MethodName: Play
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2978579531205290365}
+          m_TargetAssemblyTypeName: GrandSling.GrandSlingBehaviour, Assembly-CSharp
+          m_MethodName: SetIsTalking
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2978579531205290365}
+          m_TargetAssemblyTypeName: GrandSling.GrandSlingBehaviour, Assembly-CSharp
+          m_MethodName: SetIsTalking
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6614,6 +6644,8 @@ PlayableDirector:
     value: {fileID: 44644233}
   - key: {fileID: 4750738064291915855, guid: 6caeec568cd4e664c97a0d72576683c4, type: 2}
     value: {fileID: 1540586650}
+  - key: {fileID: -7476124604977283357, guid: b9128ff50002ce24f8d1320024d41f43, type: 2}
+    value: {fileID: 44644233}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1681717895
@@ -12731,6 +12763,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: slimeMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d1f3ed08ff8b334cbdf824eb3a6f417, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb01386dfa044b5484b582e77207ce2, type: 3}
 --- !u!4 &2071002733 stripped
@@ -13393,6 +13430,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a40e6861a8ec0940bf4ed05bef82ea2, type: 3}
+--- !u!114 &2978579531205290365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1370388614650162196, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2978579531205290364}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261c541b86c34444a008802b7a6c3467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &2984501988299289227
 MeshRenderer:
   m_ObjectHideFlags: 0
