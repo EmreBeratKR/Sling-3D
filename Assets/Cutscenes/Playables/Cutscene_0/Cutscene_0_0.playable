@@ -397,6 +397,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Oooh!"'
 --- !u!114 &-8146028007090037183
 MonoBehaviour:
@@ -656,6 +657,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Well, who knows?"'
 --- !u!114 &-6590665940034365362
 MonoBehaviour:
@@ -761,6 +763,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Okey, see that
 
       GRAB above you?"'
@@ -779,6 +782,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Our Powersource
 
       is failing!"'
@@ -797,6 +801,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Oh no!
 
       Our world is
@@ -819,6 +824,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Without even one of
 
       these elements - our
@@ -877,6 +883,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"DIRT!"'
 --- !u!114 &-5902779523736934560
 MonoBehaviour:
@@ -1066,6 +1073,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"FIRE!"'
 --- !u!114 &-5008624825437457582
 MonoBehaviour:
@@ -1132,6 +1140,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"It''s a MAP of the
 
       parallel dimension!
@@ -14088,6 +14097,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"WATER!"'
 --- !u!114 &-4389759228155087424
 MonoBehaviour:
@@ -14202,6 +14212,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 4
+    fontStyles: 1
     text: '"...creating a doorway to
 
       our world, through which,
@@ -17016,6 +17027,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: "\"Wow...what\nwere the chances\n of that?\""
 --- !u!114 &-2222445442788493437
 MonoBehaviour:
@@ -17064,6 +17076,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Aaaah!
 
       Lovely isn''t it?"'
@@ -17175,6 +17188,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Rebound of the
 
       floor and grab it!"'
@@ -17282,6 +17296,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"As you know, our job,
 
       as Power-Keepers, is to
@@ -17324,6 +17339,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Here - you''ll be
 
       needing this on
@@ -17410,6 +17426,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"But first, if you''re
 
       to survive, you
@@ -17450,6 +17467,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"It is made up of all
 
       elements necessary
@@ -17472,6 +17490,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"One of us has to
 
       go and retrieve the
@@ -17492,6 +17511,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"I know what
 
       you''re thinking..."'
@@ -17510,6 +17530,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"AH! My new
 
       Power-Keeper
@@ -17628,6 +17649,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Then RELEASE the
 
       mouse - and rebound
@@ -17648,6 +17670,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"SLIME!"'
 --- !u!114 &-344426518090802232
 MonoBehaviour:
@@ -17783,6 +17806,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Maybe a magical
 
       cross-dimensional
@@ -18390,6 +18414,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Ha! ha!
 
       That ''floored'' you
@@ -18426,6 +18451,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"SPACE!"'
 --- !u!114 &1693308213288458543
 MonoBehaviour:
@@ -18492,6 +18518,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"What could possibly
 
       go wrong?"'
@@ -18590,6 +18617,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"ICE!"'
 --- !u!114 &2570762957195699781
 MonoBehaviour:
@@ -18687,6 +18715,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"AIR!"'
 --- !u!114 &2761352541882133902
 MonoBehaviour:
@@ -18784,6 +18813,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"MAGIC!"'
 --- !u!114 &3379809111863672852
 MonoBehaviour:
@@ -18817,6 +18847,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Aaah!"'
 --- !u!114 &3661631847679911365
 MonoBehaviour:
@@ -18849,6 +18880,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Let the lesson
 
       begin!"'
@@ -18916,6 +18948,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Hmm...
 
       What''s this?"'
@@ -20577,6 +20610,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Aah! I see you''ve
 
       put your hand up
@@ -20619,6 +20653,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"That creature
 
       took our
@@ -20641,6 +20676,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now!
 
       You give it a go!"'
@@ -20749,6 +20785,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"...and steal one of
 
       our elements to
@@ -20788,6 +20825,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"METAL!"'
 --- !u!114 &6062797763365963017
 MonoBehaviour:
@@ -20804,6 +20842,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"If you complete this
 
       task - your world will
@@ -21038,6 +21077,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 4
+    fontStyles: 1
     text: '"CLICK and HOLD the
 
       mouse over your ''HEAD''
@@ -21095,6 +21135,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"So we must be
 
       on the constant
@@ -21117,6 +21158,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"and of course..."'
 --- !u!114 &8636799920037504184
 MonoBehaviour:

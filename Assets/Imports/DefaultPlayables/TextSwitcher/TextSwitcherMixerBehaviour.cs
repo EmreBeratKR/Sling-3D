@@ -1,14 +1,13 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Timeline;
 
 public class TextSwitcherMixerBehaviour : PlayableBehaviour
 {
     Color m_DefaultColor;
     float m_DefaultFontSize;
     string m_DefaultText;
+    FontStyles m_DefaultFontStyle;
 
     TMP_Text m_TrackBinding;
     bool m_FirstFrameHappened;
@@ -25,6 +24,7 @@ public class TextSwitcherMixerBehaviour : PlayableBehaviour
             m_DefaultColor = m_TrackBinding.color;
             m_DefaultFontSize = m_TrackBinding.fontSize;
             m_DefaultText = m_TrackBinding.text;
+            m_DefaultFontStyle = m_TrackBinding.fontStyle;
             m_FirstFrameHappened = true;
         }
 
@@ -49,6 +49,7 @@ public class TextSwitcherMixerBehaviour : PlayableBehaviour
             if (inputWeight > greatestWeight)
             {
                 m_TrackBinding.text = input.text;
+                m_TrackBinding.fontStyle = input.fontStyles;
                 greatestWeight = inputWeight;
             }
 
@@ -74,5 +75,6 @@ public class TextSwitcherMixerBehaviour : PlayableBehaviour
         m_TrackBinding.color = m_DefaultColor;
         m_TrackBinding.fontSize = m_DefaultFontSize;
         m_TrackBinding.text = m_DefaultText;
+        m_TrackBinding.fontStyle = m_DefaultFontStyle;
     }
 }

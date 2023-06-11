@@ -233,6 +233,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now you just need to
 
       open the Magical
@@ -349,6 +350,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"GOOEY!
 
       GOOBIE!
@@ -442,6 +444,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Time for a little
 
       GOO MAGIC!"'
@@ -993,6 +996,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"GOOEY!"'
 --- !u!114 &-1154168448324301248
 MonoBehaviour:
@@ -1050,6 +1054,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 4
+    fontStyles: 1
     text: '"If you grab each one
 
       (turning them green),
@@ -1444,6 +1449,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"This magic will
 
       work wherever
@@ -2782,6 +2788,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"GOOEY!
 
       GOOBIE!"'
@@ -3084,6 +3091,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now!
 
       You give it a go!"'
@@ -3118,6 +3126,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Good!
 
       You''re ready to begin
@@ -3851,6 +3860,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Some grabs are going
 
       to appear!"'

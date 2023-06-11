@@ -419,6 +419,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now you need to
 
       learn how to drop!"'
@@ -1946,6 +1947,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Very good indeed!"'
 --- !u!114 &8765789700084301033
 MonoBehaviour:
@@ -1962,6 +1964,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"It''s easy!
 
       Just CLICK your

@@ -15,6 +15,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"There it is!
 
       There it is!"'
@@ -33,6 +34,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now! Grab the vortex
 
       and go forth to defeat

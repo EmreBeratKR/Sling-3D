@@ -32,6 +32,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Good-bye
 
       my Apprentice,
@@ -508,6 +509,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Nah!"'
 --- !u!114 &946904862781314786
 MonoBehaviour:
@@ -681,6 +683,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Hmm... I probably
 
       should have gone

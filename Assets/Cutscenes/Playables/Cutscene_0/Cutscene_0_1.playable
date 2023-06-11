@@ -3999,6 +3999,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Perfect!"'
 --- !u!114 &-4198732792519262960
 MonoBehaviour:
@@ -4032,6 +4033,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 4
+    fontStyles: 1
     text: '"CLICK and HOLD the
 
       mouse over your ''HEAD''
@@ -4073,6 +4075,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Well done!"'
 --- !u!114 &-1483049644498128306
 MonoBehaviour:
@@ -4215,6 +4218,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now!
 
       You give it a go!"'
@@ -4758,6 +4762,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now, see that
 
       other grab?..."'

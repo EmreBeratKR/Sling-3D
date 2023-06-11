@@ -79,6 +79,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"I wonder how my
 
       Apprentice is doing..."'
@@ -130,6 +131,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 4
+    fontStyles: 1
     text: '"Wow! Imagine if he
 
       manages to turn all the
@@ -212,6 +214,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"IF he gets back."'
 --- !u!114 &-4610657653800054506
 MonoBehaviour:
@@ -809,6 +812,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Well nevermind, he can
 
       always use the map to
@@ -880,6 +884,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"I probably should have
 
       explained that map a
@@ -1734,6 +1739,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"I hope he''s discovered
 
       that the map''s location

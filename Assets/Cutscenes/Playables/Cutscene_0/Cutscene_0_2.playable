@@ -153,6 +153,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"And remember...
 
       Gravity works!"'
@@ -260,6 +261,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now!
 
       See that other grab?"'
@@ -1145,6 +1147,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 4
+    fontStyles: 1
     text: '"CLICK and HOLD the
 
       mouse over your ''HEAD''
@@ -6731,6 +6734,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: "\"It's too far to stretch\nto, you have to \nFLING yourself\nover to it!\""
 --- !u!114 &4275151823874007068
 MonoBehaviour:
@@ -6906,6 +6910,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"You did it!"'
 --- !u!114 &6822400210366196998
 MonoBehaviour:
@@ -6922,6 +6927,7 @@ MonoBehaviour:
   template:
     color: {r: 1, g: 1, b: 1, a: 1}
     fontSize: 5
+    fontStyles: 1
     text: '"Now,
 
       you give it a go!"'
