@@ -286,7 +286,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
+            m_IntArgument: 4
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -458,7 +458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2978579531205290366}
+  - {fileID: 2978579531205290367}
   - {fileID: 1139372064}
   - {fileID: 1082112467}
   - {fileID: 457829251}
@@ -1657,7 +1657,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2886,7 +2886,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1662546332}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 0a4f44330ea6c964591533c9504c1303, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: c3efa143183d87d43ba2aad9e0f9b3d0, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -3025,6 +3025,16 @@ PlayableDirector:
   - key: {fileID: -4610657653800054506, guid: 0a4f44330ea6c964591533c9504c1303, type: 2}
     value: {fileID: 275531417}
   - key: {fileID: 469554705164026446, guid: 0a4f44330ea6c964591533c9504c1303, type: 2}
+    value: {fileID: 1469211674}
+  - key: {fileID: 8248804849053692666, guid: c3efa143183d87d43ba2aad9e0f9b3d0, type: 2}
+    value: {fileID: 44644233}
+  - key: {fileID: -5274871008849306527, guid: c3efa143183d87d43ba2aad9e0f9b3d0, type: 2}
+    value: {fileID: 187320039}
+  - key: {fileID: 8786298126546787530, guid: c3efa143183d87d43ba2aad9e0f9b3d0, type: 2}
+    value: {fileID: 1277642960}
+  - key: {fileID: -4610657653800054506, guid: c3efa143183d87d43ba2aad9e0f9b3d0, type: 2}
+    value: {fileID: 275531417}
+  - key: {fileID: 469554705164026446, guid: c3efa143183d87d43ba2aad9e0f9b3d0, type: 2}
     value: {fileID: 1469211674}
   m_ExposedReferences:
     m_References: []
@@ -3439,12 +3449,12 @@ PrefabInstance:
     - target: {fileID: 3058473514766915835, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.92
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 3058473514766915835, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.89
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 3058473514766915835, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
@@ -3682,7 +3692,7 @@ PrefabInstance:
     - target: {fileID: 338164670770362440, guid: 06aa28bfc8482ab409f5725bf34d0205,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.5141606
+      value: -3.8200006
       objectReference: {fileID: 0}
     - target: {fileID: 338164670770362440, guid: 06aa28bfc8482ab409f5725bf34d0205,
         type: 3}
@@ -3751,12 +3761,12 @@ PrefabInstance:
     - target: {fileID: 1370388614650162203, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.919999
+      value: 1.2099991
       objectReference: {fileID: 0}
     - target: {fileID: 1370388614650162203, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6299999
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1370388614650162203, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
         type: 3}
@@ -3817,7 +3827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261c541b86c34444a008802b7a6c3467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2978579531205290366 stripped
+--- !u!4 &2978579531205290367 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1370388614650162203, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
     type: 3}
