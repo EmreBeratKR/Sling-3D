@@ -19,6 +19,7 @@ namespace Sling
         [SerializeField] private GameObject[] functionalParts;
         [SerializeField] private SlingArm arm;
         [SerializeField] private SlingHead head;
+        [SerializeField] private SlingRange range;
 
         [Header("Animation Settings")]
         [SerializeField] private float portalTravelDuration;
@@ -87,6 +88,7 @@ namespace Sling
         {
             arm.DisablePhysics();
             head.DisablePhysics();
+            range.InputEnabled = false;
             
             var origin = new GameObject("Dummy").transform;
             origin.position = arm.Position;

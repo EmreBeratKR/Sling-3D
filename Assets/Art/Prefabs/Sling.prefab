@@ -813,7 +813,7 @@ MonoBehaviour:
   - {fileID: 4202583452454937086}
   arm: {fileID: 4202583453094838469}
   head: {fileID: 4202583452003893214}
-  sound: {fileID: 6954000508408689491}
+  range: {fileID: 4202583453418720046}
   portalTravelDuration: 0.5
 --- !u!1 &4202583452003315127
 GameObject:
@@ -1959,6 +1959,7 @@ GameObject:
   - component: {fileID: 4202583453418720047}
   - component: {fileID: 4202583453418720045}
   - component: {fileID: 4202583453418720046}
+  - component: {fileID: 4202583452871665277}
   m_Layer: 6
   m_Name: Range
   m_TagString: Untagged
@@ -2022,6 +2023,20 @@ MonoBehaviour:
     m_Bits: 128
   minRadius: 0.5
   useMinRadius: 0
+--- !u!114 &4202583452871665277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202583453418720040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a36af8c406cf41d3886d65fedf7d2585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: {fileID: 4202583453418720046}
+  shape: {fileID: 4202583451914672068}
 --- !u!1001 &793531304306466508
 PrefabInstance:
   m_ObjectHideFlags: 0

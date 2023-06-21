@@ -23,9 +23,9 @@ namespace Sling
         {
             Destroy(this);
         }
-        
-    
-        private void UpdateShape()
+
+
+        public Vector3 GetStretchEulerAngles()
         {
             var headPosition = head.Position;
             var armPosition = arm.Position;
@@ -34,8 +34,15 @@ namespace Sling
             var deltaY = armPosition.y - headPosition.y;
 
             var angle = Mathf.Atan2(deltaX, deltaY) * Mathf.Rad2Deg;
-            var eulerAngle = Vector3.forward * angle;
-
+            
+            return Vector3.forward * angle;
+        }
+        
+        
+        private void UpdateShape()
+        {
+            var eulerAngle = GetStretchEulerAngles();
+            
             head.EulerAngles = eulerAngle;
             arm.EulerAngles = eulerAngle;
         

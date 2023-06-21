@@ -1,39 +1,70 @@
-using NaughtyAttributes;
+using System;
+using Helpers;
 using UnityEngine;
 
-public class CursorManager : MonoBehaviour
+public class CursorManager : Singleton<CursorManager>
 {
-    [SerializeField] private Texture2D normal;
-    [SerializeField] private Texture2D stretch;
+    [SerializeField] private RectTransform cursorMain;
+    [SerializeField] private GameObject normalCursor;
+    [SerializeField] private GameObject hoverCursor;
+    [SerializeField] private GameObject grabbedCursor;
 
 
-    private void Start()
+    private static bool m_Initialized;
+    
+
+    protected override void Awake()
     {
+        base.Awake();
+        
+        if (m_Initialized) return;
+        
+        HideSystemCursor();
         SetNormal();
+
+        m_Initialized = true;
+    }
+
+    private void Update()
+    {
+        cursorMain.position = Input.mousePosition;
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        Cursor.visible = !hasFocus;
     }
 
 
-    public void OnEnteredStretchRange()
+    public void SetNormal()
     {
-        SetStretch();
+        normalCursor.SetActive(true);
+        hoverCursor.SetActive(false);
+        grabbedCursor.SetActive(false);
+    }
+
+    public void SetHover()
+    {
+        normalCursor.SetActive(false);
+        hoverCursor.SetActive(true);
+        grabbedCursor.SetActive(false);
     }
     
-    public void OnExitedStretchRange()
+    public void SetGrabbed()
     {
-        SetNormal();
+        normalCursor.SetActive(false);
+        hoverCursor.SetActive(false);
+        grabbedCursor.SetActive(true);
     }
 
-    [Button(enabledMode: EButtonEnableMode.Playmode)]
-    private void SetNormal()
+    public void SetGrabbedEulerAngles(Vector3 eulerAngles)
     {
-        var hotspot = Vector2.zero;
-        Cursor.SetCursor(normal, hotspot, CursorMode.ForceSoftware);
+        grabbedCursor.transform.eulerAngles = eulerAngles;
     }
     
-    [Button(enabledMode: EButtonEnableMode.Playmode)]
-    private void SetStretch()
+    
+    private static void HideSystemCursor()
     {
-        var hotspot = new Vector2(stretch.height * 0.5f, stretch.width * 0.5f);
-        Cursor.SetCursor(stretch, hotspot, CursorMode.ForceSoftware);
+        Cursor.visible = false;
     }
 }
