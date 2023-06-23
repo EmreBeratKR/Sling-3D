@@ -26,6 +26,8 @@ namespace Sling
 
 
         public static UnityAction OnThrownByThrowerHandle;
+
+        public UnityEvent OnEnterPortalComplete;
         
         
         private void Start()
@@ -98,6 +100,7 @@ namespace Sling
             origin.DOScale(Vector3.zero, portalTravelDuration)
                 .OnComplete(() =>
                 {
+                    OnEnterPortalComplete?.Invoke();
                     levelCompleted.RaiseEvent();
                 });
         }
@@ -131,5 +134,16 @@ namespace Sling
                 functionalPart.SetActive(false);
             }
         }
+
+
+
+#if UNITY_EDITOR
+
+        public void Developer_Panel_CompleteLevel()
+        {
+            levelCompleted.RaiseEvent();
+        }
+        
+#endif
     }
 }

@@ -291,7 +291,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 9
+            m_IntArgument: 10
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -1880,7 +1880,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3519,6 +3519,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 187320038}
     m_Modifications:
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1626822833}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SkipCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CutsceneSystem.CutsceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4202583451914672059, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}
       propertyPath: m_RootOrder
@@ -3797,12 +3837,12 @@ PrefabInstance:
     - target: {fileID: 3058473514766915835, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.21
+      value: -5.97
       objectReference: {fileID: 0}
     - target: {fileID: 3058473514766915835, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.74
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 3058473514766915835, guid: dcb01386dfa044b5484b582e77207ce2,
         type: 3}
@@ -3857,6 +3897,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2071002732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2071002734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2071002732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40453af1ebab483bb78201eaa252b646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2084179591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4126,6 +4178,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 187320038}
     m_Modifications:
+    - target: {fileID: 1370388613931009146, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
+        type: 3}
+      propertyPath: initialHandle
+      value: 
+      objectReference: {fileID: 2071002734}
     - target: {fileID: 1370388614650162203, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
         type: 3}
       propertyPath: m_RootOrder
@@ -4134,12 +4191,12 @@ PrefabInstance:
     - target: {fileID: 1370388614650162203, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.71
+      value: -5.94
       objectReference: {fileID: 0}
     - target: {fileID: 1370388614650162203, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: -0.436
       objectReference: {fileID: 0}
     - target: {fileID: 1370388614650162203, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
         type: 3}
@@ -4186,6 +4243,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grand Sling
       objectReference: {fileID: 0}
+    - target: {fileID: 1370388615088995169, guid: 3a40e6861a8ec0940bf4ed05bef82ea2,
+        type: 3}
+      propertyPath: initialHandle
+      value: 
+      objectReference: {fileID: 2071002734}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a40e6861a8ec0940bf4ed05bef82ea2, type: 3}
 --- !u!114 &2978579531205290365 stripped

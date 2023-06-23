@@ -16,6 +16,7 @@ namespace GrandSling
         [SerializeField] private GrandSlingArm arm;
         [SerializeField] private SlingSound sound;
         [SerializeField] private Rigidbody body;
+        [SerializeField] private Handle initialHandle;
 
         [Header("Drag")]
         [SerializeField] private float attachedDrag;
@@ -41,6 +42,21 @@ namespace GrandSling
             set => transform.eulerAngles = value;
         }
 
+
+        private void Start()
+        {
+            if (initialHandle)
+            {
+                initialHandle.TryAttach();
+            
+                var response = new GrandSlingBehaviour.EventResponse()
+                {
+                    attachedHandle = initialHandle
+                };
+                    
+                behaviour.OnAttachedToHandle?.Invoke(response);
+            }
+        }
 
         private void OnEnable()
         {
