@@ -4009,6 +4009,46 @@ PrefabInstance:
       propertyPath: slimeMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 7d1f3ed08ff8b334cbdf824eb3a6f417, type: 2}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2071002734}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IgnoreFor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Handle_System.Handle, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442669684114479242, guid: dcb01386dfa044b5484b582e77207ce2,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb01386dfa044b5484b582e77207ce2, type: 3}
 --- !u!4 &2071002733 stripped
