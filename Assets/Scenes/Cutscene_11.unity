@@ -3015,7 +3015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebc19e3f87a4acd81a1dd3515ef2d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slingRange: {fileID: 0}
+  slingRange: {fileID: 1966302512}
 --- !u!1001 &1636632447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3470,6 +3470,41 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -7.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2011080818984114222, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011080818984114222, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011080818984114222, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1626822833}
+    - target: {fileID: 2011080818984114222, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011080818984114222, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActiveSlingInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011080818984114222, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CutsceneSystem.CutsceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011080818984114222, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: onAttached.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2011080819818228172, guid: 5afa333c2f63c4f39acd812068d92a68,
         type: 3}
       propertyPath: m_RootOrder
@@ -3574,7 +3609,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
       propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1626822833}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1626822833}
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
@@ -3584,12 +3629,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
       propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadBonusLevel
       objectReference: {fileID: 0}
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActiveSlingInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
       propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CutsceneSystem.CutsceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CutsceneSystem.CutsceneManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
@@ -3600,6 +3660,11 @@ PrefabInstance:
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}
       propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4202583451914672059, guid: da4e46c4661bc4cb6975b6759f344f74,
@@ -3675,6 +3740,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1966302510}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1966302512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4202583453418720046, guid: da4e46c4661bc4cb6975b6759f344f74,
+    type: 3}
+  m_PrefabInstance: {fileID: 1966302510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6f6b76c53249aab36bad4b5aeab290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1968268664
 GameObject:
   m_ObjectHideFlags: 0
