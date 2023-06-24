@@ -37,6 +37,19 @@ namespace DeveloperTools.Editor
                 }
             });
             
+            Button("Gold Time All Levels", () =>
+            {
+                for (var i = 0; i < LevelSystem.LevelCount; i++)
+                {
+                    var levelSave = new LevelSave
+                    {
+                        state = LevelState.CompletedGold
+                    };
+                
+                    LevelSaveSystem.Save(levelSave, i);
+                }
+            });
+            
             Button("Complete Current Level", () =>
             {
                 var slingBehaviour = FindObjectOfType<SlingBehaviour>();

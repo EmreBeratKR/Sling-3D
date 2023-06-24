@@ -3579,7 +3579,7 @@ PrefabInstance:
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}
       propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 10
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}

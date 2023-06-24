@@ -23,16 +23,7 @@ public class ButtonCallbacks : MonoBehaviour
 
     public void OnClickNextButton()
     {
-        var loadCutScene = FindObjectOfType<LoadLevelCutScene>();
-
-        if (loadCutScene)
-        {
-            if (!loadCutScene.IsCompleted())
-            {
-                loadCutScene.Load();
-                return;
-            }
-        }
+        if (TryLoadCutscene()) return;
         
         RaiseLoadLevelMap();
     }
@@ -51,5 +42,28 @@ public class ButtonCallbacks : MonoBehaviour
     public void RaiseLoadGame()
     {
         loadGame.RaiseEvent();
+    }
+
+
+    private bool TryLoadCutscene()
+    {
+        var loadCutScene = FindObjectOfType<LoadLevelCutScene>();
+
+        if (loadCutScene)
+        {
+            if (!loadCutScene.IsCompleted())
+            {
+                loadCutScene.Load();
+                return true;
+            }
+        }
+        
+        var loadGoldTimeLevelCutscene = FindObjectOfType<LoadGoldTimeLevelCutscene>();
+
+        if (!loadGoldTimeLevelCutscene) return false;
+        
+        loadGoldTimeLevelCutscene.Load();
+        return true;
+
     }
 }

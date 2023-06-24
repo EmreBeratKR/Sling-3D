@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Helpers;
 using UnityEngine;
 
@@ -31,6 +32,12 @@ public static class LevelSaveSystem
         }
         
         return JsonPrefs.LoadArray<LevelSave>(LevelSaveKey);
+    }
+
+    public static bool IsAllLevelsGoldTime()
+    {
+        var save = Load();
+        return save.All(level => level.state == LevelState.CompletedGold);
     }
 
 
