@@ -34,7 +34,12 @@ namespace CutsceneSystem
             TutorialManager.MarkTutorialCompleted(index);
             LoadLevelMap();
         }
-        
+
+        public void LoadBonusLevel()
+        {
+            SceneController.LoadBonusLevel();
+        }
+
 
         private void InitializeCutscene()
         {

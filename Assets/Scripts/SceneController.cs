@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : Singleton<SceneController>
 {
-    private const int CutSceneStartIndex = 3;
+    private const int BonusLevelIndex = 3;
+    private const int CutSceneStartIndex = 4;
     
     
     [SerializeField, Scene] private int 
@@ -48,6 +49,11 @@ public class SceneController : Singleton<SceneController>
         }
     }
     
+    
+    public static void LoadBonusLevel()
+    {
+        SceneManager.LoadScene(BonusLevelIndex);
+    }
     
     public static void LoadCutScene(int index)
     {
