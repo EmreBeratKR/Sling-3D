@@ -16,6 +16,8 @@ public class Portal : MonoBehaviour
     [SerializeField] private Transform model;
     [SerializeField] private GameObject handle;
     [SerializeField] private Transform exit;
+    [SerializeField] private GameObject normalVisual;
+    [SerializeField] private GameObject goldVisual;
     
     [Header("Animation Settings")]
     [SerializeField] private Ease openEasing;
@@ -44,6 +46,18 @@ public class Portal : MonoBehaviour
     }
 
 
+    public void SetNormalVisual()
+    {
+        normalVisual.SetActive(true);
+        goldVisual.SetActive(false);
+    }
+
+    public void SetGoldVisual()
+    {
+        normalVisual.SetActive(false);
+        goldVisual.SetActive(true);
+    }
+    
     public void OnAllGoalsAchieved()
     {
         transform.position = ExitPosition;

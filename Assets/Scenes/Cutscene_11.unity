@@ -183,6 +183,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a9b0e3c632a076c41a97115de5ab414d, type: 2}
     - {fileID: 11400000, guid: 5194b21985ee8cb459b5bcb69102d507, type: 2}
     - {fileID: 11400000, guid: 8efc4569b6e21f846b147d8513c6916d, type: 2}
+    - {fileID: 11400000, guid: 06dad49468961084da34ea3509afaa53, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -291,7 +292,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 11
+            m_IntArgument: -1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -357,6 +358,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1856411504}
           m_TargetAssemblyTypeName: Portal, Assembly-CSharp
           m_MethodName: OnLevelCompleted
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1856411504}
+          m_TargetAssemblyTypeName: Portal, Assembly-CSharp
+          m_MethodName: SetGoldVisual
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1880,7 +1895,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 11
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
