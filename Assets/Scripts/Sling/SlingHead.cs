@@ -1,3 +1,4 @@
+using CollectableSystem;
 using Data_Container;
 using EffectSystem;
 using EnemySystem;
@@ -29,6 +30,7 @@ namespace Sling
     
         [Header("References")]
         [SerializeField] private SphereCollider mainCollider;
+        [SerializeField] private SlingBehaviour behaviour;
         [SerializeField] private SlingArm arm;
         [SerializeField] private SlingRange range;
         [SerializeField] private SlingSound sound;
@@ -116,6 +118,11 @@ namespace Sling
                 {
                     
                 }
+            }
+
+            if (other.TryGetComponent(out ICollectable collectable))
+            {
+                collectable.Collect(behaviour);
             }
             
             if (other.TryGetComponent(out GameAreaBorder _))

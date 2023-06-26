@@ -26,6 +26,7 @@ public class LevelSystem : Scenegleton<LevelSystem>
 
     [Header("Values")]
     [SerializeField] private bool isCutscene;
+    [SerializeField] private bool isBonusLevel;
     
     
     public static LevelData CurrentLevelData { get; private set; }
@@ -82,6 +83,12 @@ public class LevelSystem : Scenegleton<LevelSystem>
         base.Awake();
 
         if (isCutscene) return;
+
+        if (isBonusLevel)
+        {
+            LoadBonusLevel();
+            return;
+        }
         
         LoadLevel();
     }
@@ -133,6 +140,27 @@ public class LevelSystem : Scenegleton<LevelSystem>
         IEnumerator Loading()
         {
             yield return new WaitUntil(() => Instantiate(CurrentLevelData.prefab, levelParent));
+            
+            levelLoaded.RaiseEvent();
+        }
+    }
+
+    private void LoadBonusLevel()
+    {
+        CurrentLevelData = new LevelData
+        {
+            goldTime = 170f,
+            name = "Gold Level",
+            type = LevelType.Bonus
+        };
+        
+        var levelAudioClip = levelAudioClipContainer[(int) CurrentLevelData.type];
+        levelSoundPlayer.PlayClip(levelAudioClip);
+        StartCoroutine(Routine());
+
+        IEnumerator Routine()
+        {
+            yield return null;
             
             levelLoaded.RaiseEvent();
         }

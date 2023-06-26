@@ -815,6 +815,9 @@ MonoBehaviour:
   head: {fileID: 4202583452003893214}
   range: {fileID: 4202583453418720046}
   portalTravelDuration: 0.5
+  OnEnterPortalComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4202583452003315127
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,6 +984,7 @@ MonoBehaviour:
   levelFailed: {fileID: 11400000, guid: 52fbb7025c89b4ec88740b4321edc6f2, type: 2}
   slingLostLife: {fileID: 11400000, guid: 115888235d30d4b73ae88bc7f66ccc6d, type: 2}
   mainCollider: {fileID: 4202583452003893213}
+  behaviour: {fileID: 4202583451914672058}
   arm: {fileID: 4202583453094838469}
   range: {fileID: 4202583453418720046}
   sound: {fileID: 6954000508408689491}

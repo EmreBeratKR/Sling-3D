@@ -1,4 +1,6 @@
+using System;
 using ScriptableEvents.Core.Channels;
+using TubeSystem;
 using UnityEngine;
 
 namespace Sling
@@ -112,12 +114,20 @@ namespace Sling
 
             return origin + rawDirection * rawDistance;
         }
-    
-    
-    
+        
+
         private void Start()
         {
+            Tube.OnSlingEntered += OnSlingEnteredTube;
+            Tube.OnSlingThrown += OnSlingThrownFromTube;
+            
             rangeCollider = GetComponent<SphereCollider>();
+        }
+
+        private void OnDestroy()
+        {
+            Tube.OnSlingEntered -= OnSlingEnteredTube;
+            Tube.OnSlingThrown -= OnSlingThrownFromTube;
         }
 
         private void OnMouseDown()
@@ -176,6 +186,18 @@ namespace Sling
             FollowArm();
         }
 
+
+        private void OnSlingEnteredTube(EnterTubeResponse response)
+        {
+            gameObject.SetActive(true);
+            InputEnabled = false;
+        }
+
+        private void OnSlingThrownFromTube(ThrownFromTubeResponse response)
+        {
+            InputEnabled = true;
+        }
+        
 
         public void OnSlingArmAutoAttached()
         {
