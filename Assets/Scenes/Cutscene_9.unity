@@ -1499,6 +1499,7 @@ MonoBehaviour:
   levelSoundPlayer: {fileID: 0}
   levelParent: {fileID: 0}
   isCutscene: 1
+  isBonusLevel: 0
 --- !u!4 &1025801533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6223249311047698765, guid: e4f02632cd9dfce46b419a0c91fbe7f9,
@@ -1715,7 +1716,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -40, y: -15}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 300, y: 81}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1129775888
 MonoBehaviour:
@@ -1793,7 +1794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bfb5e228e2e49457489adcbcabae953d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ea8a4ff614bf4a4eb0aa973f32c203c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
