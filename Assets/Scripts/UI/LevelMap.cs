@@ -131,6 +131,14 @@ namespace UI
 
         private void UpdateGameScore()
         {
+            var gameScore = GetGameScore();
+            
+            gameScoreField.text = GameScorePrefix + gameScore;
+        }
+
+
+        private static int GetGameScore()
+        {
             var gameScore = 0;
 
             foreach (var levelSave in LevelSave)
@@ -140,7 +148,9 @@ namespace UI
                 gameScore += levelSave.bestScore;
             }
 
-            gameScoreField.text = GameScorePrefix + gameScore;
+            gameScore += BonusLevel.GetBonusLevelScore();
+
+            return gameScore;
         }
     }
 
