@@ -18,6 +18,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private Transform exit;
     [SerializeField] private GameObject normalVisual;
     [SerializeField] private GameObject goldVisual;
+    [SerializeField] private GameObject gemVisual;
     
     [Header("Animation Settings")]
     [SerializeField] private Ease openEasing;
@@ -50,12 +51,21 @@ public class Portal : MonoBehaviour
     {
         normalVisual.SetActive(true);
         goldVisual.SetActive(false);
+        gemVisual.SetActive(false);
     }
 
     public void SetGoldVisual()
     {
         normalVisual.SetActive(false);
         goldVisual.SetActive(true);
+        gemVisual.SetActive(false);
+    }
+
+    public void SetGemVisual()
+    {
+        normalVisual.SetActive(false);
+        goldVisual.SetActive(false);
+        gemVisual.SetActive(true);
     }
     
     public void OnAllGoalsAchieved()
