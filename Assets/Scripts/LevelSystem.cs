@@ -123,6 +123,11 @@ public class LevelSystem : Scenegleton<LevelSystem>
         return level == LevelCount;
     }
 
+    public static void LoadCutscene(int index)
+    {
+        SceneController.LoadCutScene(index);
+    }
+
 
     private void OnCutsceneInitialized(CutsceneEventResponse response)
     {
