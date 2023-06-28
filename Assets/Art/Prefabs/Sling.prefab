@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 4202583451687566826}
   - component: {fileID: 4202583451687566825}
   - component: {fileID: 4202583451687566824}
+  - component: {fileID: 1141909890}
   m_Layer: 0
   m_Name: Event Listener
   m_TagString: Untagged
@@ -600,6 +601,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Sling.SlingArm, Assembly-CSharp
         m_MethodName: OnAttachedToDirtyHandle
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1141909890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202583451687566847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad30ffef2d4943cdb824bf5f20bf2721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: 9e3804aeec98a4102874ad70cf0535ec, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4202583453418720046}
+        m_TargetAssemblyTypeName: Sling.SlingRange, Assembly-CSharp
+        m_MethodName: set_InputEnabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -25,6 +25,7 @@ public class LevelSystem : Scenegleton<LevelSystem>
     [SerializeField] private Transform levelParent;
 
     [Header("Values")]
+    [SerializeField] private bool isMainMenu;
     [SerializeField] private bool isCutscene;
     [SerializeField] private bool isBonusLevel;
     
@@ -82,6 +83,12 @@ public class LevelSystem : Scenegleton<LevelSystem>
     {
         base.Awake();
 
+        if (isMainMenu)
+        {
+            levelLoaded.RaiseEvent();
+            return;
+        }
+        
         if (isCutscene) return;
 
         if (isBonusLevel)

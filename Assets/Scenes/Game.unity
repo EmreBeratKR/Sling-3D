@@ -461,6 +461,7 @@ MonoBehaviour:
     type: 2}
   levelSoundPlayer: {fileID: 1988967770}
   levelParent: {fileID: 1788459477}
+  isMainMenu: 0
   isCutscene: 0
   isBonusLevel: 0
 --- !u!1 &206658471
@@ -1316,7 +1317,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -307}
-  m_SizeDelta: {x: 512, y: 256}
+  m_SizeDelta: {x: 512, y: 139}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686147807
 MonoBehaviour:
@@ -1394,9 +1395,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bfb5e228e2e49457489adcbcabae953d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ea8a4ff614bf4a4eb0aa973f32c203c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2509,7 +2510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7e5aafad5afbe44bcb9bac8a027f7a04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f86e22272e1ba546b56f6b845c1c337, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3373,6 +3374,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4202583452871665276}
+        m_TargetAssemblyTypeName: Sling.SlingRange, Assembly-CSharp
+        m_MethodName: set_InputEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1963624254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4122,6 +4135,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 4202583452871665276}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set_InputEnabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Sling.SlingRange, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1634914437621977151, guid: 89ffc17fafbf26241893f74f0897c366,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4203,3 +4256,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4e46c4661bc4cb6975b6759f344f74, type: 3}
+--- !u!114 &4202583452871665276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4202583453418720046, guid: da4e46c4661bc4cb6975b6759f344f74,
+    type: 3}
+  m_PrefabInstance: {fileID: 4202583452871665275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6f6b76c53249aab36bad4b5aeab290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
