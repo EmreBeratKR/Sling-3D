@@ -63,6 +63,13 @@ namespace Sling
                     break;
             }
         }
+
+
+        public void OnSlingDied()
+        {
+            m_State = State.Normal;
+            CursorManager.Instance.SetNormal();
+        }
         
         
         private enum State

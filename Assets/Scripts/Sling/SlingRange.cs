@@ -208,6 +208,11 @@ namespace Sling
         {
             IsDragging = false;
         }
+
+        public void OnSlingDied()
+        {
+            IsDragging = false;
+        }
         
 
         private void FollowArm()

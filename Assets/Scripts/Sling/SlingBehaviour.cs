@@ -148,21 +148,6 @@ namespace Sling
             origin.DORotate(Vector3.forward * (179f * 1f), 0.5f);
             origin.DORotate(Vector3.forward * (179f * 2f), 0.5f)
                 .SetDelay(0.5f);
-
-
-            //StartCoroutine(Routine());
-            IEnumerator Routine()
-            {
-                while (true)
-                {
-                    Time.timeScale = 0f;
-                    
-                    while (!Input.GetKeyDown(KeyCode.Space)) yield return null;
-
-                    Time.timeScale = 1f;
-                    yield return null;
-                }
-            }
         }
         
         private void Move(Vector3 position)
