@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using Handle_System;
 using NaughtyAttributes;
+using SoundSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,8 @@ namespace LeverSystem
     {
         [Header("References")]
         [SerializeField] private Transform pull;
+        [SerializeField] private SoundPlayer soundPlayer;
+        [SerializeField] private AudioClip toggleSound;
 
         [Header("Values")]
         [SerializeField, Min(0f)] private float pullSpeed;
@@ -44,6 +47,8 @@ namespace LeverSystem
         [Button(enabledMode: EButtonEnableMode.Playmode)]
         public void Toggle()
         {
+            soundPlayer.PlayClip(toggleSound);
+            
             if (m_IsOn)
             {
                 ToggleOff();
