@@ -37,6 +37,12 @@ namespace Sling
             
             return Vector3.forward * angle;
         }
+
+        public void UpdateArmLength(float armLength)
+        {
+            arm.Position = head.Position + head.transform.up * armLength;
+            arm.LocalScale = new Vector3(1f, armLength, 1f);
+        }
         
         
         private void UpdateShape()

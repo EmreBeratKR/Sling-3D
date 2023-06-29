@@ -29,6 +29,8 @@ namespace UI
 
         public void OnSlingLostLife()
         {
+            if (livesLeft <= 0) return;
+            
             livesLeft--;
             livesLeft = Mathf.Max(0, livesLeft);
             UpdateBars();

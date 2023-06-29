@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using Handle_System;
 using NaughtyAttributes;
@@ -20,6 +21,8 @@ namespace Sling
         [SerializeField] private SlingArm arm;
         [SerializeField] private SlingHead head;
         [SerializeField] private SlingRange range;
+        [SerializeField] private GameObject aliveVisual;
+        [SerializeField] private GameObject deadVisual;
 
         [Header("Animation Settings")]
         [SerializeField] private float portalTravelDuration;
@@ -107,10 +110,61 @@ namespace Sling
 
         public void OnSlingDied()
         {
+            PlayDeath();
             levelFailed.RaiseEvent();
         }
 
 
+        private void PlayDeath()
+        {
+            aliveVisual.SetActive(false);
+            deadVisual.SetActive(true);
+            
+            arm.DisablePhysics();
+            head.DisablePhysics();
+            arm.GetComponent<Collider>().enabled = false;
+            head.GetComponent<Collider>().enabled = false;
+            
+            arm.enabled = false;
+            head.enabled = false;
+            range.enabled = false;
+            range.InputEnabled = false;
+            Destroy(range);
+            GetComponentInChildren<Spring>().enabled = false;
+            GetComponentInChildren<SlingShape>().enabled = false;
+            GetComponentInChildren<SlingShape>().UpdateArmLength(1f);
+            
+            var origin = new GameObject("Dummy").transform;
+            origin.position = head.Position;
+            arm.transform.parent = origin;
+            head.transform.parent = origin;
+
+            origin.DOMove(origin.position + Vector3.up * 0.5f, 0.25f)
+                .SetEase(Ease.OutSine);
+            origin.DOMove(new Vector3(origin.position.x, -15f, 0f), 1f)
+                .SetDelay(0.25f)
+                .SetEase(Ease.InSine);
+            origin.DOScale(Vector3.one * 7f, 1f);
+            origin.DORotate(Vector3.forward * (179f * 1f), 0.5f);
+            origin.DORotate(Vector3.forward * (179f * 2f), 0.5f)
+                .SetDelay(0.5f);
+
+
+            //StartCoroutine(Routine());
+            IEnumerator Routine()
+            {
+                while (true)
+                {
+                    Time.timeScale = 0f;
+                    
+                    while (!Input.GetKeyDown(KeyCode.Space)) yield return null;
+
+                    Time.timeScale = 1f;
+                    yield return null;
+                }
+            }
+        }
+        
         private void Move(Vector3 position)
         {
             head.Position = position;
