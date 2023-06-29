@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Handle_System;
 using ScriptableEvents.Core.Channels;
+using SoundSystem;
 using UnityEngine;
 
 namespace EnemySystem
@@ -17,6 +18,9 @@ namespace EnemySystem
         [SerializeField] private Transform leftHand;
         [SerializeField] private Transform rightHand;
         [SerializeField] private Transform web;
+        [SerializeField] private SoundPlayer soundPlayer;
+        [SerializeField] private AudioClip noise;
+        [SerializeField] private AudioClip grab;
 
         [Header("Values")]
         [SerializeField, Min(0f)] private float interval;
@@ -82,7 +86,10 @@ namespace EnemySystem
 
         private void MoveToEnd()
         {
-            MoveTo(m_EndLocalPosition, interval, ToggleTargetHandle);
+            MoveTo(m_EndLocalPosition, interval, ToggleTargetHandle, () =>
+            {
+                soundPlayer.PlayClip(noise);
+            });
         }
 
         private void GrabTargetHandle()
@@ -94,6 +101,8 @@ namespace EnemySystem
             targetHandle.DisableHandle();
             onHandleGrabbed.RaiseEvent(targetHandle);
             RotateBothHand(LeftHandGrabEulerAngles, RightHandGrabEulerAngles, MoveToStart);
+            
+            soundPlayer.PlayClip(grab);
         }
 
         private void DropTargetHandle()
@@ -104,6 +113,8 @@ namespace EnemySystem
         
             targetHandle.EnableHandle();
             RotateBothHand(LeftHandFreeEulerAngles, RightHandFreeEulerAngles, MoveToStart);
+            
+            soundPlayer.PlayClip(grab);
         }
 
         private void ToggleTargetHandle()
@@ -117,7 +128,7 @@ namespace EnemySystem
             GrabTargetHandle();
         }
     
-        private void MoveTo(Vector3 position, float delay, TweenCallback callback)
+        private void MoveTo(Vector3 position, float delay, TweenCallback callback, TweenCallback onStart = default)
         {
             m_MoveTween?.Kill();
             m_MoveTween = transform.DOLocalMove(position, duration);
@@ -125,6 +136,7 @@ namespace EnemySystem
             m_MoveTween
                 .SetDelay(delay)
                 .SetEase(Ease.OutSine)
+                .OnStart(onStart)
                 .OnUpdate(() =>
                 {
                     UpdateWeb();
