@@ -83,6 +83,11 @@ namespace UI
                 oldSave.bestScore = levelScore;
                 LevelSaveSystem.Save(oldSave, completedLevelIndex);
             }
+            
+            if (LevelSystem.IsLastLevel(completedLevelIndex))
+            {
+                //Debug.Log("Congratz, You have Completed all the Levels!");
+            }
 
             else
             {
