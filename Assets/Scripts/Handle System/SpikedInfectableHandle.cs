@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using SoundSystem;
 using UnityEngine;
 
 namespace Handle_System
@@ -8,6 +9,9 @@ namespace Handle_System
     {
         [Header("References")]
         [SerializeField] private Transform spikes;
+        [SerializeField] private SoundPlayer soundPlayer;
+        [SerializeField] private AudioClip openSound;
+        [SerializeField] private AudioClip closeSound;
 
         [Header("Values")]
         [SerializeField] private float toggleInterval;
@@ -70,6 +74,8 @@ namespace Handle_System
             DisableHandle();
             spikes.DOScale(Vector3.one, toggleDuration)
                 .SetEase(Ease.OutSine);
+            
+            soundPlayer.PlayClip(openSound);
         }
         
         private void DisableSpikes()
@@ -81,6 +87,8 @@ namespace Handle_System
                     spikes.gameObject.SetActive(false);
                     EnableHandle();
                 });
+            
+            soundPlayer.PlayClip(closeSound);
         }
 
 
