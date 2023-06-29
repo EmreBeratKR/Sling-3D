@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using NaughtyAttributes;
+using SoundSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,10 +10,15 @@ namespace TubeSystem
     public abstract class Tube : MonoBehaviour
     {
         private const string EventsFo = "Events";
+        private static readonly int TriggerHash = Animator.StringToHash("trigger");
 
 
         [Header("References")]
         [SerializeField] private Transform chargingAnchor;
+        [SerializeField] private Animator animator;
+        [SerializeField] private SoundPlayer soundPlayer;
+        [SerializeField] private AudioClip enterSound;
+        [SerializeField] private AudioClip throwSound;
 
         [Header("Values")] 
         [SerializeField, Min(0f)] private float throwForce;
@@ -63,6 +69,9 @@ namespace TubeSystem
                 OnSlingEntered?.Invoke(response);
             
                 StartCharging();
+                
+                PlayTrigger();
+                soundPlayer.PlayClip(enterSound);
             }
         }
 
@@ -105,6 +114,9 @@ namespace TubeSystem
             };
             
             OnSlingThrown?.Invoke(response);
+            
+            PlayTrigger();
+            soundPlayer.PlayClip(throwSound);
         }
 
         private void StartReloading()
@@ -128,6 +140,11 @@ namespace TubeSystem
                 
                 onReloaded?.Invoke();
             }
+        }
+
+        private void PlayTrigger()
+        {
+            animator.SetTrigger(TriggerHash);
         }
 
 
