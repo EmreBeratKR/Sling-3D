@@ -537,6 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275531416}
   - component: {fileID: 275531417}
+  - component: {fileID: 275531418}
   m_Layer: 0
   m_Name: Audio Channel (0)
   m_TagString: Untagged
@@ -655,6 +656,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &275531418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275531415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd97ffc635e0c4053ba3f29e86b00341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 275531417}
+  playOnStart: 0
 --- !u!1 &447548393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1444,7 @@ MonoBehaviour:
   levelAudioClipContainer: {fileID: 0}
   levelSoundPlayer: {fileID: 0}
   levelParent: {fileID: 0}
+  isMainMenu: 0
   isCutscene: 1
   isBonusLevel: 0
 --- !u!4 &1025801533 stripped
@@ -2347,6 +2363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1469211673}
   - component: {fileID: 1469211674}
+  - component: {fileID: 1469211675}
   m_Layer: 0
   m_Name: Audio Channel (1)
   m_TagString: Untagged
@@ -2465,6 +2482,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1469211675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469211672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd97ffc635e0c4053ba3f29e86b00341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1469211674}
+  playOnStart: 0
 --- !u!1 &1471279815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1540586651}
   - component: {fileID: 1540586650}
+  - component: {fileID: 1540586652}
   m_Layer: 0
   m_Name: Audio Channel (2)
   m_TagString: Untagged
@@ -2758,6 +2790,20 @@ Transform:
   m_Father: {fileID: 1378787032}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1540586652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540586649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd97ffc635e0c4053ba3f29e86b00341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1540586650}
+  playOnStart: 0
 --- !u!1 &1626822831
 GameObject:
   m_ObjectHideFlags: 0

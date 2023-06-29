@@ -25,6 +25,11 @@ namespace SoundSystem
             GameSettings.OnSoundToggled -= OnSoundToggled;
         }
 
+        private void Reset()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
 
         public void Play()
         {

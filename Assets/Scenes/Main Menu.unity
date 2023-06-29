@@ -3081,6 +3081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596334662}
   - component: {fileID: 1596334663}
+  - component: {fileID: 1596334664}
   m_Layer: 0
   m_Name: Slime suckup
   m_TagString: Untagged
@@ -3199,6 +3200,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1596334664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596334661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd97ffc635e0c4053ba3f29e86b00341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1596334663}
+  playOnStart: 0
 --- !u!114 &1682450996 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4202583453418720046, guid: da4e46c4661bc4cb6975b6759f344f74,
@@ -3582,7 +3597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slimeImage: {fileID: 92947353}
-  slimeAudio: {fileID: 1596334663}
+  slimeAudio: {fileID: 1596334664}
 --- !u!4 &1950720875
 Transform:
   m_ObjectHideFlags: 0

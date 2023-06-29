@@ -1,11 +1,12 @@
 using DG.Tweening;
 using Helpers;
+using SoundSystem;
 using UnityEngine;
 
 public class SceneTransition : Singleton<SceneTransition>
 {
     [SerializeField] private RectTransform slimeImage;
-    [SerializeField] private AudioSource slimeAudio;
+    [SerializeField] private SoundPlayer slimeAudio;
     
     
     public static void FadeInOutSlime()
