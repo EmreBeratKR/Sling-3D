@@ -1,6 +1,7 @@
 using System;
 using DG.Tweening;
 using NaughtyAttributes;
+using SoundSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,8 @@ namespace Handle_System
         [Header("References")]
         [SerializeField] private Transform endPointAnchor;
         [SerializeField] private Transform model;
+        [SerializeField] private SoundPlayer soundPlayer;
+        [SerializeField] private AudioClip throwSound;
 
         [Header("Values")] 
         [SerializeField, Min(0f)] private float throwCooldown;
@@ -61,6 +64,10 @@ namespace Handle_System
         private void StartThrowing()
         {
             transform.DOMove(EndPoint, throwSpeed)
+                .OnStart(() =>
+                {
+                    soundPlayer.PlayClip(throwSound);
+                })
                 .SetDelay(throwCooldown)
                 .SetEase(Ease.OutExpo)
                 .SetSpeedBased()
