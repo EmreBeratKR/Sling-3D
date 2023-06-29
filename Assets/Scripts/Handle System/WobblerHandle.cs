@@ -1,6 +1,7 @@
 using System.Collections;
 using PathSystem;
 using ScriptableEvents.Core.Channels;
+using SoundSystem;
 using UnityEngine;
 
 namespace Handle_System
@@ -12,7 +13,9 @@ namespace Handle_System
         
         [Header("References")]
         [SerializeField] private PathMover pathMover;
-        
+        [SerializeField] private SoundPlayer soundPlayer;
+        [SerializeField] private AudioClip wobbleSound;
+
         [Header("Values")]
         [SerializeField, Min(0f)] private float interval;
         [SerializeField] private bool looping;
@@ -42,6 +45,7 @@ namespace Handle_System
         public void StartWobble()
         {
             pathMover.Play();
+            soundPlayer.PlayClip(wobbleSound);
         }
 
         public void StopWobble()
