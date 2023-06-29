@@ -1,5 +1,7 @@
 using ScriptableEvents.Core.Channels;
+using SoundSystem;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace EnemySystem
 {
@@ -8,6 +10,11 @@ namespace EnemySystem
         [Header(nameof(Enemy))]
         [Header("Event Channels")] 
         [SerializeField] private VoidEventChannel goalAchieved;
+
+        [Header("References")]
+        [SerializeField] private SoundPlayer soundPlayer;
+        [SerializeField] private SfxPlayer gurpPlayer;
+        [SerializeField] private AudioClip dieSound;
         
         [Header("Values")]
         [SerializeField, Min(0)] private float health;
@@ -21,6 +28,7 @@ namespace EnemySystem
         
         
         private float m_CurrentHealth;
+        protected float m_GurpTimer;
         
         
         protected virtual void OnDamaged(){}
@@ -28,13 +36,20 @@ namespace EnemySystem
 
         protected virtual void OnDead()
         {
+            soundPlayer.PlayClip(dieSound);
             goalAchieved.RaiseEvent();
         }
         
         
-        private void Start()
+        protected virtual void Start()
         {
+            m_GurpTimer = GetGurpTimer();
             SetHealth(health);
+        }
+
+        protected virtual void Update()
+        {
+            TickGurpSound();
         }
 
 
@@ -70,6 +85,26 @@ namespace EnemySystem
         private void SetHealth(float healthAmount)
         {
             m_CurrentHealth = healthAmount;
+        }
+
+        private float GetGurpTimer()
+        {
+            return Random.Range(2.5f, 5f);
+        }
+
+        private void TickGurpSound()
+        {
+            if (IsDead) return;
+
+            if (m_GurpTimer > 0f)
+            {
+                m_GurpTimer -= Time.deltaTime;
+            }
+            
+            if (m_GurpTimer > 0f) return;
+
+            gurpPlayer.PlayRandomClip();
+            m_GurpTimer = GetGurpTimer();
         }
     }
 }

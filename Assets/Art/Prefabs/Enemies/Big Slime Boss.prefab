@@ -525,6 +525,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da0b7bf5f800f4fb494c8d077c61c18d, type: 3}
+--- !u!114 &866437962438010293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5877831092808180952, guid: da0b7bf5f800f4fb494c8d077c61c18d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6743142638869021037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd97ffc635e0c4053ba3f29e86b00341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3613102221590884746 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8047974122489999591, guid: da0b7bf5f800f4fb494c8d077c61c18d,
@@ -544,6 +556,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalAchieved: {fileID: 11400000, guid: 28f890d354d1d45818f6bafaaee1e5ed, type: 2}
+  soundPlayer: {fileID: 866437962438010293}
+  gurpPlayer: {fileID: 7351270261146108817}
+  dieSound: {fileID: 8300000, guid: 9732138bc15e5f94ea5c1d46482ee976, type: 3}
   health: 10
   healthBar: {fileID: 6743142637504046377}
   trigger: {fileID: 3613102221590884748}
@@ -562,3 +577,15 @@ CapsuleCollider:
     type: 3}
   m_PrefabInstance: {fileID: 6743142638869021037}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7351270261146108817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4292073219396322044, guid: da0b7bf5f800f4fb494c8d077c61c18d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6743142638869021037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7202ddd0ad424cd8a50cb7e9791e6df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

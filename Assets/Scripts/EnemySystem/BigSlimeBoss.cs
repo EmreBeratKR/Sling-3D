@@ -9,8 +9,10 @@ namespace EnemySystem
         [SerializeField] private float healPerSeconds;
 
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
+            
             TickHealing();
         }
 
