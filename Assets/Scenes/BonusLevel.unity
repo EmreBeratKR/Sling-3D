@@ -302,6 +302,7 @@ MonoBehaviour:
     type: 2}
   levelSoundPlayer: {fileID: 1988967770}
   levelParent: {fileID: 1788459477}
+  isMainMenu: 0
   isCutscene: 0
   isBonusLevel: 1
 --- !u!1001 &304029033
@@ -431,6 +432,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 4202583452871665276}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set_InputEnabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Sling.SlingRange, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1634914437621977151, guid: 89ffc17fafbf26241893f74f0897c366,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -439,7 +480,7 @@ PrefabInstance:
     - target: {fileID: 1634914437621977151, guid: 89ffc17fafbf26241893f74f0897c366,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RaiseLoadGame
+      value: ReloadCurrentScene
       objectReference: {fileID: 0}
     - target: {fileID: 1634914438199808760, guid: 89ffc17fafbf26241893f74f0897c366,
         type: 3}
@@ -453,6 +494,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ffc17fafbf26241893f74f0897c366, type: 3}
+--- !u!114 &304029034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1634914436603451086, guid: 89ffc17fafbf26241893f74f0897c366,
+    type: 3}
+  m_PrefabInstance: {fileID: 304029033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039ff28e3a5a4372be92979a9a78d6bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,10 +2493,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75007737}
-        m_TargetAssemblyTypeName: ButtonCallbacks, Assembly-CSharp
-        m_MethodName: RaiseLoadMainMenu
+      - m_Target: {fileID: 304029034}
+        m_TargetAssemblyTypeName: UI.PauseMenuUI, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4202583452871665276}
+        m_TargetAssemblyTypeName: Sling.SlingRange, Assembly-CSharp
+        m_MethodName: set_InputEnabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3569,6 +3634,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4e46c4661bc4cb6975b6759f344f74, type: 3}
+--- !u!114 &4202583452871665276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4202583453418720046, guid: da4e46c4661bc4cb6975b6759f344f74,
+    type: 3}
+  m_PrefabInstance: {fileID: 4202583452871665275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6f6b76c53249aab36bad4b5aeab290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4495763415146651962
 PrefabInstance:
   m_ObjectHideFlags: 0

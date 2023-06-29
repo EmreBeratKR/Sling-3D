@@ -44,6 +44,11 @@ public class ButtonCallbacks : MonoBehaviour
         loadGame.RaiseEvent();
     }
 
+    public static void ReloadCurrentScene()
+    {
+        SceneController.ReloadCurrentScene();
+    }
+
 
     private bool TryLoadCutscene()
     {

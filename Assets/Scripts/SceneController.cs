@@ -49,7 +49,13 @@ public class SceneController : Singleton<SceneController>
             SceneTransition.FadeInOutSlime();
         }
     }
-    
+
+
+    public static void ReloadCurrentScene()
+    {
+        var index = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(index);
+    }
     
     public static void LoadBonusLevel()
     {

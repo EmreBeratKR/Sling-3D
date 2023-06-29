@@ -508,6 +508,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1626822833}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActiveSlingInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: CutsceneSystem.CutsceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634914437187539180, guid: 89ffc17fafbf26241893f74f0897c366,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1634914437621977151, guid: 89ffc17fafbf26241893f74f0897c366,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -516,7 +556,7 @@ PrefabInstance:
     - target: {fileID: 1634914437621977151, guid: 89ffc17fafbf26241893f74f0897c366,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RaiseLoadGame
+      value: ReloadCurrentScene
       objectReference: {fileID: 0}
     - target: {fileID: 1634914438199808760, guid: 89ffc17fafbf26241893f74f0897c366,
         type: 3}
@@ -530,6 +570,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ffc17fafbf26241893f74f0897c366, type: 3}
+--- !u!114 &45717658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1634914436603451086, guid: 89ffc17fafbf26241893f74f0897c366,
+    type: 3}
+  m_PrefabInstance: {fileID: 45717657}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039ff28e3a5a4372be92979a9a78d6bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &131193464
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,10 +874,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131193465}
-        m_TargetAssemblyTypeName: ButtonCallbacks, Assembly-CSharp
-        m_MethodName: RaiseLoadMainMenu
+      - m_Target: {fileID: 45717658}
+        m_TargetAssemblyTypeName: UI.PauseMenuUI, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1626822833}
+        m_TargetAssemblyTypeName: CutsceneSystem.CutsceneManager, Assembly-CSharp
+        m_MethodName: SetActiveSlingInput
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1788,6 +1852,7 @@ MonoBehaviour:
   levelAudioClipContainer: {fileID: 0}
   levelSoundPlayer: {fileID: 0}
   levelParent: {fileID: 0}
+  isMainMenu: 0
   isCutscene: 1
   isBonusLevel: 0
 --- !u!4 &1025801533 stripped
