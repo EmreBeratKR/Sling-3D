@@ -1038,9 +1038,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
       propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1368139080}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202583451914672058, guid: da4e46c4661bc4cb6975b6759f344f74,
+        type: 3}
+      propertyPath: OnEnterPortalComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4202583451914672059, guid: da4e46c4661bc4cb6975b6759f344f74,
         type: 3}
       propertyPath: m_RootOrder

@@ -103,8 +103,14 @@ namespace Sling
             origin.DOScale(Vector3.zero, portalTravelDuration)
                 .OnComplete(() =>
                 {
-                    OnEnterPortalComplete?.Invoke();
-                    levelCompleted.RaiseEvent();
+                    StartCoroutine(Routine());
+                    
+                    IEnumerator Routine()
+                    {
+                        levelCompleted.RaiseEvent();
+                        yield return new WaitForSeconds(1f);
+                        OnEnterPortalComplete?.Invoke();
+                    }
                 });
         }
 

@@ -3,7 +3,6 @@ using DG.Tweening;
 using Handle_System;
 using NaughtyAttributes;
 using ScriptableEvents.Core.Channels;
-using SoundSystem;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
@@ -19,6 +18,10 @@ public class Portal : MonoBehaviour
     [SerializeField] private GameObject normalVisual;
     [SerializeField] private GameObject goldVisual;
     [SerializeField] private GameObject gemVisual;
+    [SerializeField] private new Light light;
+    [SerializeField] private Color normalLightColor;
+    [SerializeField] private Color goldLightColor;
+    [SerializeField] private Color gemLightColor;
     
     [Header("Animation Settings")]
     [SerializeField] private Ease openEasing;
@@ -52,6 +55,7 @@ public class Portal : MonoBehaviour
         normalVisual.SetActive(true);
         goldVisual.SetActive(false);
         gemVisual.SetActive(false);
+        light.color = normalLightColor;
     }
 
     public void SetGoldVisual()
@@ -59,6 +63,7 @@ public class Portal : MonoBehaviour
         normalVisual.SetActive(false);
         goldVisual.SetActive(true);
         gemVisual.SetActive(false);
+        light.color = goldLightColor;
     }
 
     public void SetGemVisual()
@@ -66,6 +71,7 @@ public class Portal : MonoBehaviour
         normalVisual.SetActive(false);
         goldVisual.SetActive(false);
         gemVisual.SetActive(true);
+        light.color = gemLightColor;
     }
     
     public void OnAllGoalsAchieved()
@@ -115,6 +121,9 @@ public class Portal : MonoBehaviour
                 spawnPosition.z = 0f;
                 portalSpawned.RaiseEvent(spawnPosition);
             });
+
+        light.DOIntensity(10f, duration)
+            .SetEase(openEasing);
         
         sound.PlayOpening();
     }
@@ -130,6 +139,9 @@ public class Portal : MonoBehaviour
         model.DOScale(Vector3.zero, duration)
             .SetEase(closeEasing)
             .OnComplete(onCompleted);
+
+        light.DOIntensity(0f, duration)
+            .SetEase(closeEasing);
     }
 
     private void InstantClose()
@@ -140,6 +152,7 @@ public class Portal : MonoBehaviour
         handle.SetActive(false);
         
         model.localScale = Vector3.zero;
+        light.intensity = 0f;
     }
     
     private enum State
