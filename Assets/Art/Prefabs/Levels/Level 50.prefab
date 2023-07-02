@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeab1e8f6fb045efbe5a53c5e69e4649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLastLevel: 1
 --- !u!1 &5967548424333703251
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +331,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2293848432092756649}
     m_Modifications:
+    - target: {fileID: 14772918681035883, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2011080818894962590, guid: 5afa333c2f63c4f39acd812068d92a68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -404,6 +410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143889609000148346, guid: 5afa333c2f63c4f39acd812068d92a68,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5afa333c2f63c4f39acd812068d92a68, type: 3}

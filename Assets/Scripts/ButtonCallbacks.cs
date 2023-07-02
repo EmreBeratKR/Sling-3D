@@ -66,6 +66,8 @@ public class ButtonCallbacks : MonoBehaviour
         var loadGoldTimeLevelCutscene = FindObjectOfType<LoadGoldTimeLevelCutscene>();
 
         if (!loadGoldTimeLevelCutscene) return false;
+
+        if (!loadGoldTimeLevelCutscene.IsLastLevel() && !LevelSaveSystem.IsAllLevelsGoldTime()) return false;
         
         loadGoldTimeLevelCutscene.Load();
         return true;

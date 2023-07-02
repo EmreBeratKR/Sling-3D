@@ -9,6 +9,9 @@ namespace CutsceneSystem
         private const int AfterGoldTimeCutsceneIndex = 12;
 
 
+        [SerializeField] private bool isLastLevel;
+        
+
         public void Load()
         {
             if (TutorialManager.IsTutorialCompleted(GoldTimeCutsceneIndex))
@@ -18,6 +21,11 @@ namespace CutsceneSystem
             }
             
             SceneController.LoadCutScene(GetCutsceneIndex());
+        }
+
+        public bool IsLastLevel()
+        {
+            return isLastLevel;
         }
 
 
