@@ -22,6 +22,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private Color normalLightColor;
     [SerializeField] private Color goldLightColor;
     [SerializeField] private Color gemLightColor;
+    [SerializeField] private ParticleSystem particle;
     
     [Header("Animation Settings")]
     [SerializeField] private Ease openEasing;
@@ -55,7 +56,13 @@ public class Portal : MonoBehaviour
         normalVisual.SetActive(true);
         goldVisual.SetActive(false);
         gemVisual.SetActive(false);
+        
         light.color = normalLightColor;
+        
+        var particleMain = particle.main;
+        particleMain.startColor = normalLightColor;
+        particle.gameObject.SetActive(true);
+        particle.Clear();
     }
 
     public void SetGoldVisual()
@@ -63,7 +70,13 @@ public class Portal : MonoBehaviour
         normalVisual.SetActive(false);
         goldVisual.SetActive(true);
         gemVisual.SetActive(false);
+        
         light.color = goldLightColor;
+        
+        var particleMain = particle.main;
+        particleMain.startColor = goldLightColor;
+        particle.gameObject.SetActive(true);
+        particle.Clear();
     }
 
     public void SetGemVisual()
@@ -71,7 +84,13 @@ public class Portal : MonoBehaviour
         normalVisual.SetActive(false);
         goldVisual.SetActive(false);
         gemVisual.SetActive(true);
+        
         light.color = gemLightColor;
+        
+        var particleMain = particle.main;
+        particleMain.startColor = gemLightColor;
+        particle.gameObject.SetActive(false);
+        particle.Clear();
     }
     
     public void OnAllGoalsAchieved()
@@ -125,6 +144,8 @@ public class Portal : MonoBehaviour
         light.DOIntensity(10f, duration)
             .SetEase(openEasing);
         
+        particle.Play();
+        
         sound.PlayOpening();
     }
 
@@ -142,6 +163,8 @@ public class Portal : MonoBehaviour
 
         light.DOIntensity(0f, duration)
             .SetEase(closeEasing);
+        
+        particle.Stop();
     }
 
     private void InstantClose()
