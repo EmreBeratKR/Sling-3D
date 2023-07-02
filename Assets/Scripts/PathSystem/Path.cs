@@ -157,7 +157,9 @@ namespace PathSystem
 #endif
     }
 
-
+    
+#if UNITY_EDITOR    
+    
     [CustomEditor(typeof(Path))]
     public class PathEditor : Editor
     {
@@ -343,4 +345,6 @@ namespace PathSystem
             Handles.Label(position, removeText, labelStyle);
         }
     }
+    
+#endif
 }
