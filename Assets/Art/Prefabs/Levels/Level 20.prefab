@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4032754456111846416}
   - component: {fileID: -5628346347063573850}
+  - component: {fileID: 4205034058246707182}
   m_Layer: 0
   m_Name: Level 20
   m_TagString: Untagged
@@ -50,6 +51,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutSceneIndex: 4
+--- !u!114 &4205034058246707182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4032754456111846423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeab1e8f6fb045efbe5a53c5e69e4649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4032754456549681625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5148262179950302011}
     m_Modifications:
+    - target: {fileID: 5877831092808180953, guid: da0b7bf5f800f4fb494c8d077c61c18d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8047974122489999590, guid: da0b7bf5f800f4fb494c8d077c61c18d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1240,6 +1258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901618115532863971, guid: da0b7bf5f800f4fb494c8d077c61c18d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da0b7bf5f800f4fb494c8d077c61c18d, type: 3}

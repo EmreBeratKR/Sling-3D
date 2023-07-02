@@ -338,6 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7034744782613099487}
   - component: {fileID: -5666991423950681380}
+  - component: {fileID: -8537656873632007743}
   m_Layer: 0
   m_Name: Level 15
   m_TagString: Untagged
@@ -379,6 +380,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutSceneIndex: 3
+--- !u!114 &-8537656873632007743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034744782613099480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeab1e8f6fb045efbe5a53c5e69e4649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7034744782957807840
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +755,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4247082512168146944}
     m_Modifications:
+    - target: {fileID: 5877831092808180953, guid: da0b7bf5f800f4fb494c8d077c61c18d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8047974122489999590, guid: da0b7bf5f800f4fb494c8d077c61c18d,
         type: 3}
       propertyPath: m_RootOrder
@@ -802,6 +820,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8901618115532863971, guid: da0b7bf5f800f4fb494c8d077c61c18d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da0b7bf5f800f4fb494c8d077c61c18d, type: 3}
 --- !u!1 &6143066956579879546 stripped
@@ -852,6 +875,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4247082512168146944}
     m_Modifications:
+    - target: {fileID: 5877831092808180953, guid: da0b7bf5f800f4fb494c8d077c61c18d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8047974122489999590, guid: da0b7bf5f800f4fb494c8d077c61c18d,
         type: 3}
       propertyPath: m_RootOrder
@@ -911,6 +939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901618115532863971, guid: da0b7bf5f800f4fb494c8d077c61c18d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da0b7bf5f800f4fb494c8d077c61c18d, type: 3}

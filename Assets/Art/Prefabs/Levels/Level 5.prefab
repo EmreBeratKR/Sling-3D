@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 283116443060412388}
   - component: {fileID: 2319282592994135140}
+  - component: {fileID: -5643171932709275400}
   m_Layer: 0
   m_Name: Level 5
   m_TagString: Untagged
@@ -50,6 +51,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutSceneIndex: 1
+--- !u!114 &-5643171932709275400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283116443060412387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeab1e8f6fb045efbe5a53c5e69e4649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &283116443521000667
 GameObject:
   m_ObjectHideFlags: 0
